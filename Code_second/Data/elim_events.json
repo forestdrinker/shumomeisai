@@ -1,0 +1,5842 @@
+{
+  "1_1": {
+    "season": 1,
+    "week": 1,
+    "active_count": 5,
+    "eliminated_count": 0,
+    "active_names": [
+      "Joey McIntyre",
+      "Kelly Monaco",
+      "John O'Hurley",
+      "Trista Sutter",
+      "Evander Holyfield"
+    ],
+    "eliminated_names": []
+  },
+  "1_2": {
+    "season": 1,
+    "week": 2,
+    "active_count": 5,
+    "eliminated_count": 1,
+    "active_names": [
+      "Joey McIntyre",
+      "Kelly Monaco",
+      "John O'Hurley",
+      "Trista Sutter",
+      "Evander Holyfield"
+    ],
+    "eliminated_names": [
+      "Trista Sutter"
+    ]
+  },
+  "1_3": {
+    "season": 1,
+    "week": 3,
+    "active_count": 4,
+    "eliminated_count": 1,
+    "active_names": [
+      "John O'Hurley",
+      "Joey McIntyre",
+      "Evander Holyfield",
+      "Kelly Monaco"
+    ],
+    "eliminated_names": [
+      "Evander Holyfield"
+    ]
+  },
+  "1_4": {
+    "season": 1,
+    "week": 4,
+    "active_count": 3,
+    "eliminated_count": 0,
+    "active_names": [
+      "John O'Hurley",
+      "Joey McIntyre",
+      "Kelly Monaco"
+    ],
+    "eliminated_names": []
+  },
+  "1_5": {
+    "season": 1,
+    "week": 5,
+    "active_count": 3,
+    "eliminated_count": 1,
+    "active_names": [
+      "John O'Hurley",
+      "Joey McIntyre",
+      "Kelly Monaco"
+    ],
+    "eliminated_names": [
+      "Joey McIntyre"
+    ]
+  },
+  "1_6_final": {
+    "season": 1,
+    "week": 6,
+    "is_final": true,
+    "finalists": [
+      "John O'Hurley",
+      "Kelly Monaco"
+    ]
+  },
+  "2_1": {
+    "season": 2,
+    "week": 1,
+    "active_count": 9,
+    "eliminated_count": 1,
+    "active_names": [
+      "Kenny Mayne",
+      "Jerry Rice",
+      "Master P",
+      "Tia Carrere",
+      "George Hamilton",
+      "Drew Lachey",
+      "Lisa Rinna",
+      "Stacy Keibler",
+      "Tatum O'Neal"
+    ],
+    "eliminated_names": [
+      "Kenny Mayne"
+    ]
+  },
+  "2_2": {
+    "season": 2,
+    "week": 2,
+    "active_count": 8,
+    "eliminated_count": 1,
+    "active_names": [
+      "Jerry Rice",
+      "Master P",
+      "Tia Carrere",
+      "George Hamilton",
+      "Drew Lachey",
+      "Lisa Rinna",
+      "Stacy Keibler",
+      "Tatum O'Neal"
+    ],
+    "eliminated_names": [
+      "Tatum O'Neal"
+    ]
+  },
+  "2_3": {
+    "season": 2,
+    "week": 3,
+    "active_count": 7,
+    "eliminated_count": 0,
+    "active_names": [
+      "Jerry Rice",
+      "Master P",
+      "Tia Carrere",
+      "George Hamilton",
+      "Drew Lachey",
+      "Lisa Rinna",
+      "Stacy Keibler"
+    ],
+    "eliminated_names": []
+  },
+  "2_4": {
+    "season": 2,
+    "week": 4,
+    "active_count": 7,
+    "eliminated_count": 1,
+    "active_names": [
+      "Jerry Rice",
+      "Master P",
+      "Tia Carrere",
+      "George Hamilton",
+      "Drew Lachey",
+      "Lisa Rinna",
+      "Stacy Keibler"
+    ],
+    "eliminated_names": [
+      "Master P"
+    ]
+  },
+  "2_5": {
+    "season": 2,
+    "week": 5,
+    "active_count": 6,
+    "eliminated_count": 1,
+    "active_names": [
+      "Jerry Rice",
+      "Tia Carrere",
+      "George Hamilton",
+      "Drew Lachey",
+      "Lisa Rinna",
+      "Stacy Keibler"
+    ],
+    "eliminated_names": [
+      "Tia Carrere"
+    ]
+  },
+  "2_6": {
+    "season": 2,
+    "week": 6,
+    "active_count": 5,
+    "eliminated_count": 1,
+    "active_names": [
+      "Jerry Rice",
+      "George Hamilton",
+      "Drew Lachey",
+      "Lisa Rinna",
+      "Stacy Keibler"
+    ],
+    "eliminated_names": [
+      "George Hamilton"
+    ]
+  },
+  "2_7": {
+    "season": 2,
+    "week": 7,
+    "active_count": 4,
+    "eliminated_count": 1,
+    "active_names": [
+      "Stacy Keibler",
+      "Drew Lachey",
+      "Lisa Rinna",
+      "Jerry Rice"
+    ],
+    "eliminated_names": [
+      "Lisa Rinna"
+    ]
+  },
+  "2_8_final": {
+    "season": 2,
+    "week": 8,
+    "is_final": true,
+    "finalists": [
+      "Drew Lachey",
+      "Jerry Rice",
+      "Stacy Keibler"
+    ]
+  },
+  "3_1": {
+    "season": 3,
+    "week": 1,
+    "active_count": 10,
+    "eliminated_count": 1,
+    "active_names": [
+      "Tucker Carlson",
+      "Joey Lawrence",
+      "Willa Ford",
+      "Shanna Moakler",
+      "Sara Evans",
+      "Emmitt Smith",
+      "Mario Lopez",
+      "Monique Coleman",
+      "Harry Hamlin",
+      "Vivica A. Fox"
+    ],
+    "eliminated_names": [
+      "Tucker Carlson"
+    ]
+  },
+  "3_2": {
+    "season": 3,
+    "week": 2,
+    "active_count": 9,
+    "eliminated_count": 1,
+    "active_names": [
+      "Joey Lawrence",
+      "Willa Ford",
+      "Shanna Moakler",
+      "Sara Evans",
+      "Emmitt Smith",
+      "Mario Lopez",
+      "Monique Coleman",
+      "Harry Hamlin",
+      "Vivica A. Fox"
+    ],
+    "eliminated_names": [
+      "Shanna Moakler"
+    ]
+  },
+  "3_3": {
+    "season": 3,
+    "week": 3,
+    "active_count": 8,
+    "eliminated_count": 1,
+    "active_names": [
+      "Joey Lawrence",
+      "Willa Ford",
+      "Sara Evans",
+      "Emmitt Smith",
+      "Mario Lopez",
+      "Monique Coleman",
+      "Harry Hamlin",
+      "Vivica A. Fox"
+    ],
+    "eliminated_names": [
+      "Harry Hamlin"
+    ]
+  },
+  "3_4": {
+    "season": 3,
+    "week": 4,
+    "active_count": 7,
+    "eliminated_count": 1,
+    "active_names": [
+      "Joey Lawrence",
+      "Willa Ford",
+      "Sara Evans",
+      "Emmitt Smith",
+      "Mario Lopez",
+      "Monique Coleman",
+      "Vivica A. Fox"
+    ],
+    "eliminated_names": [
+      "Vivica A. Fox"
+    ]
+  },
+  "3_5": {
+    "season": 3,
+    "week": 5,
+    "active_count": 6,
+    "eliminated_count": 2,
+    "active_names": [
+      "Joey Lawrence",
+      "Willa Ford",
+      "Sara Evans",
+      "Emmitt Smith",
+      "Mario Lopez",
+      "Monique Coleman"
+    ],
+    "eliminated_names": [
+      "Willa Ford",
+      "Sara Evans"
+    ]
+  },
+  "3_6": {
+    "season": 3,
+    "week": 6,
+    "active_count": 4,
+    "eliminated_count": 0,
+    "active_names": [
+      "Mario Lopez",
+      "Joey Lawrence",
+      "Emmitt Smith",
+      "Monique Coleman"
+    ],
+    "eliminated_names": []
+  },
+  "3_7": {
+    "season": 3,
+    "week": 7,
+    "active_count": 4,
+    "eliminated_count": 0,
+    "active_names": [
+      "Mario Lopez",
+      "Joey Lawrence",
+      "Emmitt Smith",
+      "Monique Coleman"
+    ],
+    "eliminated_names": []
+  },
+  "3_8": {
+    "season": 3,
+    "week": 8,
+    "active_count": 4,
+    "eliminated_count": 1,
+    "active_names": [
+      "Mario Lopez",
+      "Joey Lawrence",
+      "Emmitt Smith",
+      "Monique Coleman"
+    ],
+    "eliminated_names": [
+      "Monique Coleman"
+    ]
+  },
+  "3_9": {
+    "season": 3,
+    "week": 9,
+    "active_count": 3,
+    "eliminated_count": 1,
+    "active_names": [
+      "Mario Lopez",
+      "Joey Lawrence",
+      "Emmitt Smith"
+    ],
+    "eliminated_names": [
+      "Joey Lawrence"
+    ]
+  },
+  "3_10_final": {
+    "season": 3,
+    "week": 10,
+    "is_final": true,
+    "finalists": [
+      "Emmitt Smith",
+      "Mario Lopez"
+    ]
+  },
+  "4_1": {
+    "season": 4,
+    "week": 1,
+    "active_count": 9,
+    "eliminated_count": 0,
+    "active_names": [
+      "Billy Ray Cyrus",
+      "Shandi Finnessey",
+      "Ian Ziering",
+      "Leeza Gibbons",
+      "Joey Fatone",
+      "John Ratzenberger",
+      "Laila Ali",
+      "Clyde Drexler",
+      "Apolo Anton Ohno"
+    ],
+    "eliminated_names": []
+  },
+  "4_2": {
+    "season": 4,
+    "week": 2,
+    "active_count": 9,
+    "eliminated_count": 0,
+    "active_names": [
+      "Billy Ray Cyrus",
+      "Shandi Finnessey",
+      "Ian Ziering",
+      "Leeza Gibbons",
+      "Joey Fatone",
+      "John Ratzenberger",
+      "Laila Ali",
+      "Clyde Drexler",
+      "Apolo Anton Ohno"
+    ],
+    "eliminated_names": []
+  },
+  "4_3": {
+    "season": 4,
+    "week": 3,
+    "active_count": 9,
+    "eliminated_count": 1,
+    "active_names": [
+      "Billy Ray Cyrus",
+      "Shandi Finnessey",
+      "Ian Ziering",
+      "Leeza Gibbons",
+      "Joey Fatone",
+      "John Ratzenberger",
+      "Laila Ali",
+      "Clyde Drexler",
+      "Apolo Anton Ohno"
+    ],
+    "eliminated_names": [
+      "Shandi Finnessey"
+    ]
+  },
+  "4_4": {
+    "season": 4,
+    "week": 4,
+    "active_count": 8,
+    "eliminated_count": 1,
+    "active_names": [
+      "Billy Ray Cyrus",
+      "Ian Ziering",
+      "Leeza Gibbons",
+      "Joey Fatone",
+      "John Ratzenberger",
+      "Laila Ali",
+      "Clyde Drexler",
+      "Apolo Anton Ohno"
+    ],
+    "eliminated_names": [
+      "Leeza Gibbons"
+    ]
+  },
+  "4_5": {
+    "season": 4,
+    "week": 5,
+    "active_count": 7,
+    "eliminated_count": 1,
+    "active_names": [
+      "Billy Ray Cyrus",
+      "Ian Ziering",
+      "Joey Fatone",
+      "John Ratzenberger",
+      "Laila Ali",
+      "Clyde Drexler",
+      "Apolo Anton Ohno"
+    ],
+    "eliminated_names": [
+      "Clyde Drexler"
+    ]
+  },
+  "4_6": {
+    "season": 4,
+    "week": 6,
+    "active_count": 6,
+    "eliminated_count": 0,
+    "active_names": [
+      "Billy Ray Cyrus",
+      "Ian Ziering",
+      "Joey Fatone",
+      "John Ratzenberger",
+      "Laila Ali",
+      "Apolo Anton Ohno"
+    ],
+    "eliminated_names": []
+  },
+  "4_7": {
+    "season": 4,
+    "week": 7,
+    "active_count": 6,
+    "eliminated_count": 1,
+    "active_names": [
+      "Billy Ray Cyrus",
+      "Ian Ziering",
+      "Joey Fatone",
+      "John Ratzenberger",
+      "Laila Ali",
+      "Apolo Anton Ohno"
+    ],
+    "eliminated_names": [
+      "John Ratzenberger"
+    ]
+  },
+  "4_8": {
+    "season": 4,
+    "week": 8,
+    "active_count": 5,
+    "eliminated_count": 1,
+    "active_names": [
+      "Billy Ray Cyrus",
+      "Ian Ziering",
+      "Joey Fatone",
+      "Laila Ali",
+      "Apolo Anton Ohno"
+    ],
+    "eliminated_names": [
+      "Billy Ray Cyrus"
+    ]
+  },
+  "4_9": {
+    "season": 4,
+    "week": 9,
+    "active_count": 4,
+    "eliminated_count": 1,
+    "active_names": [
+      "Laila Ali",
+      "Ian Ziering",
+      "Joey Fatone",
+      "Apolo Anton Ohno"
+    ],
+    "eliminated_names": [
+      "Ian Ziering"
+    ]
+  },
+  "4_10_final": {
+    "season": 4,
+    "week": 10,
+    "is_final": true,
+    "finalists": [
+      "Apolo Anton Ohno",
+      "Joey Fatone",
+      "Laila Ali"
+    ]
+  },
+  "5_1": {
+    "season": 5,
+    "week": 1,
+    "active_count": 8,
+    "eliminated_count": 1,
+    "active_names": [
+      "Josie Maran",
+      "Sabrina Bryan",
+      "Floyd Mayweather Jr. ",
+      "Mark Cuban",
+      "Jennie Garth",
+      "Wayne Newton",
+      "Albert Reed",
+      "Marie Osmond"
+    ],
+    "eliminated_names": [
+      "Josie Maran"
+    ]
+  },
+  "5_2": {
+    "season": 5,
+    "week": 2,
+    "active_count": 7,
+    "eliminated_count": 1,
+    "active_names": [
+      "Sabrina Bryan",
+      "Floyd Mayweather Jr. ",
+      "Mark Cuban",
+      "Jennie Garth",
+      "Wayne Newton",
+      "Albert Reed",
+      "Marie Osmond"
+    ],
+    "eliminated_names": [
+      "Albert Reed"
+    ]
+  },
+  "5_3": {
+    "season": 5,
+    "week": 3,
+    "active_count": 6,
+    "eliminated_count": 1,
+    "active_names": [
+      "Sabrina Bryan",
+      "Floyd Mayweather Jr. ",
+      "Mark Cuban",
+      "Jennie Garth",
+      "Wayne Newton",
+      "Marie Osmond"
+    ],
+    "eliminated_names": [
+      "Wayne Newton"
+    ]
+  },
+  "5_4": {
+    "season": 5,
+    "week": 4,
+    "active_count": 5,
+    "eliminated_count": 1,
+    "active_names": [
+      "Sabrina Bryan",
+      "Floyd Mayweather Jr. ",
+      "Mark Cuban",
+      "Jennie Garth",
+      "Marie Osmond"
+    ],
+    "eliminated_names": [
+      "Floyd Mayweather Jr. "
+    ]
+  },
+  "5_5": {
+    "season": 5,
+    "week": 5,
+    "active_count": 4,
+    "eliminated_count": 1,
+    "active_names": [
+      "Sabrina Bryan",
+      "Marie Osmond",
+      "Mark Cuban",
+      "Jennie Garth"
+    ],
+    "eliminated_names": [
+      "Mark Cuban"
+    ]
+  },
+  "5_6": {
+    "season": 5,
+    "week": 6,
+    "active_count": 3,
+    "eliminated_count": 1,
+    "active_names": [
+      "Sabrina Bryan",
+      "Marie Osmond",
+      "Jennie Garth"
+    ],
+    "eliminated_names": [
+      "Sabrina Bryan"
+    ]
+  },
+  "5_7": {
+    "season": 5,
+    "week": 7,
+    "active_count": 2,
+    "eliminated_count": 0,
+    "active_names": [
+      "Marie Osmond",
+      "Jennie Garth"
+    ],
+    "eliminated_names": []
+  },
+  "5_8": {
+    "season": 5,
+    "week": 8,
+    "active_count": 2,
+    "eliminated_count": 0,
+    "active_names": [
+      "Marie Osmond",
+      "Jennie Garth"
+    ],
+    "eliminated_names": []
+  },
+  "5_9": {
+    "season": 5,
+    "week": 9,
+    "active_count": 2,
+    "eliminated_count": 1,
+    "active_names": [
+      "Marie Osmond",
+      "Jennie Garth"
+    ],
+    "eliminated_names": [
+      "Jennie Garth"
+    ]
+  },
+  "5_10_final": {
+    "season": 5,
+    "week": 10,
+    "is_final": true,
+    "finalists": [
+      "Marie Osmond"
+    ]
+  },
+  "6_1": {
+    "season": 6,
+    "week": 1,
+    "active_count": 10,
+    "eliminated_count": 0,
+    "active_names": [
+      "Shannon Elizabeth",
+      "Jason Taylor",
+      "Mario",
+      "Kristi Yamaguchi",
+      "Adam Carolla",
+      "Steve Guttenberg",
+      "Penn Jillette",
+      "Priscilla Presley",
+      "Marlee Matlin",
+      "Marissa Jaret Winokur"
+    ],
+    "eliminated_names": []
+  },
+  "6_2": {
+    "season": 6,
+    "week": 2,
+    "active_count": 10,
+    "eliminated_count": 1,
+    "active_names": [
+      "Shannon Elizabeth",
+      "Jason Taylor",
+      "Mario",
+      "Kristi Yamaguchi",
+      "Adam Carolla",
+      "Steve Guttenberg",
+      "Penn Jillette",
+      "Priscilla Presley",
+      "Marlee Matlin",
+      "Marissa Jaret Winokur"
+    ],
+    "eliminated_names": [
+      "Penn Jillette"
+    ]
+  },
+  "6_3": {
+    "season": 6,
+    "week": 3,
+    "active_count": 9,
+    "eliminated_count": 1,
+    "active_names": [
+      "Shannon Elizabeth",
+      "Jason Taylor",
+      "Mario",
+      "Kristi Yamaguchi",
+      "Adam Carolla",
+      "Steve Guttenberg",
+      "Priscilla Presley",
+      "Marlee Matlin",
+      "Marissa Jaret Winokur"
+    ],
+    "eliminated_names": [
+      "Steve Guttenberg"
+    ]
+  },
+  "6_4": {
+    "season": 6,
+    "week": 4,
+    "active_count": 8,
+    "eliminated_count": 1,
+    "active_names": [
+      "Shannon Elizabeth",
+      "Jason Taylor",
+      "Mario",
+      "Kristi Yamaguchi",
+      "Adam Carolla",
+      "Priscilla Presley",
+      "Marlee Matlin",
+      "Marissa Jaret Winokur"
+    ],
+    "eliminated_names": [
+      "Adam Carolla"
+    ]
+  },
+  "6_5": {
+    "season": 6,
+    "week": 5,
+    "active_count": 7,
+    "eliminated_count": 1,
+    "active_names": [
+      "Shannon Elizabeth",
+      "Jason Taylor",
+      "Mario",
+      "Kristi Yamaguchi",
+      "Priscilla Presley",
+      "Marlee Matlin",
+      "Marissa Jaret Winokur"
+    ],
+    "eliminated_names": [
+      "Priscilla Presley"
+    ]
+  },
+  "6_6": {
+    "season": 6,
+    "week": 6,
+    "active_count": 6,
+    "eliminated_count": 1,
+    "active_names": [
+      "Shannon Elizabeth",
+      "Jason Taylor",
+      "Mario",
+      "Kristi Yamaguchi",
+      "Marlee Matlin",
+      "Marissa Jaret Winokur"
+    ],
+    "eliminated_names": [
+      "Marlee Matlin"
+    ]
+  },
+  "6_7": {
+    "season": 6,
+    "week": 7,
+    "active_count": 5,
+    "eliminated_count": 1,
+    "active_names": [
+      "Jason Taylor",
+      "Mario",
+      "Kristi Yamaguchi",
+      "Marissa Jaret Winokur",
+      "Shannon Elizabeth"
+    ],
+    "eliminated_names": [
+      "Shannon Elizabeth"
+    ]
+  },
+  "6_8": {
+    "season": 6,
+    "week": 8,
+    "active_count": 4,
+    "eliminated_count": 1,
+    "active_names": [
+      "Jason Taylor",
+      "Mario",
+      "Kristi Yamaguchi",
+      "Marissa Jaret Winokur"
+    ],
+    "eliminated_names": [
+      "Mario"
+    ]
+  },
+  "6_9": {
+    "season": 6,
+    "week": 9,
+    "active_count": 3,
+    "eliminated_count": 1,
+    "active_names": [
+      "Jason Taylor",
+      "Kristi Yamaguchi",
+      "Marissa Jaret Winokur"
+    ],
+    "eliminated_names": [
+      "Marissa Jaret Winokur"
+    ]
+  },
+  "6_10_final": {
+    "season": 6,
+    "week": 10,
+    "is_final": true,
+    "finalists": [
+      "Jason Taylor",
+      "Kristi Yamaguchi"
+    ]
+  },
+  "7_1": {
+    "season": 7,
+    "week": 1,
+    "active_count": 13,
+    "eliminated_count": 2,
+    "active_names": [
+      "Jeffrey Ross",
+      "Cloris Leachman",
+      "Toni Braxton",
+      "Lance Bass",
+      "Warren Sapp",
+      "Kim Kardashian",
+      "Brooke Burke",
+      "Misty May-Treanor",
+      "Maurice Greene",
+      "Rocco DiSpirito",
+      "Cody Linley",
+      "Susan Lucci",
+      "Ted McGinley"
+    ],
+    "eliminated_names": [
+      "Jeffrey Ross",
+      "Ted McGinley"
+    ]
+  },
+  "7_2": {
+    "season": 7,
+    "week": 2,
+    "active_count": 11,
+    "eliminated_count": 2,
+    "active_names": [
+      "Cloris Leachman",
+      "Toni Braxton",
+      "Lance Bass",
+      "Warren Sapp",
+      "Kim Kardashian",
+      "Brooke Burke",
+      "Misty May-Treanor",
+      "Maurice Greene",
+      "Rocco DiSpirito",
+      "Cody Linley",
+      "Susan Lucci"
+    ],
+    "eliminated_names": [
+      "Kim Kardashian",
+      "Misty May-Treanor"
+    ]
+  },
+  "7_3": {
+    "season": 7,
+    "week": 3,
+    "active_count": 9,
+    "eliminated_count": 0,
+    "active_names": [
+      "Cloris Leachman",
+      "Toni Braxton",
+      "Lance Bass",
+      "Warren Sapp",
+      "Susan Lucci",
+      "Brooke Burke",
+      "Rocco DiSpirito",
+      "Maurice Greene",
+      "Cody Linley"
+    ],
+    "eliminated_names": []
+  },
+  "7_4": {
+    "season": 7,
+    "week": 4,
+    "active_count": 9,
+    "eliminated_count": 1,
+    "active_names": [
+      "Cloris Leachman",
+      "Toni Braxton",
+      "Lance Bass",
+      "Warren Sapp",
+      "Susan Lucci",
+      "Brooke Burke",
+      "Rocco DiSpirito",
+      "Maurice Greene",
+      "Cody Linley"
+    ],
+    "eliminated_names": [
+      "Rocco DiSpirito"
+    ]
+  },
+  "7_5": {
+    "season": 7,
+    "week": 5,
+    "active_count": 8,
+    "eliminated_count": 1,
+    "active_names": [
+      "Cloris Leachman",
+      "Toni Braxton",
+      "Lance Bass",
+      "Warren Sapp",
+      "Susan Lucci",
+      "Brooke Burke",
+      "Maurice Greene",
+      "Cody Linley"
+    ],
+    "eliminated_names": [
+      "Toni Braxton"
+    ]
+  },
+  "7_6": {
+    "season": 7,
+    "week": 6,
+    "active_count": 7,
+    "eliminated_count": 1,
+    "active_names": [
+      "Cloris Leachman",
+      "Lance Bass",
+      "Warren Sapp",
+      "Susan Lucci",
+      "Brooke Burke",
+      "Maurice Greene",
+      "Cody Linley"
+    ],
+    "eliminated_names": [
+      "Cloris Leachman"
+    ]
+  },
+  "7_7": {
+    "season": 7,
+    "week": 7,
+    "active_count": 6,
+    "eliminated_count": 1,
+    "active_names": [
+      "Lance Bass",
+      "Warren Sapp",
+      "Susan Lucci",
+      "Brooke Burke",
+      "Maurice Greene",
+      "Cody Linley"
+    ],
+    "eliminated_names": [
+      "Susan Lucci"
+    ]
+  },
+  "7_8": {
+    "season": 7,
+    "week": 8,
+    "active_count": 5,
+    "eliminated_count": 1,
+    "active_names": [
+      "Lance Bass",
+      "Warren Sapp",
+      "Brooke Burke",
+      "Maurice Greene",
+      "Cody Linley"
+    ],
+    "eliminated_names": [
+      "Maurice Greene"
+    ]
+  },
+  "7_9": {
+    "season": 7,
+    "week": 9,
+    "active_count": 4,
+    "eliminated_count": 1,
+    "active_names": [
+      "Lance Bass",
+      "Cody Linley",
+      "Warren Sapp",
+      "Brooke Burke"
+    ],
+    "eliminated_names": [
+      "Cody Linley"
+    ]
+  },
+  "7_10_final": {
+    "season": 7,
+    "week": 10,
+    "is_final": true,
+    "finalists": [
+      "Brooke Burke",
+      "Lance Bass",
+      "Warren Sapp"
+    ]
+  },
+  "8_1": {
+    "season": 8,
+    "week": 1,
+    "active_count": 11,
+    "eliminated_count": 0,
+    "active_names": [
+      "Shawn Johnson",
+      "Lil' Kim",
+      "Lawrence Taylor",
+      "David Alan Grier",
+      "Chuck Wicks",
+      "Ty Murray",
+      "Belinda Carlisle",
+      "Melissa Rycroft",
+      "Steve Wozniak",
+      "Denise Richards",
+      "Holly Madison"
+    ],
+    "eliminated_names": []
+  },
+  "8_2": {
+    "season": 8,
+    "week": 2,
+    "active_count": 11,
+    "eliminated_count": 1,
+    "active_names": [
+      "Shawn Johnson",
+      "Lil' Kim",
+      "Lawrence Taylor",
+      "David Alan Grier",
+      "Chuck Wicks",
+      "Ty Murray",
+      "Belinda Carlisle",
+      "Melissa Rycroft",
+      "Steve Wozniak",
+      "Denise Richards",
+      "Holly Madison"
+    ],
+    "eliminated_names": [
+      "Belinda Carlisle"
+    ]
+  },
+  "8_3": {
+    "season": 8,
+    "week": 3,
+    "active_count": 10,
+    "eliminated_count": 1,
+    "active_names": [
+      "Shawn Johnson",
+      "Lil' Kim",
+      "David Alan Grier",
+      "Denise Richards",
+      "Chuck Wicks",
+      "Ty Murray",
+      "Melissa Rycroft",
+      "Steve Wozniak",
+      "Lawrence Taylor",
+      "Holly Madison"
+    ],
+    "eliminated_names": [
+      "Denise Richards"
+    ]
+  },
+  "8_4": {
+    "season": 8,
+    "week": 4,
+    "active_count": 9,
+    "eliminated_count": 2,
+    "active_names": [
+      "Shawn Johnson",
+      "Lil' Kim",
+      "David Alan Grier",
+      "Chuck Wicks",
+      "Ty Murray",
+      "Melissa Rycroft",
+      "Steve Wozniak",
+      "Lawrence Taylor",
+      "Holly Madison"
+    ],
+    "eliminated_names": [
+      "Holly Madison",
+      "Steve Wozniak"
+    ]
+  },
+  "8_5": {
+    "season": 8,
+    "week": 5,
+    "active_count": 7,
+    "eliminated_count": 1,
+    "active_names": [
+      "Shawn Johnson",
+      "Lil' Kim",
+      "David Alan Grier",
+      "Chuck Wicks",
+      "Ty Murray",
+      "Melissa Rycroft",
+      "Lawrence Taylor"
+    ],
+    "eliminated_names": [
+      "David Alan Grier"
+    ]
+  },
+  "8_6": {
+    "season": 8,
+    "week": 6,
+    "active_count": 6,
+    "eliminated_count": 0,
+    "active_names": [
+      "Shawn Johnson",
+      "Lil' Kim",
+      "Chuck Wicks",
+      "Ty Murray",
+      "Melissa Rycroft",
+      "Lawrence Taylor"
+    ],
+    "eliminated_names": []
+  },
+  "8_7": {
+    "season": 8,
+    "week": 7,
+    "active_count": 6,
+    "eliminated_count": 1,
+    "active_names": [
+      "Shawn Johnson",
+      "Lil' Kim",
+      "Chuck Wicks",
+      "Ty Murray",
+      "Melissa Rycroft",
+      "Lawrence Taylor"
+    ],
+    "eliminated_names": [
+      "Lawrence Taylor"
+    ]
+  },
+  "8_8": {
+    "season": 8,
+    "week": 8,
+    "active_count": 5,
+    "eliminated_count": 1,
+    "active_names": [
+      "Shawn Johnson",
+      "Lil' Kim",
+      "Chuck Wicks",
+      "Ty Murray",
+      "Melissa Rycroft"
+    ],
+    "eliminated_names": [
+      "Chuck Wicks"
+    ]
+  },
+  "8_9": {
+    "season": 8,
+    "week": 9,
+    "active_count": 4,
+    "eliminated_count": 1,
+    "active_names": [
+      "Melissa Rycroft",
+      "Shawn Johnson",
+      "Lil' Kim",
+      "Ty Murray"
+    ],
+    "eliminated_names": [
+      "Lil' Kim"
+    ]
+  },
+  "8_10": {
+    "season": 8,
+    "week": 10,
+    "active_count": 3,
+    "eliminated_count": 1,
+    "active_names": [
+      "Melissa Rycroft",
+      "Shawn Johnson",
+      "Ty Murray"
+    ],
+    "eliminated_names": [
+      "Ty Murray"
+    ]
+  },
+  "8_11_final": {
+    "season": 8,
+    "week": 11,
+    "is_final": true,
+    "finalists": [
+      "Melissa Rycroft",
+      "Shawn Johnson"
+    ]
+  },
+  "9_1": {
+    "season": 9,
+    "week": 1,
+    "active_count": 14,
+    "eliminated_count": 2,
+    "active_names": [
+      "Donny Osmond",
+      "Natalie Coughlin",
+      "Chuck Liddell",
+      "Tom DeLay",
+      "Louie Vito",
+      "Kathy Ireland",
+      "Debi Mazar",
+      "Michael Irvin",
+      "Ashley Hamiliton",
+      "Aaron Carter",
+      "Macy Gray",
+      "Mya",
+      "Melissa Joan Hart",
+      "Mark Dacascos"
+    ],
+    "eliminated_names": [
+      "Macy Gray",
+      "Ashley Hamiliton"
+    ]
+  },
+  "9_2": {
+    "season": 9,
+    "week": 2,
+    "active_count": 12,
+    "eliminated_count": 1,
+    "active_names": [
+      "Donny Osmond",
+      "Natalie Coughlin",
+      "Chuck Liddell",
+      "Tom DeLay",
+      "Louie Vito",
+      "Kathy Ireland",
+      "Debi Mazar",
+      "Michael Irvin",
+      "Aaron Carter",
+      "Mya",
+      "Melissa Joan Hart",
+      "Mark Dacascos"
+    ],
+    "eliminated_names": [
+      "Kathy Ireland"
+    ]
+  },
+  "9_3": {
+    "season": 9,
+    "week": 3,
+    "active_count": 11,
+    "eliminated_count": 2,
+    "active_names": [
+      "Donny Osmond",
+      "Natalie Coughlin",
+      "Chuck Liddell",
+      "Tom DeLay",
+      "Louie Vito",
+      "Debi Mazar",
+      "Michael Irvin",
+      "Aaron Carter",
+      "Mya",
+      "Melissa Joan Hart",
+      "Mark Dacascos"
+    ],
+    "eliminated_names": [
+      "Debi Mazar",
+      "Tom DeLay"
+    ]
+  },
+  "9_4": {
+    "season": 9,
+    "week": 4,
+    "active_count": 9,
+    "eliminated_count": 1,
+    "active_names": [
+      "Donny Osmond",
+      "Natalie Coughlin",
+      "Chuck Liddell",
+      "Louie Vito",
+      "Michael Irvin",
+      "Aaron Carter",
+      "Mya",
+      "Melissa Joan Hart",
+      "Mark Dacascos"
+    ],
+    "eliminated_names": [
+      "Chuck Liddell"
+    ]
+  },
+  "9_5": {
+    "season": 9,
+    "week": 5,
+    "active_count": 8,
+    "eliminated_count": 1,
+    "active_names": [
+      "Donny Osmond",
+      "Natalie Coughlin",
+      "Louie Vito",
+      "Michael Irvin",
+      "Aaron Carter",
+      "Mya",
+      "Melissa Joan Hart",
+      "Mark Dacascos"
+    ],
+    "eliminated_names": [
+      "Natalie Coughlin"
+    ]
+  },
+  "9_6": {
+    "season": 9,
+    "week": 6,
+    "active_count": 7,
+    "eliminated_count": 2,
+    "active_names": [
+      "Donny Osmond",
+      "Louie Vito",
+      "Michael Irvin",
+      "Aaron Carter",
+      "Mya",
+      "Melissa Joan Hart",
+      "Mark Dacascos"
+    ],
+    "eliminated_names": [
+      "Melissa Joan Hart",
+      "Louie Vito"
+    ]
+  },
+  "9_7": {
+    "season": 9,
+    "week": 7,
+    "active_count": 5,
+    "eliminated_count": 2,
+    "active_names": [
+      "Donny Osmond",
+      "Michael Irvin",
+      "Aaron Carter",
+      "Mya",
+      "Mark Dacascos"
+    ],
+    "eliminated_names": [
+      "Michael Irvin",
+      "Mark Dacascos"
+    ]
+  },
+  "9_8": {
+    "season": 9,
+    "week": 8,
+    "active_count": 3,
+    "eliminated_count": 1,
+    "active_names": [
+      "Aaron Carter",
+      "Mya",
+      "Donny Osmond"
+    ],
+    "eliminated_names": [
+      "Aaron Carter"
+    ]
+  },
+  "9_9": {
+    "season": 9,
+    "week": 9,
+    "active_count": 2,
+    "eliminated_count": 0,
+    "active_names": [
+      "Mya",
+      "Donny Osmond"
+    ],
+    "eliminated_names": []
+  },
+  "9_10_final": {
+    "season": 9,
+    "week": 10,
+    "is_final": true,
+    "finalists": [
+      "Donny Osmond",
+      "Mya"
+    ]
+  },
+  "10_1": {
+    "season": 10,
+    "week": 1,
+    "active_count": 9,
+    "eliminated_count": 0,
+    "active_names": [
+      "Evan Lysacek",
+      "Shannen Doherty",
+      "Erin Andrews",
+      "Nicole Scherzinger",
+      "Niecy Nash",
+      "Jake Pavelka",
+      "Kate Gosselin",
+      "Chad Ochocinco",
+      "Buzz Aldrin"
+    ],
+    "eliminated_names": []
+  },
+  "10_2": {
+    "season": 10,
+    "week": 2,
+    "active_count": 9,
+    "eliminated_count": 1,
+    "active_names": [
+      "Evan Lysacek",
+      "Shannen Doherty",
+      "Erin Andrews",
+      "Nicole Scherzinger",
+      "Niecy Nash",
+      "Jake Pavelka",
+      "Kate Gosselin",
+      "Chad Ochocinco",
+      "Buzz Aldrin"
+    ],
+    "eliminated_names": [
+      "Shannen Doherty"
+    ]
+  },
+  "10_3": {
+    "season": 10,
+    "week": 3,
+    "active_count": 8,
+    "eliminated_count": 1,
+    "active_names": [
+      "Evan Lysacek",
+      "Erin Andrews",
+      "Nicole Scherzinger",
+      "Niecy Nash",
+      "Jake Pavelka",
+      "Kate Gosselin",
+      "Chad Ochocinco",
+      "Buzz Aldrin"
+    ],
+    "eliminated_names": [
+      "Buzz Aldrin"
+    ]
+  },
+  "10_4": {
+    "season": 10,
+    "week": 4,
+    "active_count": 7,
+    "eliminated_count": 0,
+    "active_names": [
+      "Evan Lysacek",
+      "Erin Andrews",
+      "Nicole Scherzinger",
+      "Niecy Nash",
+      "Jake Pavelka",
+      "Kate Gosselin",
+      "Chad Ochocinco"
+    ],
+    "eliminated_names": []
+  },
+  "10_5": {
+    "season": 10,
+    "week": 5,
+    "active_count": 7,
+    "eliminated_count": 1,
+    "active_names": [
+      "Evan Lysacek",
+      "Erin Andrews",
+      "Nicole Scherzinger",
+      "Niecy Nash",
+      "Jake Pavelka",
+      "Kate Gosselin",
+      "Chad Ochocinco"
+    ],
+    "eliminated_names": [
+      "Kate Gosselin"
+    ]
+  },
+  "10_6": {
+    "season": 10,
+    "week": 6,
+    "active_count": 6,
+    "eliminated_count": 1,
+    "active_names": [
+      "Evan Lysacek",
+      "Nicole Scherzinger",
+      "Erin Andrews",
+      "Niecy Nash",
+      "Jake Pavelka",
+      "Chad Ochocinco"
+    ],
+    "eliminated_names": [
+      "Jake Pavelka"
+    ]
+  },
+  "10_7": {
+    "season": 10,
+    "week": 7,
+    "active_count": 5,
+    "eliminated_count": 0,
+    "active_names": [
+      "Evan Lysacek",
+      "Nicole Scherzinger",
+      "Erin Andrews",
+      "Niecy Nash",
+      "Chad Ochocinco"
+    ],
+    "eliminated_names": []
+  },
+  "10_8": {
+    "season": 10,
+    "week": 8,
+    "active_count": 5,
+    "eliminated_count": 1,
+    "active_names": [
+      "Evan Lysacek",
+      "Nicole Scherzinger",
+      "Erin Andrews",
+      "Niecy Nash",
+      "Chad Ochocinco"
+    ],
+    "eliminated_names": [
+      "Niecy Nash"
+    ]
+  },
+  "10_9": {
+    "season": 10,
+    "week": 9,
+    "active_count": 4,
+    "eliminated_count": 1,
+    "active_names": [
+      "Evan Lysacek",
+      "Nicole Scherzinger",
+      "Erin Andrews",
+      "Chad Ochocinco"
+    ],
+    "eliminated_names": [
+      "Chad Ochocinco"
+    ]
+  },
+  "10_10_final": {
+    "season": 10,
+    "week": 10,
+    "is_final": true,
+    "finalists": [
+      "Erin Andrews",
+      "Evan Lysacek",
+      "Nicole Scherzinger"
+    ]
+  },
+  "11_1": {
+    "season": 11,
+    "week": 1,
+    "active_count": 11,
+    "eliminated_count": 1,
+    "active_names": [
+      "David Hasselhoff",
+      "Kyle Massey",
+      "Michael Bolton",
+      "Jennifer Grey",
+      "The Situation",
+      "Bristol Palin",
+      "Brandy",
+      "Kurt Warner",
+      "Florence Henderson",
+      "Audrina Patridge",
+      "Margaret Cho"
+    ],
+    "eliminated_names": [
+      "David Hasselhoff"
+    ]
+  },
+  "11_2": {
+    "season": 11,
+    "week": 2,
+    "active_count": 10,
+    "eliminated_count": 1,
+    "active_names": [
+      "Kyle Massey",
+      "Michael Bolton",
+      "Jennifer Grey",
+      "The Situation",
+      "Bristol Palin",
+      "Brandy",
+      "Kurt Warner",
+      "Florence Henderson",
+      "Audrina Patridge",
+      "Margaret Cho"
+    ],
+    "eliminated_names": [
+      "Michael Bolton"
+    ]
+  },
+  "11_3": {
+    "season": 11,
+    "week": 3,
+    "active_count": 9,
+    "eliminated_count": 1,
+    "active_names": [
+      "Kyle Massey",
+      "Jennifer Grey",
+      "The Situation",
+      "Bristol Palin",
+      "Brandy",
+      "Kurt Warner",
+      "Florence Henderson",
+      "Audrina Patridge",
+      "Margaret Cho"
+    ],
+    "eliminated_names": [
+      "Margaret Cho"
+    ]
+  },
+  "11_4": {
+    "season": 11,
+    "week": 4,
+    "active_count": 8,
+    "eliminated_count": 1,
+    "active_names": [
+      "Kyle Massey",
+      "Jennifer Grey",
+      "The Situation",
+      "Bristol Palin",
+      "Brandy",
+      "Kurt Warner",
+      "Florence Henderson",
+      "Audrina Patridge"
+    ],
+    "eliminated_names": [
+      "The Situation"
+    ]
+  },
+  "11_5": {
+    "season": 11,
+    "week": 5,
+    "active_count": 7,
+    "eliminated_count": 1,
+    "active_names": [
+      "Kyle Massey",
+      "Jennifer Grey",
+      "Bristol Palin",
+      "Brandy",
+      "Kurt Warner",
+      "Florence Henderson",
+      "Audrina Patridge"
+    ],
+    "eliminated_names": [
+      "Florence Henderson"
+    ]
+  },
+  "11_6": {
+    "season": 11,
+    "week": 6,
+    "active_count": 6,
+    "eliminated_count": 1,
+    "active_names": [
+      "Kyle Massey",
+      "Jennifer Grey",
+      "Bristol Palin",
+      "Brandy",
+      "Kurt Warner",
+      "Audrina Patridge"
+    ],
+    "eliminated_names": [
+      "Audrina Patridge"
+    ]
+  },
+  "11_7": {
+    "season": 11,
+    "week": 7,
+    "active_count": 5,
+    "eliminated_count": 0,
+    "active_names": [
+      "Kyle Massey",
+      "Jennifer Grey",
+      "Bristol Palin",
+      "Brandy",
+      "Kurt Warner"
+    ],
+    "eliminated_names": []
+  },
+  "11_8": {
+    "season": 11,
+    "week": 8,
+    "active_count": 5,
+    "eliminated_count": 1,
+    "active_names": [
+      "Kyle Massey",
+      "Jennifer Grey",
+      "Bristol Palin",
+      "Brandy",
+      "Kurt Warner"
+    ],
+    "eliminated_names": [
+      "Kurt Warner"
+    ]
+  },
+  "11_9": {
+    "season": 11,
+    "week": 9,
+    "active_count": 4,
+    "eliminated_count": 1,
+    "active_names": [
+      "Bristol Palin",
+      "Brandy",
+      "Jennifer Grey",
+      "Kyle Massey"
+    ],
+    "eliminated_names": [
+      "Brandy"
+    ]
+  },
+  "11_10_final": {
+    "season": 11,
+    "week": 10,
+    "is_final": true,
+    "finalists": [
+      "Bristol Palin",
+      "Jennifer Grey",
+      "Kyle Massey"
+    ]
+  },
+  "12_1": {
+    "season": 12,
+    "week": 1,
+    "active_count": 9,
+    "eliminated_count": 0,
+    "active_names": [
+      "Kirstie Alley",
+      "Wendy Williams",
+      "Sugar Ray Leonard",
+      "Chelsea Kane",
+      "Ralph Macchio",
+      "Kendra Wilkinson",
+      "Mike Catherwood",
+      "Romeo",
+      "Chris Jericho"
+    ],
+    "eliminated_names": []
+  },
+  "12_2": {
+    "season": 12,
+    "week": 2,
+    "active_count": 9,
+    "eliminated_count": 1,
+    "active_names": [
+      "Kirstie Alley",
+      "Wendy Williams",
+      "Sugar Ray Leonard",
+      "Chelsea Kane",
+      "Ralph Macchio",
+      "Kendra Wilkinson",
+      "Mike Catherwood",
+      "Romeo",
+      "Chris Jericho"
+    ],
+    "eliminated_names": [
+      "Mike Catherwood"
+    ]
+  },
+  "12_3": {
+    "season": 12,
+    "week": 3,
+    "active_count": 8,
+    "eliminated_count": 1,
+    "active_names": [
+      "Kirstie Alley",
+      "Wendy Williams",
+      "Sugar Ray Leonard",
+      "Chelsea Kane",
+      "Ralph Macchio",
+      "Kendra Wilkinson",
+      "Romeo",
+      "Chris Jericho"
+    ],
+    "eliminated_names": [
+      "Wendy Williams"
+    ]
+  },
+  "12_4": {
+    "season": 12,
+    "week": 4,
+    "active_count": 7,
+    "eliminated_count": 1,
+    "active_names": [
+      "Kirstie Alley",
+      "Sugar Ray Leonard",
+      "Chelsea Kane",
+      "Ralph Macchio",
+      "Kendra Wilkinson",
+      "Romeo",
+      "Chris Jericho"
+    ],
+    "eliminated_names": [
+      "Sugar Ray Leonard"
+    ]
+  },
+  "12_5": {
+    "season": 12,
+    "week": 5,
+    "active_count": 6,
+    "eliminated_count": 0,
+    "active_names": [
+      "Kirstie Alley",
+      "Chelsea Kane",
+      "Ralph Macchio",
+      "Kendra Wilkinson",
+      "Romeo",
+      "Chris Jericho"
+    ],
+    "eliminated_names": []
+  },
+  "12_6": {
+    "season": 12,
+    "week": 6,
+    "active_count": 6,
+    "eliminated_count": 1,
+    "active_names": [
+      "Kirstie Alley",
+      "Chelsea Kane",
+      "Ralph Macchio",
+      "Kendra Wilkinson",
+      "Romeo",
+      "Chris Jericho"
+    ],
+    "eliminated_names": [
+      "Chris Jericho"
+    ]
+  },
+  "12_7": {
+    "season": 12,
+    "week": 7,
+    "active_count": 5,
+    "eliminated_count": 1,
+    "active_names": [
+      "Kirstie Alley",
+      "Chelsea Kane",
+      "Ralph Macchio",
+      "Kendra Wilkinson",
+      "Romeo"
+    ],
+    "eliminated_names": [
+      "Kendra Wilkinson"
+    ]
+  },
+  "12_8": {
+    "season": 12,
+    "week": 8,
+    "active_count": 4,
+    "eliminated_count": 1,
+    "active_names": [
+      "Chelsea Kane",
+      "Ralph Macchio",
+      "Romeo",
+      "Kirstie Alley"
+    ],
+    "eliminated_names": [
+      "Romeo"
+    ]
+  },
+  "12_9": {
+    "season": 12,
+    "week": 9,
+    "active_count": 3,
+    "eliminated_count": 1,
+    "active_names": [
+      "Chelsea Kane",
+      "Ralph Macchio",
+      "Kirstie Alley"
+    ],
+    "eliminated_names": [
+      "Ralph Macchio"
+    ]
+  },
+  "12_10_final": {
+    "season": 12,
+    "week": 10,
+    "is_final": true,
+    "finalists": [
+      "Chelsea Kane",
+      "Kirstie Alley"
+    ]
+  },
+  "13_1": {
+    "season": 13,
+    "week": 1,
+    "active_count": 11,
+    "eliminated_count": 1,
+    "active_names": [
+      "Rob Kardashian",
+      "Ricki Lake",
+      "Kristin Cavallari",
+      "Carson Kressley",
+      "Chaz Bono",
+      "Hope Solo",
+      "Metta World Peace (Ron)",
+      "Nancy Grace",
+      "David Arquette",
+      "Chynna Phillips",
+      "J.R. Martinez"
+    ],
+    "eliminated_names": [
+      "Metta World Peace (Ron)"
+    ]
+  },
+  "13_2": {
+    "season": 13,
+    "week": 2,
+    "active_count": 10,
+    "eliminated_count": 0,
+    "active_names": [
+      "Rob Kardashian",
+      "Ricki Lake",
+      "Kristin Cavallari",
+      "Carson Kressley",
+      "Chaz Bono",
+      "Hope Solo",
+      "Nancy Grace",
+      "David Arquette",
+      "Chynna Phillips",
+      "J.R. Martinez"
+    ],
+    "eliminated_names": []
+  },
+  "13_3": {
+    "season": 13,
+    "week": 3,
+    "active_count": 10,
+    "eliminated_count": 1,
+    "active_names": [
+      "Rob Kardashian",
+      "Ricki Lake",
+      "Kristin Cavallari",
+      "Carson Kressley",
+      "Chaz Bono",
+      "Hope Solo",
+      "Nancy Grace",
+      "David Arquette",
+      "Chynna Phillips",
+      "J.R. Martinez"
+    ],
+    "eliminated_names": [
+      "Kristin Cavallari"
+    ]
+  },
+  "13_4": {
+    "season": 13,
+    "week": 4,
+    "active_count": 9,
+    "eliminated_count": 1,
+    "active_names": [
+      "Rob Kardashian",
+      "Ricki Lake",
+      "Carson Kressley",
+      "Chaz Bono",
+      "Hope Solo",
+      "Nancy Grace",
+      "David Arquette",
+      "Chynna Phillips",
+      "J.R. Martinez"
+    ],
+    "eliminated_names": [
+      "Chynna Phillips"
+    ]
+  },
+  "13_5": {
+    "season": 13,
+    "week": 5,
+    "active_count": 8,
+    "eliminated_count": 1,
+    "active_names": [
+      "Ricki Lake",
+      "Carson Kressley",
+      "Chaz Bono",
+      "Hope Solo",
+      "Nancy Grace",
+      "David Arquette",
+      "Rob Kardashian",
+      "J.R. Martinez"
+    ],
+    "eliminated_names": [
+      "Carson Kressley"
+    ]
+  },
+  "13_6": {
+    "season": 13,
+    "week": 6,
+    "active_count": 7,
+    "eliminated_count": 1,
+    "active_names": [
+      "Ricki Lake",
+      "Chaz Bono",
+      "Hope Solo",
+      "Nancy Grace",
+      "David Arquette",
+      "Rob Kardashian",
+      "J.R. Martinez"
+    ],
+    "eliminated_names": [
+      "Chaz Bono"
+    ]
+  },
+  "13_7": {
+    "season": 13,
+    "week": 7,
+    "active_count": 6,
+    "eliminated_count": 1,
+    "active_names": [
+      "Ricki Lake",
+      "Hope Solo",
+      "Nancy Grace",
+      "David Arquette",
+      "Rob Kardashian",
+      "J.R. Martinez"
+    ],
+    "eliminated_names": [
+      "David Arquette"
+    ]
+  },
+  "13_8": {
+    "season": 13,
+    "week": 8,
+    "active_count": 5,
+    "eliminated_count": 1,
+    "active_names": [
+      "Ricki Lake",
+      "Hope Solo",
+      "Nancy Grace",
+      "Rob Kardashian",
+      "J.R. Martinez"
+    ],
+    "eliminated_names": [
+      "Nancy Grace"
+    ]
+  },
+  "13_9": {
+    "season": 13,
+    "week": 9,
+    "active_count": 4,
+    "eliminated_count": 1,
+    "active_names": [
+      "Hope Solo",
+      "Rob Kardashian",
+      "Ricki Lake",
+      "J.R. Martinez"
+    ],
+    "eliminated_names": [
+      "Hope Solo"
+    ]
+  },
+  "13_10_final": {
+    "season": 13,
+    "week": 10,
+    "is_final": true,
+    "finalists": [
+      "J.R. Martinez",
+      "Ricki Lake",
+      "Rob Kardashian"
+    ]
+  },
+  "14_1": {
+    "season": 14,
+    "week": 1,
+    "active_count": 9,
+    "eliminated_count": 0,
+    "active_names": [
+      "Jaleel White",
+      "Donald Driver",
+      "Maria Menounos",
+      "Roshon Fegan",
+      "Jack Wagner",
+      "Sherri Sheperd",
+      "Melissa Gilbert",
+      "Gladys Knight",
+      "Gavin DeGraw"
+    ],
+    "eliminated_names": []
+  },
+  "14_2": {
+    "season": 14,
+    "week": 2,
+    "active_count": 9,
+    "eliminated_count": 0,
+    "active_names": [
+      "Jaleel White",
+      "Donald Driver",
+      "Maria Menounos",
+      "Roshon Fegan",
+      "Jack Wagner",
+      "Sherri Sheperd",
+      "Melissa Gilbert",
+      "Gladys Knight",
+      "Gavin DeGraw"
+    ],
+    "eliminated_names": []
+  },
+  "14_3": {
+    "season": 14,
+    "week": 3,
+    "active_count": 9,
+    "eliminated_count": 1,
+    "active_names": [
+      "Jaleel White",
+      "Donald Driver",
+      "Maria Menounos",
+      "Roshon Fegan",
+      "Jack Wagner",
+      "Sherri Sheperd",
+      "Melissa Gilbert",
+      "Gladys Knight",
+      "Gavin DeGraw"
+    ],
+    "eliminated_names": [
+      "Jack Wagner"
+    ]
+  },
+  "14_4": {
+    "season": 14,
+    "week": 4,
+    "active_count": 8,
+    "eliminated_count": 1,
+    "active_names": [
+      "Jaleel White",
+      "Donald Driver",
+      "Maria Menounos",
+      "Roshon Fegan",
+      "Sherri Sheperd",
+      "Melissa Gilbert",
+      "Gladys Knight",
+      "Gavin DeGraw"
+    ],
+    "eliminated_names": [
+      "Sherri Sheperd"
+    ]
+  },
+  "14_5": {
+    "season": 14,
+    "week": 5,
+    "active_count": 7,
+    "eliminated_count": 1,
+    "active_names": [
+      "Jaleel White",
+      "Donald Driver",
+      "Maria Menounos",
+      "Roshon Fegan",
+      "Melissa Gilbert",
+      "Gladys Knight",
+      "Gavin DeGraw"
+    ],
+    "eliminated_names": [
+      "Gavin DeGraw"
+    ]
+  },
+  "14_6": {
+    "season": 14,
+    "week": 6,
+    "active_count": 6,
+    "eliminated_count": 1,
+    "active_names": [
+      "Jaleel White",
+      "Donald Driver",
+      "Maria Menounos",
+      "Roshon Fegan",
+      "Melissa Gilbert",
+      "Gladys Knight"
+    ],
+    "eliminated_names": [
+      "Gladys Knight"
+    ]
+  },
+  "14_7": {
+    "season": 14,
+    "week": 7,
+    "active_count": 5,
+    "eliminated_count": 1,
+    "active_names": [
+      "Jaleel White",
+      "Donald Driver",
+      "Maria Menounos",
+      "Roshon Fegan",
+      "Melissa Gilbert"
+    ],
+    "eliminated_names": [
+      "Jaleel White"
+    ]
+  },
+  "14_8": {
+    "season": 14,
+    "week": 8,
+    "active_count": 4,
+    "eliminated_count": 2,
+    "active_names": [
+      "Melissa Gilbert",
+      "Donald Driver",
+      "Maria Menounos",
+      "Roshon Fegan"
+    ],
+    "eliminated_names": [
+      "Melissa Gilbert",
+      "Roshon Fegan"
+    ]
+  },
+  "14_9": {
+    "season": 14,
+    "week": 9,
+    "active_count": 2,
+    "eliminated_count": 1,
+    "active_names": [
+      "Donald Driver",
+      "Maria Menounos"
+    ],
+    "eliminated_names": [
+      "Maria Menounos"
+    ]
+  },
+  "14_10_final": {
+    "season": 14,
+    "week": 10,
+    "is_final": true,
+    "finalists": [
+      "Donald Driver"
+    ]
+  },
+  "15_1": {
+    "season": 15,
+    "week": 1,
+    "active_count": 10,
+    "eliminated_count": 0,
+    "active_names": [
+      "Kirstie Alley",
+      "Shawn Johnson",
+      "Emmitt Smith",
+      "Sabrina Bryan",
+      "Kelly Monaco",
+      "Bristol Palin",
+      "Drew Lachey",
+      "Joey Fatone",
+      "Melissa Rycroft",
+      "Apolo Anton Ohno"
+    ],
+    "eliminated_names": []
+  },
+  "15_2": {
+    "season": 15,
+    "week": 2,
+    "active_count": 10,
+    "eliminated_count": 1,
+    "active_names": [
+      "Kirstie Alley",
+      "Shawn Johnson",
+      "Emmitt Smith",
+      "Sabrina Bryan",
+      "Kelly Monaco",
+      "Bristol Palin",
+      "Drew Lachey",
+      "Joey Fatone",
+      "Melissa Rycroft",
+      "Apolo Anton Ohno"
+    ],
+    "eliminated_names": [
+      "Joey Fatone"
+    ]
+  },
+  "15_3": {
+    "season": 15,
+    "week": 3,
+    "active_count": 9,
+    "eliminated_count": 1,
+    "active_names": [
+      "Kirstie Alley",
+      "Shawn Johnson",
+      "Emmitt Smith",
+      "Sabrina Bryan",
+      "Kelly Monaco",
+      "Bristol Palin",
+      "Drew Lachey",
+      "Melissa Rycroft",
+      "Apolo Anton Ohno"
+    ],
+    "eliminated_names": [
+      "Drew Lachey"
+    ]
+  },
+  "15_4": {
+    "season": 15,
+    "week": 4,
+    "active_count": 8,
+    "eliminated_count": 1,
+    "active_names": [
+      "Kirstie Alley",
+      "Shawn Johnson",
+      "Emmitt Smith",
+      "Sabrina Bryan",
+      "Kelly Monaco",
+      "Bristol Palin",
+      "Melissa Rycroft",
+      "Apolo Anton Ohno"
+    ],
+    "eliminated_names": [
+      "Bristol Palin"
+    ]
+  },
+  "15_5": {
+    "season": 15,
+    "week": 5,
+    "active_count": 7,
+    "eliminated_count": 0,
+    "active_names": [
+      "Kirstie Alley",
+      "Shawn Johnson",
+      "Emmitt Smith",
+      "Sabrina Bryan",
+      "Kelly Monaco",
+      "Melissa Rycroft",
+      "Apolo Anton Ohno"
+    ],
+    "eliminated_names": []
+  },
+  "15_6": {
+    "season": 15,
+    "week": 6,
+    "active_count": 7,
+    "eliminated_count": 1,
+    "active_names": [
+      "Kirstie Alley",
+      "Shawn Johnson",
+      "Emmitt Smith",
+      "Sabrina Bryan",
+      "Kelly Monaco",
+      "Melissa Rycroft",
+      "Apolo Anton Ohno"
+    ],
+    "eliminated_names": [
+      "Sabrina Bryan"
+    ]
+  },
+  "15_7": {
+    "season": 15,
+    "week": 7,
+    "active_count": 6,
+    "eliminated_count": 0,
+    "active_names": [
+      "Kirstie Alley",
+      "Shawn Johnson",
+      "Emmitt Smith",
+      "Kelly Monaco",
+      "Melissa Rycroft",
+      "Apolo Anton Ohno"
+    ],
+    "eliminated_names": []
+  },
+  "15_8": {
+    "season": 15,
+    "week": 8,
+    "active_count": 6,
+    "eliminated_count": 1,
+    "active_names": [
+      "Kirstie Alley",
+      "Shawn Johnson",
+      "Emmitt Smith",
+      "Kelly Monaco",
+      "Melissa Rycroft",
+      "Apolo Anton Ohno"
+    ],
+    "eliminated_names": [
+      "Kirstie Alley"
+    ]
+  },
+  "15_9": {
+    "season": 15,
+    "week": 9,
+    "active_count": 5,
+    "eliminated_count": 2,
+    "active_names": [
+      "Shawn Johnson",
+      "Emmitt Smith",
+      "Kelly Monaco",
+      "Melissa Rycroft",
+      "Apolo Anton Ohno"
+    ],
+    "eliminated_names": [
+      "Emmitt Smith",
+      "Apolo Anton Ohno"
+    ]
+  },
+  "15_10_final": {
+    "season": 15,
+    "week": 10,
+    "is_final": true,
+    "finalists": [
+      "Kelly Monaco",
+      "Melissa Rycroft",
+      "Shawn Johnson"
+    ]
+  },
+  "16_1": {
+    "season": 16,
+    "week": 1,
+    "active_count": 10,
+    "eliminated_count": 0,
+    "active_names": [
+      "Andy Dick",
+      "D. L. Hughley",
+      "Jacoby Jones",
+      "Victor Ortiz",
+      "Dorothy Hamill",
+      "Wynonna Judd",
+      "Alexandra Raisman",
+      "Zendaya",
+      "Kellie Pickler",
+      "Sean Lowe"
+    ],
+    "eliminated_names": []
+  },
+  "16_2": {
+    "season": 16,
+    "week": 2,
+    "active_count": 10,
+    "eliminated_count": 1,
+    "active_names": [
+      "Andy Dick",
+      "D. L. Hughley",
+      "Jacoby Jones",
+      "Victor Ortiz",
+      "Dorothy Hamill",
+      "Wynonna Judd",
+      "Alexandra Raisman",
+      "Zendaya",
+      "Kellie Pickler",
+      "Sean Lowe"
+    ],
+    "eliminated_names": [
+      "Dorothy Hamill"
+    ]
+  },
+  "16_3": {
+    "season": 16,
+    "week": 3,
+    "active_count": 9,
+    "eliminated_count": 1,
+    "active_names": [
+      "Andy Dick",
+      "D. L. Hughley",
+      "Jacoby Jones",
+      "Victor Ortiz",
+      "Wynonna Judd",
+      "Alexandra Raisman",
+      "Zendaya",
+      "Kellie Pickler",
+      "Sean Lowe"
+    ],
+    "eliminated_names": [
+      "Wynonna Judd"
+    ]
+  },
+  "16_4": {
+    "season": 16,
+    "week": 4,
+    "active_count": 8,
+    "eliminated_count": 0,
+    "active_names": [
+      "Andy Dick",
+      "D. L. Hughley",
+      "Jacoby Jones",
+      "Victor Ortiz",
+      "Zendaya",
+      "Alexandra Raisman",
+      "Kellie Pickler",
+      "Sean Lowe"
+    ],
+    "eliminated_names": []
+  },
+  "16_5": {
+    "season": 16,
+    "week": 5,
+    "active_count": 8,
+    "eliminated_count": 1,
+    "active_names": [
+      "Andy Dick",
+      "D. L. Hughley",
+      "Jacoby Jones",
+      "Victor Ortiz",
+      "Zendaya",
+      "Alexandra Raisman",
+      "Kellie Pickler",
+      "Sean Lowe"
+    ],
+    "eliminated_names": [
+      "D. L. Hughley"
+    ]
+  },
+  "16_6": {
+    "season": 16,
+    "week": 6,
+    "active_count": 7,
+    "eliminated_count": 1,
+    "active_names": [
+      "Andy Dick",
+      "Jacoby Jones",
+      "Victor Ortiz",
+      "Zendaya",
+      "Alexandra Raisman",
+      "Kellie Pickler",
+      "Sean Lowe"
+    ],
+    "eliminated_names": [
+      "Victor Ortiz"
+    ]
+  },
+  "16_7": {
+    "season": 16,
+    "week": 7,
+    "active_count": 6,
+    "eliminated_count": 1,
+    "active_names": [
+      "Andy Dick",
+      "Jacoby Jones",
+      "Zendaya",
+      "Alexandra Raisman",
+      "Kellie Pickler",
+      "Sean Lowe"
+    ],
+    "eliminated_names": [
+      "Andy Dick"
+    ]
+  },
+  "16_8": {
+    "season": 16,
+    "week": 8,
+    "active_count": 5,
+    "eliminated_count": 1,
+    "active_names": [
+      "Jacoby Jones",
+      "Zendaya",
+      "Alexandra Raisman",
+      "Kellie Pickler",
+      "Sean Lowe"
+    ],
+    "eliminated_names": [
+      "Sean Lowe"
+    ]
+  },
+  "16_9": {
+    "season": 16,
+    "week": 9,
+    "active_count": 4,
+    "eliminated_count": 0,
+    "active_names": [
+      "Jacoby Jones",
+      "Kellie Pickler",
+      "Zendaya",
+      "Alexandra Raisman"
+    ],
+    "eliminated_names": []
+  },
+  "16_10_final": {
+    "season": 16,
+    "week": 10,
+    "is_final": true,
+    "finalists": [
+      "Alexandra Raisman",
+      "Jacoby Jones",
+      "Kellie Pickler",
+      "Zendaya"
+    ]
+  },
+  "17_1": {
+    "season": 17,
+    "week": 1,
+    "active_count": 10,
+    "eliminated_count": 0,
+    "active_names": [
+      "Leah Remini",
+      "Corbin Bleu",
+      "Keyshawn Johnson",
+      "Valerie Harper",
+      "Bill Engvall",
+      "Elizabeth Berkley Lauren",
+      "Brant Daugherty",
+      "Amber Riley",
+      "Christina Milian",
+      "Bill Nye"
+    ],
+    "eliminated_names": []
+  },
+  "17_2": {
+    "season": 17,
+    "week": 2,
+    "active_count": 10,
+    "eliminated_count": 1,
+    "active_names": [
+      "Leah Remini",
+      "Corbin Bleu",
+      "Keyshawn Johnson",
+      "Valerie Harper",
+      "Bill Engvall",
+      "Elizabeth Berkley Lauren",
+      "Brant Daugherty",
+      "Amber Riley",
+      "Christina Milian",
+      "Bill Nye"
+    ],
+    "eliminated_names": [
+      "Keyshawn Johnson"
+    ]
+  },
+  "17_3": {
+    "season": 17,
+    "week": 3,
+    "active_count": 9,
+    "eliminated_count": 1,
+    "active_names": [
+      "Leah Remini",
+      "Corbin Bleu",
+      "Valerie Harper",
+      "Bill Engvall",
+      "Elizabeth Berkley Lauren",
+      "Brant Daugherty",
+      "Amber Riley",
+      "Christina Milian",
+      "Bill Nye"
+    ],
+    "eliminated_names": [
+      "Bill Nye"
+    ]
+  },
+  "17_4": {
+    "season": 17,
+    "week": 4,
+    "active_count": 8,
+    "eliminated_count": 1,
+    "active_names": [
+      "Leah Remini",
+      "Corbin Bleu",
+      "Valerie Harper",
+      "Bill Engvall",
+      "Elizabeth Berkley Lauren",
+      "Brant Daugherty",
+      "Amber Riley",
+      "Christina Milian"
+    ],
+    "eliminated_names": [
+      "Valerie Harper"
+    ]
+  },
+  "17_5": {
+    "season": 17,
+    "week": 5,
+    "active_count": 7,
+    "eliminated_count": 1,
+    "active_names": [
+      "Leah Remini",
+      "Corbin Bleu",
+      "Bill Engvall",
+      "Elizabeth Berkley Lauren",
+      "Brant Daugherty",
+      "Amber Riley",
+      "Christina Milian"
+    ],
+    "eliminated_names": [
+      "Christina Milian"
+    ]
+  },
+  "17_6": {
+    "season": 17,
+    "week": 6,
+    "active_count": 6,
+    "eliminated_count": 0,
+    "active_names": [
+      "Leah Remini",
+      "Corbin Bleu",
+      "Bill Engvall",
+      "Elizabeth Berkley Lauren",
+      "Brant Daugherty",
+      "Amber Riley"
+    ],
+    "eliminated_names": []
+  },
+  "17_7": {
+    "season": 17,
+    "week": 7,
+    "active_count": 6,
+    "eliminated_count": 0,
+    "active_names": [
+      "Leah Remini",
+      "Corbin Bleu",
+      "Bill Engvall",
+      "Elizabeth Berkley Lauren",
+      "Brant Daugherty",
+      "Amber Riley"
+    ],
+    "eliminated_names": []
+  },
+  "17_8": {
+    "season": 17,
+    "week": 8,
+    "active_count": 6,
+    "eliminated_count": 1,
+    "active_names": [
+      "Leah Remini",
+      "Corbin Bleu",
+      "Bill Engvall",
+      "Elizabeth Berkley Lauren",
+      "Brant Daugherty",
+      "Amber Riley"
+    ],
+    "eliminated_names": [
+      "Brant Daugherty"
+    ]
+  },
+  "17_9": {
+    "season": 17,
+    "week": 9,
+    "active_count": 5,
+    "eliminated_count": 1,
+    "active_names": [
+      "Leah Remini",
+      "Corbin Bleu",
+      "Bill Engvall",
+      "Elizabeth Berkley Lauren",
+      "Amber Riley"
+    ],
+    "eliminated_names": [
+      "Elizabeth Berkley Lauren"
+    ]
+  },
+  "17_10": {
+    "season": 17,
+    "week": 10,
+    "active_count": 4,
+    "eliminated_count": 1,
+    "active_names": [
+      "Leah Remini",
+      "Amber Riley",
+      "Corbin Bleu",
+      "Bill Engvall"
+    ],
+    "eliminated_names": [
+      "Leah Remini"
+    ]
+  },
+  "17_11_final": {
+    "season": 17,
+    "week": 11,
+    "is_final": true,
+    "finalists": [
+      "Amber Riley",
+      "Bill Engvall",
+      "Corbin Bleu"
+    ]
+  },
+  "18_1": {
+    "season": 18,
+    "week": 1,
+    "active_count": 10,
+    "eliminated_count": 1,
+    "active_names": [
+      "Diana Nyad",
+      "James Maslow",
+      "NeNe Leakes",
+      "Candace Cameron Bure",
+      "Meryl Davis",
+      "Billy Dee Williams",
+      "Danica McKellar",
+      "Amy Purdy",
+      "Charlie White",
+      "Drew Carey"
+    ],
+    "eliminated_names": [
+      "Diana Nyad"
+    ]
+  },
+  "18_2": {
+    "season": 18,
+    "week": 2,
+    "active_count": 9,
+    "eliminated_count": 1,
+    "active_names": [
+      "James Maslow",
+      "NeNe Leakes",
+      "Candace Cameron Bure",
+      "Meryl Davis",
+      "Billy Dee Williams",
+      "Danica McKellar",
+      "Amy Purdy",
+      "Charlie White",
+      "Drew Carey"
+    ],
+    "eliminated_names": [
+      "Billy Dee Williams"
+    ]
+  },
+  "18_3": {
+    "season": 18,
+    "week": 3,
+    "active_count": 8,
+    "eliminated_count": 0,
+    "active_names": [
+      "James Maslow",
+      "NeNe Leakes",
+      "Candace Cameron Bure",
+      "Meryl Davis",
+      "Danica McKellar",
+      "Amy Purdy",
+      "Charlie White",
+      "Drew Carey"
+    ],
+    "eliminated_names": []
+  },
+  "18_4": {
+    "season": 18,
+    "week": 4,
+    "active_count": 8,
+    "eliminated_count": 0,
+    "active_names": [
+      "James Maslow",
+      "NeNe Leakes",
+      "Candace Cameron Bure",
+      "Meryl Davis",
+      "Danica McKellar",
+      "Amy Purdy",
+      "Charlie White",
+      "Drew Carey"
+    ],
+    "eliminated_names": []
+  },
+  "18_5": {
+    "season": 18,
+    "week": 5,
+    "active_count": 8,
+    "eliminated_count": 0,
+    "active_names": [
+      "James Maslow",
+      "NeNe Leakes",
+      "Candace Cameron Bure",
+      "Meryl Davis",
+      "Danica McKellar",
+      "Amy Purdy",
+      "Charlie White",
+      "Drew Carey"
+    ],
+    "eliminated_names": []
+  },
+  "18_6": {
+    "season": 18,
+    "week": 6,
+    "active_count": 8,
+    "eliminated_count": 1,
+    "active_names": [
+      "James Maslow",
+      "NeNe Leakes",
+      "Candace Cameron Bure",
+      "Meryl Davis",
+      "Danica McKellar",
+      "Amy Purdy",
+      "Charlie White",
+      "Drew Carey"
+    ],
+    "eliminated_names": [
+      "Drew Carey"
+    ]
+  },
+  "18_7": {
+    "season": 18,
+    "week": 7,
+    "active_count": 7,
+    "eliminated_count": 1,
+    "active_names": [
+      "James Maslow",
+      "NeNe Leakes",
+      "Candace Cameron Bure",
+      "Meryl Davis",
+      "Danica McKellar",
+      "Amy Purdy",
+      "Charlie White"
+    ],
+    "eliminated_names": [
+      "NeNe Leakes"
+    ]
+  },
+  "18_8": {
+    "season": 18,
+    "week": 8,
+    "active_count": 6,
+    "eliminated_count": 1,
+    "active_names": [
+      "James Maslow",
+      "Candace Cameron Bure",
+      "Meryl Davis",
+      "Danica McKellar",
+      "Amy Purdy",
+      "Charlie White"
+    ],
+    "eliminated_names": [
+      "Danica McKellar"
+    ]
+  },
+  "18_9": {
+    "season": 18,
+    "week": 9,
+    "active_count": 5,
+    "eliminated_count": 1,
+    "active_names": [
+      "James Maslow",
+      "Candace Cameron Bure",
+      "Meryl Davis",
+      "Amy Purdy",
+      "Charlie White"
+    ],
+    "eliminated_names": [
+      "Charlie White"
+    ]
+  },
+  "18_10_final": {
+    "season": 18,
+    "week": 10,
+    "is_final": true,
+    "finalists": [
+      "Amy Purdy",
+      "Candace Cameron Bure",
+      "James Maslow",
+      "Meryl Davis"
+    ]
+  },
+  "19_1": {
+    "season": 19,
+    "week": 1,
+    "active_count": 11,
+    "eliminated_count": 1,
+    "active_names": [
+      "Betsey Johnson",
+      "Jonathan Bennett",
+      "Tavis Smiley",
+      "Alfonso Ribeiro",
+      "Randy Couture",
+      "Sadie Robertson",
+      "Janel Parrish",
+      "Lolo Jones",
+      "Michael Waltrip",
+      "Lea Thompson",
+      "Bethany Mota"
+    ],
+    "eliminated_names": [
+      "Lolo Jones"
+    ]
+  },
+  "19_2": {
+    "season": 19,
+    "week": 2,
+    "active_count": 10,
+    "eliminated_count": 1,
+    "active_names": [
+      "Betsey Johnson",
+      "Jonathan Bennett",
+      "Tavis Smiley",
+      "Alfonso Ribeiro",
+      "Randy Couture",
+      "Sadie Robertson",
+      "Janel Parrish",
+      "Michael Waltrip",
+      "Lea Thompson",
+      "Bethany Mota"
+    ],
+    "eliminated_names": [
+      "Tavis Smiley"
+    ]
+  },
+  "19_3": {
+    "season": 19,
+    "week": 3,
+    "active_count": 9,
+    "eliminated_count": 1,
+    "active_names": [
+      "Betsey Johnson",
+      "Jonathan Bennett",
+      "Alfonso Ribeiro",
+      "Randy Couture",
+      "Sadie Robertson",
+      "Janel Parrish",
+      "Michael Waltrip",
+      "Lea Thompson",
+      "Bethany Mota"
+    ],
+    "eliminated_names": [
+      "Randy Couture"
+    ]
+  },
+  "19_4": {
+    "season": 19,
+    "week": 4,
+    "active_count": 8,
+    "eliminated_count": 1,
+    "active_names": [
+      "Betsey Johnson",
+      "Jonathan Bennett",
+      "Alfonso Ribeiro",
+      "Sadie Robertson",
+      "Janel Parrish",
+      "Michael Waltrip",
+      "Lea Thompson",
+      "Bethany Mota"
+    ],
+    "eliminated_names": [
+      "Betsey Johnson"
+    ]
+  },
+  "19_5": {
+    "season": 19,
+    "week": 5,
+    "active_count": 7,
+    "eliminated_count": 0,
+    "active_names": [
+      "Jonathan Bennett",
+      "Alfonso Ribeiro",
+      "Sadie Robertson",
+      "Janel Parrish",
+      "Michael Waltrip",
+      "Lea Thompson",
+      "Bethany Mota"
+    ],
+    "eliminated_names": []
+  },
+  "19_6": {
+    "season": 19,
+    "week": 6,
+    "active_count": 7,
+    "eliminated_count": 1,
+    "active_names": [
+      "Jonathan Bennett",
+      "Alfonso Ribeiro",
+      "Sadie Robertson",
+      "Janel Parrish",
+      "Michael Waltrip",
+      "Lea Thompson",
+      "Bethany Mota"
+    ],
+    "eliminated_names": [
+      "Jonathan Bennett"
+    ]
+  },
+  "19_7": {
+    "season": 19,
+    "week": 7,
+    "active_count": 6,
+    "eliminated_count": 0,
+    "active_names": [
+      "Alfonso Ribeiro",
+      "Sadie Robertson",
+      "Janel Parrish",
+      "Michael Waltrip",
+      "Lea Thompson",
+      "Bethany Mota"
+    ],
+    "eliminated_names": []
+  },
+  "19_8": {
+    "season": 19,
+    "week": 8,
+    "active_count": 6,
+    "eliminated_count": 1,
+    "active_names": [
+      "Alfonso Ribeiro",
+      "Sadie Robertson",
+      "Janel Parrish",
+      "Michael Waltrip",
+      "Lea Thompson",
+      "Bethany Mota"
+    ],
+    "eliminated_names": [
+      "Michael Waltrip"
+    ]
+  },
+  "19_9": {
+    "season": 19,
+    "week": 9,
+    "active_count": 5,
+    "eliminated_count": 1,
+    "active_names": [
+      "Sadie Robertson",
+      "Alfonso Ribeiro",
+      "Janel Parrish",
+      "Lea Thompson",
+      "Bethany Mota"
+    ],
+    "eliminated_names": [
+      "Lea Thompson"
+    ]
+  },
+  "19_10": {
+    "season": 19,
+    "week": 10,
+    "active_count": 4,
+    "eliminated_count": 0,
+    "active_names": [
+      "Sadie Robertson",
+      "Alfonso Ribeiro",
+      "Bethany Mota",
+      "Janel Parrish"
+    ],
+    "eliminated_names": []
+  },
+  "19_11_final": {
+    "season": 19,
+    "week": 11,
+    "is_final": true,
+    "finalists": [
+      "Alfonso Ribeiro",
+      "Bethany Mota",
+      "Janel Parrish",
+      "Sadie Robertson"
+    ]
+  },
+  "20_1": {
+    "season": 20,
+    "week": 1,
+    "active_count": 10,
+    "eliminated_count": 0,
+    "active_names": [
+      "Chris Soules",
+      "Charlotte McKinney",
+      "Noah Galloway",
+      "Redfoo",
+      "Michael Sam",
+      "Rumer Willis",
+      "Suzanne Somers",
+      "Patti LaBelle",
+      "Riker Lynch",
+      "Willow Shields"
+    ],
+    "eliminated_names": []
+  },
+  "20_2": {
+    "season": 20,
+    "week": 2,
+    "active_count": 10,
+    "eliminated_count": 1,
+    "active_names": [
+      "Chris Soules",
+      "Charlotte McKinney",
+      "Noah Galloway",
+      "Redfoo",
+      "Michael Sam",
+      "Rumer Willis",
+      "Suzanne Somers",
+      "Patti LaBelle",
+      "Riker Lynch",
+      "Willow Shields"
+    ],
+    "eliminated_names": [
+      "Redfoo"
+    ]
+  },
+  "20_3": {
+    "season": 20,
+    "week": 3,
+    "active_count": 9,
+    "eliminated_count": 1,
+    "active_names": [
+      "Chris Soules",
+      "Charlotte McKinney",
+      "Noah Galloway",
+      "Michael Sam",
+      "Rumer Willis",
+      "Suzanne Somers",
+      "Patti LaBelle",
+      "Riker Lynch",
+      "Willow Shields"
+    ],
+    "eliminated_names": [
+      "Charlotte McKinney"
+    ]
+  },
+  "20_4": {
+    "season": 20,
+    "week": 4,
+    "active_count": 8,
+    "eliminated_count": 1,
+    "active_names": [
+      "Chris Soules",
+      "Noah Galloway",
+      "Michael Sam",
+      "Rumer Willis",
+      "Suzanne Somers",
+      "Patti LaBelle",
+      "Riker Lynch",
+      "Willow Shields"
+    ],
+    "eliminated_names": [
+      "Michael Sam"
+    ]
+  },
+  "20_5": {
+    "season": 20,
+    "week": 5,
+    "active_count": 7,
+    "eliminated_count": 1,
+    "active_names": [
+      "Chris Soules",
+      "Noah Galloway",
+      "Rumer Willis",
+      "Suzanne Somers",
+      "Patti LaBelle",
+      "Riker Lynch",
+      "Willow Shields"
+    ],
+    "eliminated_names": [
+      "Suzanne Somers"
+    ]
+  },
+  "20_6": {
+    "season": 20,
+    "week": 6,
+    "active_count": 6,
+    "eliminated_count": 1,
+    "active_names": [
+      "Chris Soules",
+      "Noah Galloway",
+      "Rumer Willis",
+      "Patti LaBelle",
+      "Riker Lynch",
+      "Willow Shields"
+    ],
+    "eliminated_names": [
+      "Patti LaBelle"
+    ]
+  },
+  "20_7": {
+    "season": 20,
+    "week": 7,
+    "active_count": 5,
+    "eliminated_count": 1,
+    "active_names": [
+      "Chris Soules",
+      "Noah Galloway",
+      "Rumer Willis",
+      "Riker Lynch",
+      "Willow Shields"
+    ],
+    "eliminated_names": [
+      "Willow Shields"
+    ]
+  },
+  "20_8": {
+    "season": 20,
+    "week": 8,
+    "active_count": 4,
+    "eliminated_count": 1,
+    "active_names": [
+      "Noah Galloway",
+      "Riker Lynch",
+      "Chris Soules",
+      "Rumer Willis"
+    ],
+    "eliminated_names": [
+      "Chris Soules"
+    ]
+  },
+  "20_9": {
+    "season": 20,
+    "week": 9,
+    "active_count": 3,
+    "eliminated_count": 0,
+    "active_names": [
+      "Noah Galloway",
+      "Riker Lynch",
+      "Rumer Willis"
+    ],
+    "eliminated_names": []
+  },
+  "20_10_final": {
+    "season": 20,
+    "week": 10,
+    "is_final": true,
+    "finalists": [
+      "Noah Galloway",
+      "Riker Lynch",
+      "Rumer Willis"
+    ]
+  },
+  "21_1": {
+    "season": 21,
+    "week": 1,
+    "active_count": 11,
+    "eliminated_count": 0,
+    "active_names": [
+      "Alek Skarlatos",
+      "Kim Zolciak-Biermann",
+      "Hayes Grier",
+      "Tamar Braxton",
+      "Nick Carter",
+      "Carlos PenaVega",
+      "Chaka Khan",
+      "Andy Grammer",
+      "Paula Deen",
+      "Gary Busey",
+      "Alexa PenaVega"
+    ],
+    "eliminated_names": []
+  },
+  "21_2": {
+    "season": 21,
+    "week": 2,
+    "active_count": 11,
+    "eliminated_count": 2,
+    "active_names": [
+      "Alek Skarlatos",
+      "Kim Zolciak-Biermann",
+      "Hayes Grier",
+      "Tamar Braxton",
+      "Nick Carter",
+      "Carlos PenaVega",
+      "Chaka Khan",
+      "Andy Grammer",
+      "Paula Deen",
+      "Gary Busey",
+      "Alexa PenaVega"
+    ],
+    "eliminated_names": [
+      "Kim Zolciak-Biermann",
+      "Chaka Khan"
+    ]
+  },
+  "21_3": {
+    "season": 21,
+    "week": 3,
+    "active_count": 9,
+    "eliminated_count": 0,
+    "active_names": [
+      "Alek Skarlatos",
+      "Hayes Grier",
+      "Tamar Braxton",
+      "Nick Carter",
+      "Carlos PenaVega",
+      "Andy Grammer",
+      "Paula Deen",
+      "Gary Busey",
+      "Alexa PenaVega"
+    ],
+    "eliminated_names": []
+  },
+  "21_4": {
+    "season": 21,
+    "week": 4,
+    "active_count": 9,
+    "eliminated_count": 1,
+    "active_names": [
+      "Alek Skarlatos",
+      "Hayes Grier",
+      "Tamar Braxton",
+      "Nick Carter",
+      "Carlos PenaVega",
+      "Andy Grammer",
+      "Paula Deen",
+      "Gary Busey",
+      "Alexa PenaVega"
+    ],
+    "eliminated_names": [
+      "Gary Busey"
+    ]
+  },
+  "21_5": {
+    "season": 21,
+    "week": 5,
+    "active_count": 8,
+    "eliminated_count": 0,
+    "active_names": [
+      "Alek Skarlatos",
+      "Hayes Grier",
+      "Tamar Braxton",
+      "Nick Carter",
+      "Carlos PenaVega",
+      "Andy Grammer",
+      "Paula Deen",
+      "Alexa PenaVega"
+    ],
+    "eliminated_names": []
+  },
+  "21_6": {
+    "season": 21,
+    "week": 6,
+    "active_count": 8,
+    "eliminated_count": 1,
+    "active_names": [
+      "Alek Skarlatos",
+      "Hayes Grier",
+      "Tamar Braxton",
+      "Nick Carter",
+      "Carlos PenaVega",
+      "Andy Grammer",
+      "Paula Deen",
+      "Alexa PenaVega"
+    ],
+    "eliminated_names": [
+      "Paula Deen"
+    ]
+  },
+  "21_7": {
+    "season": 21,
+    "week": 7,
+    "active_count": 7,
+    "eliminated_count": 1,
+    "active_names": [
+      "Alek Skarlatos",
+      "Hayes Grier",
+      "Tamar Braxton",
+      "Nick Carter",
+      "Carlos PenaVega",
+      "Andy Grammer",
+      "Alexa PenaVega"
+    ],
+    "eliminated_names": [
+      "Hayes Grier"
+    ]
+  },
+  "21_8": {
+    "season": 21,
+    "week": 8,
+    "active_count": 6,
+    "eliminated_count": 1,
+    "active_names": [
+      "Alek Skarlatos",
+      "Tamar Braxton",
+      "Nick Carter",
+      "Carlos PenaVega",
+      "Andy Grammer",
+      "Alexa PenaVega"
+    ],
+    "eliminated_names": [
+      "Andy Grammer"
+    ]
+  },
+  "21_9": {
+    "season": 21,
+    "week": 9,
+    "active_count": 5,
+    "eliminated_count": 2,
+    "active_names": [
+      "Alek Skarlatos",
+      "Tamar Braxton",
+      "Nick Carter",
+      "Carlos PenaVega",
+      "Alexa PenaVega"
+    ],
+    "eliminated_names": [
+      "Tamar Braxton",
+      "Alexa PenaVega"
+    ]
+  },
+  "21_10": {
+    "season": 21,
+    "week": 10,
+    "active_count": 3,
+    "eliminated_count": 0,
+    "active_names": [
+      "Nick Carter",
+      "Carlos PenaVega",
+      "Alek Skarlatos"
+    ],
+    "eliminated_names": []
+  },
+  "21_11_final": {
+    "season": 21,
+    "week": 11,
+    "is_final": true,
+    "finalists": [
+      "Alek Skarlatos",
+      "Carlos PenaVega",
+      "Nick Carter"
+    ]
+  },
+  "22_1": {
+    "season": 22,
+    "week": 1,
+    "active_count": 11,
+    "eliminated_count": 0,
+    "active_names": [
+      "Von Miller",
+      "Kim Fields",
+      "Jodie Sweetin",
+      "Nyle DiMarco",
+      "Marla Maples",
+      "Geraldo Rivera",
+      "Paige VanZant",
+      "Doug Flutie",
+      "Wanya Morris",
+      "Antonio Brown",
+      "Ginger Zee"
+    ],
+    "eliminated_names": []
+  },
+  "22_2": {
+    "season": 22,
+    "week": 2,
+    "active_count": 11,
+    "eliminated_count": 1,
+    "active_names": [
+      "Von Miller",
+      "Kim Fields",
+      "Jodie Sweetin",
+      "Nyle DiMarco",
+      "Marla Maples",
+      "Geraldo Rivera",
+      "Paige VanZant",
+      "Doug Flutie",
+      "Wanya Morris",
+      "Antonio Brown",
+      "Ginger Zee"
+    ],
+    "eliminated_names": [
+      "Geraldo Rivera"
+    ]
+  },
+  "22_3": {
+    "season": 22,
+    "week": 3,
+    "active_count": 10,
+    "eliminated_count": 0,
+    "active_names": [
+      "Von Miller",
+      "Kim Fields",
+      "Jodie Sweetin",
+      "Nyle DiMarco",
+      "Marla Maples",
+      "Paige VanZant",
+      "Doug Flutie",
+      "Wanya Morris",
+      "Antonio Brown",
+      "Ginger Zee"
+    ],
+    "eliminated_names": []
+  },
+  "22_4": {
+    "season": 22,
+    "week": 4,
+    "active_count": 10,
+    "eliminated_count": 1,
+    "active_names": [
+      "Von Miller",
+      "Kim Fields",
+      "Jodie Sweetin",
+      "Nyle DiMarco",
+      "Marla Maples",
+      "Paige VanZant",
+      "Doug Flutie",
+      "Wanya Morris",
+      "Antonio Brown",
+      "Ginger Zee"
+    ],
+    "eliminated_names": [
+      "Marla Maples"
+    ]
+  },
+  "22_5": {
+    "season": 22,
+    "week": 5,
+    "active_count": 9,
+    "eliminated_count": 0,
+    "active_names": [
+      "Von Miller",
+      "Kim Fields",
+      "Jodie Sweetin",
+      "Nyle DiMarco",
+      "Paige VanZant",
+      "Doug Flutie",
+      "Wanya Morris",
+      "Antonio Brown",
+      "Ginger Zee"
+    ],
+    "eliminated_names": []
+  },
+  "22_6": {
+    "season": 22,
+    "week": 6,
+    "active_count": 9,
+    "eliminated_count": 1,
+    "active_names": [
+      "Von Miller",
+      "Kim Fields",
+      "Jodie Sweetin",
+      "Nyle DiMarco",
+      "Paige VanZant",
+      "Doug Flutie",
+      "Wanya Morris",
+      "Antonio Brown",
+      "Ginger Zee"
+    ],
+    "eliminated_names": [
+      "Doug Flutie"
+    ]
+  },
+  "22_7": {
+    "season": 22,
+    "week": 7,
+    "active_count": 8,
+    "eliminated_count": 2,
+    "active_names": [
+      "Von Miller",
+      "Kim Fields",
+      "Jodie Sweetin",
+      "Nyle DiMarco",
+      "Paige VanZant",
+      "Wanya Morris",
+      "Antonio Brown",
+      "Ginger Zee"
+    ],
+    "eliminated_names": [
+      "Von Miller",
+      "Kim Fields"
+    ]
+  },
+  "22_8": {
+    "season": 22,
+    "week": 8,
+    "active_count": 6,
+    "eliminated_count": 1,
+    "active_names": [
+      "Jodie Sweetin",
+      "Nyle DiMarco",
+      "Paige VanZant",
+      "Wanya Morris",
+      "Antonio Brown",
+      "Ginger Zee"
+    ],
+    "eliminated_names": [
+      "Jodie Sweetin"
+    ]
+  },
+  "22_9": {
+    "season": 22,
+    "week": 9,
+    "active_count": 5,
+    "eliminated_count": 2,
+    "active_names": [
+      "Nyle DiMarco",
+      "Paige VanZant",
+      "Wanya Morris",
+      "Antonio Brown",
+      "Ginger Zee"
+    ],
+    "eliminated_names": [
+      "Wanya Morris",
+      "Antonio Brown"
+    ]
+  },
+  "22_10_final": {
+    "season": 22,
+    "week": 10,
+    "is_final": true,
+    "finalists": [
+      "Ginger Zee",
+      "Nyle DiMarco",
+      "Paige VanZant"
+    ]
+  },
+  "23_1": {
+    "season": 23,
+    "week": 1,
+    "active_count": 12,
+    "eliminated_count": 0,
+    "active_names": [
+      "Terra Jole",
+      "Rick Perry",
+      "Jana Kramer",
+      "Laurie Hernandez",
+      "Marilu Henner",
+      "Ryan Lochte",
+      "Amber Rose",
+      "Vanilla Ice",
+      "Babyface",
+      "Jake T. Austin",
+      "Maureen McCormick",
+      "Calvin Johnson Jr."
+    ],
+    "eliminated_names": []
+  },
+  "23_2": {
+    "season": 23,
+    "week": 2,
+    "active_count": 12,
+    "eliminated_count": 1,
+    "active_names": [
+      "Terra Jole",
+      "Rick Perry",
+      "Jana Kramer",
+      "Laurie Hernandez",
+      "Marilu Henner",
+      "Ryan Lochte",
+      "Amber Rose",
+      "Vanilla Ice",
+      "Babyface",
+      "Jake T. Austin",
+      "Maureen McCormick",
+      "Calvin Johnson Jr."
+    ],
+    "eliminated_names": [
+      "Jake T. Austin"
+    ]
+  },
+  "23_3": {
+    "season": 23,
+    "week": 3,
+    "active_count": 11,
+    "eliminated_count": 1,
+    "active_names": [
+      "Terra Jole",
+      "Rick Perry",
+      "Jana Kramer",
+      "Laurie Hernandez",
+      "Marilu Henner",
+      "Ryan Lochte",
+      "Amber Rose",
+      "Vanilla Ice",
+      "Babyface",
+      "Maureen McCormick",
+      "Calvin Johnson Jr."
+    ],
+    "eliminated_names": [
+      "Rick Perry"
+    ]
+  },
+  "23_4": {
+    "season": 23,
+    "week": 4,
+    "active_count": 10,
+    "eliminated_count": 2,
+    "active_names": [
+      "Terra Jole",
+      "Jana Kramer",
+      "Laurie Hernandez",
+      "Marilu Henner",
+      "Ryan Lochte",
+      "Amber Rose",
+      "Vanilla Ice",
+      "Babyface",
+      "Maureen McCormick",
+      "Calvin Johnson Jr."
+    ],
+    "eliminated_names": [
+      "Vanilla Ice",
+      "Babyface"
+    ]
+  },
+  "23_5": {
+    "season": 23,
+    "week": 5,
+    "active_count": 8,
+    "eliminated_count": 0,
+    "active_names": [
+      "Terra Jole",
+      "Jana Kramer",
+      "Laurie Hernandez",
+      "Marilu Henner",
+      "Ryan Lochte",
+      "Amber Rose",
+      "Maureen McCormick",
+      "Calvin Johnson Jr."
+    ],
+    "eliminated_names": []
+  },
+  "23_6": {
+    "season": 23,
+    "week": 6,
+    "active_count": 8,
+    "eliminated_count": 1,
+    "active_names": [
+      "Terra Jole",
+      "Jana Kramer",
+      "Laurie Hernandez",
+      "Marilu Henner",
+      "Ryan Lochte",
+      "Amber Rose",
+      "Maureen McCormick",
+      "Calvin Johnson Jr."
+    ],
+    "eliminated_names": [
+      "Amber Rose"
+    ]
+  },
+  "23_7": {
+    "season": 23,
+    "week": 7,
+    "active_count": 7,
+    "eliminated_count": 1,
+    "active_names": [
+      "Terra Jole",
+      "Jana Kramer",
+      "Laurie Hernandez",
+      "Marilu Henner",
+      "Ryan Lochte",
+      "Maureen McCormick",
+      "Calvin Johnson Jr."
+    ],
+    "eliminated_names": [
+      "Maureen McCormick"
+    ]
+  },
+  "23_8": {
+    "season": 23,
+    "week": 8,
+    "active_count": 6,
+    "eliminated_count": 1,
+    "active_names": [
+      "Terra Jole",
+      "Jana Kramer",
+      "Laurie Hernandez",
+      "Marilu Henner",
+      "Ryan Lochte",
+      "Calvin Johnson Jr."
+    ],
+    "eliminated_names": [
+      "Ryan Lochte"
+    ]
+  },
+  "23_9": {
+    "season": 23,
+    "week": 9,
+    "active_count": 5,
+    "eliminated_count": 1,
+    "active_names": [
+      "Terra Jole",
+      "Jana Kramer",
+      "Laurie Hernandez",
+      "Marilu Henner",
+      "Calvin Johnson Jr."
+    ],
+    "eliminated_names": [
+      "Marilu Henner"
+    ]
+  },
+  "23_10": {
+    "season": 23,
+    "week": 10,
+    "active_count": 4,
+    "eliminated_count": 1,
+    "active_names": [
+      "Laurie Hernandez",
+      "Terra Jole",
+      "Calvin Johnson Jr.",
+      "Jana Kramer"
+    ],
+    "eliminated_names": [
+      "Terra Jole"
+    ]
+  },
+  "23_11_final": {
+    "season": 23,
+    "week": 11,
+    "is_final": true,
+    "finalists": [
+      "Calvin Johnson Jr.",
+      "Jana Kramer",
+      "Laurie Hernandez"
+    ]
+  },
+  "24_1": {
+    "season": 24,
+    "week": 1,
+    "active_count": 11,
+    "eliminated_count": 0,
+    "active_names": [
+      "Bonner Bolton",
+      "Heather Morris",
+      "Simone Biles",
+      "Chris Kattan",
+      "Rashad Jennings",
+      "Normani",
+      "David Ross",
+      "Erika Jayne",
+      "Mr. T",
+      "Nick Viall",
+      "Nancy Kerrigan"
+    ],
+    "eliminated_names": []
+  },
+  "24_2": {
+    "season": 24,
+    "week": 2,
+    "active_count": 11,
+    "eliminated_count": 1,
+    "active_names": [
+      "Bonner Bolton",
+      "Heather Morris",
+      "Simone Biles",
+      "Chris Kattan",
+      "Rashad Jennings",
+      "Normani",
+      "David Ross",
+      "Erika Jayne",
+      "Mr. T",
+      "Nick Viall",
+      "Nancy Kerrigan"
+    ],
+    "eliminated_names": [
+      "Chris Kattan"
+    ]
+  },
+  "24_3": {
+    "season": 24,
+    "week": 3,
+    "active_count": 10,
+    "eliminated_count": 0,
+    "active_names": [
+      "Bonner Bolton",
+      "Heather Morris",
+      "Simone Biles",
+      "Rashad Jennings",
+      "Normani",
+      "David Ross",
+      "Erika Jayne",
+      "Mr. T",
+      "Nick Viall",
+      "Nancy Kerrigan"
+    ],
+    "eliminated_names": []
+  },
+  "24_4": {
+    "season": 24,
+    "week": 4,
+    "active_count": 10,
+    "eliminated_count": 1,
+    "active_names": [
+      "Bonner Bolton",
+      "Heather Morris",
+      "Simone Biles",
+      "Rashad Jennings",
+      "Normani",
+      "David Ross",
+      "Erika Jayne",
+      "Mr. T",
+      "Nick Viall",
+      "Nancy Kerrigan"
+    ],
+    "eliminated_names": [
+      "Mr. T"
+    ]
+  },
+  "24_5": {
+    "season": 24,
+    "week": 5,
+    "active_count": 9,
+    "eliminated_count": 1,
+    "active_names": [
+      "Bonner Bolton",
+      "Heather Morris",
+      "Simone Biles",
+      "Rashad Jennings",
+      "Normani",
+      "David Ross",
+      "Erika Jayne",
+      "Nick Viall",
+      "Nancy Kerrigan"
+    ],
+    "eliminated_names": [
+      "Erika Jayne"
+    ]
+  },
+  "24_6": {
+    "season": 24,
+    "week": 6,
+    "active_count": 8,
+    "eliminated_count": 1,
+    "active_names": [
+      "Bonner Bolton",
+      "Heather Morris",
+      "Simone Biles",
+      "Rashad Jennings",
+      "Normani",
+      "David Ross",
+      "Nick Viall",
+      "Nancy Kerrigan"
+    ],
+    "eliminated_names": [
+      "Heather Morris"
+    ]
+  },
+  "24_7": {
+    "season": 24,
+    "week": 7,
+    "active_count": 7,
+    "eliminated_count": 2,
+    "active_names": [
+      "Bonner Bolton",
+      "Simone Biles",
+      "Rashad Jennings",
+      "Normani",
+      "David Ross",
+      "Nick Viall",
+      "Nancy Kerrigan"
+    ],
+    "eliminated_names": [
+      "Nancy Kerrigan",
+      "Nick Viall"
+    ]
+  },
+  "24_8": {
+    "season": 24,
+    "week": 8,
+    "active_count": 5,
+    "eliminated_count": 1,
+    "active_names": [
+      "Bonner Bolton",
+      "Simone Biles",
+      "Rashad Jennings",
+      "Normani",
+      "David Ross"
+    ],
+    "eliminated_names": [
+      "Bonner Bolton"
+    ]
+  },
+  "24_9": {
+    "season": 24,
+    "week": 9,
+    "active_count": 4,
+    "eliminated_count": 1,
+    "active_names": [
+      "David Ross",
+      "Rashad Jennings",
+      "Simone Biles",
+      "Normani"
+    ],
+    "eliminated_names": [
+      "Simone Biles"
+    ]
+  },
+  "24_10_final": {
+    "season": 24,
+    "week": 10,
+    "is_final": true,
+    "finalists": [
+      "David Ross",
+      "Normani",
+      "Rashad Jennings"
+    ]
+  },
+  "25_1": {
+    "season": 25,
+    "week": 1,
+    "active_count": 10,
+    "eliminated_count": 0,
+    "active_names": [
+      "Nikki Bella",
+      "Barbara Corcoran",
+      "Lindsey Stirling",
+      "Jordan Fisher",
+      "Frankie Muniz",
+      "Terrell Owens",
+      "Debbie Gibson",
+      "Victoria Arlen",
+      "Derek Fisher",
+      "Nick Lachey"
+    ],
+    "eliminated_names": []
+  },
+  "25_2": {
+    "season": 25,
+    "week": 2,
+    "active_count": 10,
+    "eliminated_count": 2,
+    "active_names": [
+      "Nikki Bella",
+      "Barbara Corcoran",
+      "Lindsey Stirling",
+      "Jordan Fisher",
+      "Frankie Muniz",
+      "Terrell Owens",
+      "Debbie Gibson",
+      "Victoria Arlen",
+      "Derek Fisher",
+      "Nick Lachey"
+    ],
+    "eliminated_names": [
+      "Barbara Corcoran",
+      "Debbie Gibson"
+    ]
+  },
+  "25_3": {
+    "season": 25,
+    "week": 3,
+    "active_count": 8,
+    "eliminated_count": 0,
+    "active_names": [
+      "Nikki Bella",
+      "Lindsey Stirling",
+      "Jordan Fisher",
+      "Frankie Muniz",
+      "Terrell Owens",
+      "Victoria Arlen",
+      "Derek Fisher",
+      "Nick Lachey"
+    ],
+    "eliminated_names": []
+  },
+  "25_4": {
+    "season": 25,
+    "week": 4,
+    "active_count": 8,
+    "eliminated_count": 1,
+    "active_names": [
+      "Nikki Bella",
+      "Lindsey Stirling",
+      "Jordan Fisher",
+      "Frankie Muniz",
+      "Terrell Owens",
+      "Victoria Arlen",
+      "Derek Fisher",
+      "Nick Lachey"
+    ],
+    "eliminated_names": [
+      "Derek Fisher"
+    ]
+  },
+  "25_5": {
+    "season": 25,
+    "week": 5,
+    "active_count": 7,
+    "eliminated_count": 0,
+    "active_names": [
+      "Nikki Bella",
+      "Lindsey Stirling",
+      "Jordan Fisher",
+      "Frankie Muniz",
+      "Terrell Owens",
+      "Victoria Arlen",
+      "Nick Lachey"
+    ],
+    "eliminated_names": []
+  },
+  "25_6": {
+    "season": 25,
+    "week": 6,
+    "active_count": 7,
+    "eliminated_count": 1,
+    "active_names": [
+      "Nikki Bella",
+      "Lindsey Stirling",
+      "Jordan Fisher",
+      "Frankie Muniz",
+      "Terrell Owens",
+      "Victoria Arlen",
+      "Nick Lachey"
+    ],
+    "eliminated_names": [
+      "Nick Lachey"
+    ]
+  },
+  "25_7": {
+    "season": 25,
+    "week": 7,
+    "active_count": 6,
+    "eliminated_count": 1,
+    "active_names": [
+      "Nikki Bella",
+      "Lindsey Stirling",
+      "Jordan Fisher",
+      "Frankie Muniz",
+      "Terrell Owens",
+      "Victoria Arlen"
+    ],
+    "eliminated_names": [
+      "Nikki Bella"
+    ]
+  },
+  "25_8": {
+    "season": 25,
+    "week": 8,
+    "active_count": 5,
+    "eliminated_count": 1,
+    "active_names": [
+      "Lindsey Stirling",
+      "Jordan Fisher",
+      "Frankie Muniz",
+      "Victoria Arlen",
+      "Terrell Owens"
+    ],
+    "eliminated_names": [
+      "Terrell Owens"
+    ]
+  },
+  "25_9": {
+    "season": 25,
+    "week": 9,
+    "active_count": 4,
+    "eliminated_count": 1,
+    "active_names": [
+      "Lindsey Stirling",
+      "Jordan Fisher",
+      "Frankie Muniz",
+      "Victoria Arlen"
+    ],
+    "eliminated_names": [
+      "Victoria Arlen"
+    ]
+  },
+  "25_10_final": {
+    "season": 25,
+    "week": 10,
+    "is_final": true,
+    "finalists": [
+      "Frankie Muniz",
+      "Jordan Fisher",
+      "Lindsey Stirling"
+    ]
+  },
+  "26_1": {
+    "season": 26,
+    "week": 1,
+    "active_count": 10,
+    "eliminated_count": 2,
+    "active_names": [
+      "Adam Rippon",
+      "Arike Ogunbowale",
+      "Josh Norman",
+      "Mirai Nagasu",
+      "Tonya Harding",
+      "Kareem Abdul-Jabbar",
+      "Jamie Anderson",
+      "Jennie Finch Daigle",
+      "Chris Mazdzer",
+      "Johnny Damon"
+    ],
+    "eliminated_names": [
+      "Jamie Anderson",
+      "Johnny Damon"
+    ]
+  },
+  "26_2": {
+    "season": 26,
+    "week": 2,
+    "active_count": 8,
+    "eliminated_count": 2,
+    "active_names": [
+      "Adam Rippon",
+      "Arike Ogunbowale",
+      "Josh Norman",
+      "Mirai Nagasu",
+      "Tonya Harding",
+      "Kareem Abdul-Jabbar",
+      "Jennie Finch Daigle",
+      "Chris Mazdzer"
+    ],
+    "eliminated_names": [
+      "Arike Ogunbowale",
+      "Kareem Abdul-Jabbar"
+    ]
+  },
+  "26_3": {
+    "season": 26,
+    "week": 3,
+    "active_count": 6,
+    "eliminated_count": 3,
+    "active_names": [
+      "Adam Rippon",
+      "Josh Norman",
+      "Mirai Nagasu",
+      "Tonya Harding",
+      "Jennie Finch Daigle",
+      "Chris Mazdzer"
+    ],
+    "eliminated_names": [
+      "Chris Mazdzer",
+      "Mirai Nagasu",
+      "Jennie Finch Daigle"
+    ]
+  },
+  "26_4_final": {
+    "season": 26,
+    "week": 4,
+    "is_final": true,
+    "finalists": [
+      "Adam Rippon",
+      "Josh Norman",
+      "Tonya Harding"
+    ]
+  },
+  "27_1": {
+    "season": 27,
+    "week": 1,
+    "active_count": 11,
+    "eliminated_count": 1,
+    "active_names": [
+      "John Schneider",
+      "Tinashe",
+      "Danelle Umstead",
+      "Nikki Glaser",
+      "Nancy McKeon",
+      "Milo Manheim",
+      "Alexis Ren",
+      "Bobby Bones",
+      "Joe Amabile",
+      "Mary Lou Retton",
+      "DeMarcus Ware"
+    ],
+    "eliminated_names": [
+      "Nikki Glaser"
+    ]
+  },
+  "27_2": {
+    "season": 27,
+    "week": 2,
+    "active_count": 10,
+    "eliminated_count": 1,
+    "active_names": [
+      "John Schneider",
+      "Tinashe",
+      "Danelle Umstead",
+      "Nancy McKeon",
+      "Milo Manheim",
+      "Alexis Ren",
+      "Bobby Bones",
+      "Joe Amabile",
+      "Mary Lou Retton",
+      "DeMarcus Ware"
+    ],
+    "eliminated_names": [
+      "Danelle Umstead"
+    ]
+  },
+  "27_3": {
+    "season": 27,
+    "week": 3,
+    "active_count": 9,
+    "eliminated_count": 1,
+    "active_names": [
+      "John Schneider",
+      "Tinashe",
+      "Nancy McKeon",
+      "Milo Manheim",
+      "Alexis Ren",
+      "Bobby Bones",
+      "Joe Amabile",
+      "Mary Lou Retton",
+      "DeMarcus Ware"
+    ],
+    "eliminated_names": [
+      "Nancy McKeon"
+    ]
+  },
+  "27_4": {
+    "season": 27,
+    "week": 4,
+    "active_count": 8,
+    "eliminated_count": 1,
+    "active_names": [
+      "John Schneider",
+      "Tinashe",
+      "Milo Manheim",
+      "Alexis Ren",
+      "Bobby Bones",
+      "Joe Amabile",
+      "Mary Lou Retton",
+      "DeMarcus Ware"
+    ],
+    "eliminated_names": [
+      "Tinashe"
+    ]
+  },
+  "27_5": {
+    "season": 27,
+    "week": 5,
+    "active_count": 7,
+    "eliminated_count": 0,
+    "active_names": [
+      "John Schneider",
+      "Milo Manheim",
+      "Alexis Ren",
+      "Bobby Bones",
+      "Joe Amabile",
+      "Mary Lou Retton",
+      "DeMarcus Ware"
+    ],
+    "eliminated_names": []
+  },
+  "27_6": {
+    "season": 27,
+    "week": 6,
+    "active_count": 7,
+    "eliminated_count": 1,
+    "active_names": [
+      "John Schneider",
+      "Milo Manheim",
+      "Alexis Ren",
+      "Bobby Bones",
+      "Joe Amabile",
+      "Mary Lou Retton",
+      "DeMarcus Ware"
+    ],
+    "eliminated_names": [
+      "Mary Lou Retton"
+    ]
+  },
+  "27_7": {
+    "season": 27,
+    "week": 7,
+    "active_count": 6,
+    "eliminated_count": 2,
+    "active_names": [
+      "John Schneider",
+      "Milo Manheim",
+      "Alexis Ren",
+      "Bobby Bones",
+      "Joe Amabile",
+      "DeMarcus Ware"
+    ],
+    "eliminated_names": [
+      "John Schneider",
+      "DeMarcus Ware"
+    ]
+  },
+  "27_8": {
+    "season": 27,
+    "week": 8,
+    "active_count": 4,
+    "eliminated_count": 1,
+    "active_names": [
+      "Joe Amabile",
+      "Milo Manheim",
+      "Alexis Ren",
+      "Bobby Bones"
+    ],
+    "eliminated_names": [
+      "Joe Amabile"
+    ]
+  },
+  "27_9_final": {
+    "season": 27,
+    "week": 9,
+    "is_final": true,
+    "finalists": [
+      "Alexis Ren",
+      "Bobby Bones",
+      "Milo Manheim"
+    ]
+  },
+  "28_1": {
+    "season": 28,
+    "week": 1,
+    "active_count": 12,
+    "eliminated_count": 0,
+    "active_names": [
+      "James Van Der Beek",
+      "Hannah Brown",
+      "Karamo Brown",
+      "Sailor Brinkley-Cook",
+      "Kel Mitchell",
+      "Lamar Odom",
+      "Mary Wilson",
+      "Kate Flannery",
+      "Ray Lewis",
+      "Lauren Alaina",
+      "Sean Spicer",
+      "Ally Brooke"
+    ],
+    "eliminated_names": []
+  },
+  "28_2": {
+    "season": 28,
+    "week": 2,
+    "active_count": 12,
+    "eliminated_count": 2,
+    "active_names": [
+      "James Van Der Beek",
+      "Hannah Brown",
+      "Karamo Brown",
+      "Sailor Brinkley-Cook",
+      "Kel Mitchell",
+      "Lamar Odom",
+      "Mary Wilson",
+      "Kate Flannery",
+      "Ray Lewis",
+      "Lauren Alaina",
+      "Sean Spicer",
+      "Ally Brooke"
+    ],
+    "eliminated_names": [
+      "Ray Lewis",
+      "Mary Wilson"
+    ]
+  },
+  "28_3": {
+    "season": 28,
+    "week": 3,
+    "active_count": 10,
+    "eliminated_count": 0,
+    "active_names": [
+      "James Van Der Beek",
+      "Hannah Brown",
+      "Karamo Brown",
+      "Sailor Brinkley-Cook",
+      "Kel Mitchell",
+      "Lamar Odom",
+      "Kate Flannery",
+      "Lauren Alaina",
+      "Sean Spicer",
+      "Ally Brooke"
+    ],
+    "eliminated_names": []
+  },
+  "28_4": {
+    "season": 28,
+    "week": 4,
+    "active_count": 10,
+    "eliminated_count": 1,
+    "active_names": [
+      "James Van Der Beek",
+      "Hannah Brown",
+      "Karamo Brown",
+      "Sailor Brinkley-Cook",
+      "Kel Mitchell",
+      "Lamar Odom",
+      "Kate Flannery",
+      "Lauren Alaina",
+      "Sean Spicer",
+      "Ally Brooke"
+    ],
+    "eliminated_names": [
+      "Lamar Odom"
+    ]
+  },
+  "28_5": {
+    "season": 28,
+    "week": 5,
+    "active_count": 9,
+    "eliminated_count": 0,
+    "active_names": [
+      "James Van Der Beek",
+      "Hannah Brown",
+      "Karamo Brown",
+      "Sailor Brinkley-Cook",
+      "Kel Mitchell",
+      "Kate Flannery",
+      "Lauren Alaina",
+      "Sean Spicer",
+      "Ally Brooke"
+    ],
+    "eliminated_names": []
+  },
+  "28_6": {
+    "season": 28,
+    "week": 6,
+    "active_count": 9,
+    "eliminated_count": 1,
+    "active_names": [
+      "James Van Der Beek",
+      "Hannah Brown",
+      "Karamo Brown",
+      "Sailor Brinkley-Cook",
+      "Kel Mitchell",
+      "Kate Flannery",
+      "Lauren Alaina",
+      "Sean Spicer",
+      "Ally Brooke"
+    ],
+    "eliminated_names": [
+      "Sailor Brinkley-Cook"
+    ]
+  },
+  "28_7": {
+    "season": 28,
+    "week": 7,
+    "active_count": 8,
+    "eliminated_count": 1,
+    "active_names": [
+      "James Van Der Beek",
+      "Hannah Brown",
+      "Karamo Brown",
+      "Kel Mitchell",
+      "Kate Flannery",
+      "Lauren Alaina",
+      "Sean Spicer",
+      "Ally Brooke"
+    ],
+    "eliminated_names": [
+      "Karamo Brown"
+    ]
+  },
+  "28_8": {
+    "season": 28,
+    "week": 8,
+    "active_count": 7,
+    "eliminated_count": 1,
+    "active_names": [
+      "James Van Der Beek",
+      "Hannah Brown",
+      "Kel Mitchell",
+      "Kate Flannery",
+      "Lauren Alaina",
+      "Sean Spicer",
+      "Ally Brooke"
+    ],
+    "eliminated_names": [
+      "Kate Flannery"
+    ]
+  },
+  "28_9": {
+    "season": 28,
+    "week": 9,
+    "active_count": 6,
+    "eliminated_count": 1,
+    "active_names": [
+      "James Van Der Beek",
+      "Hannah Brown",
+      "Kel Mitchell",
+      "Lauren Alaina",
+      "Sean Spicer",
+      "Ally Brooke"
+    ],
+    "eliminated_names": [
+      "Sean Spicer"
+    ]
+  },
+  "28_10": {
+    "season": 28,
+    "week": 10,
+    "active_count": 5,
+    "eliminated_count": 1,
+    "active_names": [
+      "James Van Der Beek",
+      "Hannah Brown",
+      "Kel Mitchell",
+      "Lauren Alaina",
+      "Ally Brooke"
+    ],
+    "eliminated_names": [
+      "James Van Der Beek"
+    ]
+  },
+  "28_11_final": {
+    "season": 28,
+    "week": 11,
+    "is_final": true,
+    "finalists": [
+      "Ally Brooke",
+      "Hannah Brown",
+      "Kel Mitchell",
+      "Lauren Alaina"
+    ]
+  },
+  "29_1": {
+    "season": 29,
+    "week": 1,
+    "active_count": 14,
+    "eliminated_count": 0,
+    "active_names": [
+      "Charles Oakley",
+      "Johnny Weir",
+      "Nelly",
+      "Jeannie Mai",
+      "Justina Machado",
+      "Skai Jackson",
+      "Monica Aldama",
+      "Veron Davis",
+      "Anne Heche",
+      "AJ McLean",
+      "Carole Baskin",
+      "Chrishell Stause",
+      "Jesse Metcalfe",
+      "Nev Schulman"
+    ],
+    "eliminated_names": []
+  },
+  "29_2": {
+    "season": 29,
+    "week": 2,
+    "active_count": 14,
+    "eliminated_count": 1,
+    "active_names": [
+      "Charles Oakley",
+      "Johnny Weir",
+      "Nelly",
+      "Jeannie Mai",
+      "Justina Machado",
+      "Skai Jackson",
+      "Monica Aldama",
+      "Veron Davis",
+      "Anne Heche",
+      "AJ McLean",
+      "Carole Baskin",
+      "Chrishell Stause",
+      "Jesse Metcalfe",
+      "Nev Schulman"
+    ],
+    "eliminated_names": [
+      "Charles Oakley"
+    ]
+  },
+  "29_3": {
+    "season": 29,
+    "week": 3,
+    "active_count": 13,
+    "eliminated_count": 1,
+    "active_names": [
+      "Johnny Weir",
+      "Nelly",
+      "Jeannie Mai",
+      "Justina Machado",
+      "Skai Jackson",
+      "Monica Aldama",
+      "Veron Davis",
+      "Anne Heche",
+      "Chrishell Stause",
+      "AJ McLean",
+      "Carole Baskin",
+      "Jesse Metcalfe",
+      "Nev Schulman"
+    ],
+    "eliminated_names": [
+      "Carole Baskin"
+    ]
+  },
+  "29_4": {
+    "season": 29,
+    "week": 4,
+    "active_count": 12,
+    "eliminated_count": 1,
+    "active_names": [
+      "Johnny Weir",
+      "Nelly",
+      "Jeannie Mai",
+      "Justina Machado",
+      "Skai Jackson",
+      "Monica Aldama",
+      "Veron Davis",
+      "Anne Heche",
+      "Chrishell Stause",
+      "AJ McLean",
+      "Jesse Metcalfe",
+      "Nev Schulman"
+    ],
+    "eliminated_names": [
+      "Anne Heche"
+    ]
+  },
+  "29_5": {
+    "season": 29,
+    "week": 5,
+    "active_count": 11,
+    "eliminated_count": 1,
+    "active_names": [
+      "Johnny Weir",
+      "Nelly",
+      "Jeannie Mai",
+      "Justina Machado",
+      "Skai Jackson",
+      "Monica Aldama",
+      "Veron Davis",
+      "Chrishell Stause",
+      "Jesse Metcalfe",
+      "AJ McLean",
+      "Nev Schulman"
+    ],
+    "eliminated_names": [
+      "Jesse Metcalfe"
+    ]
+  },
+  "29_6": {
+    "season": 29,
+    "week": 6,
+    "active_count": 10,
+    "eliminated_count": 1,
+    "active_names": [
+      "Johnny Weir",
+      "Nelly",
+      "Jeannie Mai",
+      "Justina Machado",
+      "Skai Jackson",
+      "Monica Aldama",
+      "Veron Davis",
+      "Chrishell Stause",
+      "AJ McLean",
+      "Nev Schulman"
+    ],
+    "eliminated_names": [
+      "Veron Davis"
+    ]
+  },
+  "29_7": {
+    "season": 29,
+    "week": 7,
+    "active_count": 9,
+    "eliminated_count": 2,
+    "active_names": [
+      "Johnny Weir",
+      "Nelly",
+      "Jeannie Mai",
+      "Justina Machado",
+      "Skai Jackson",
+      "Monica Aldama",
+      "Chrishell Stause",
+      "AJ McLean",
+      "Nev Schulman"
+    ],
+    "eliminated_names": [
+      "Monica Aldama",
+      "Jeannie Mai"
+    ]
+  },
+  "29_8": {
+    "season": 29,
+    "week": 8,
+    "active_count": 7,
+    "eliminated_count": 1,
+    "active_names": [
+      "Johnny Weir",
+      "Nelly",
+      "Justina Machado",
+      "Skai Jackson",
+      "Chrishell Stause",
+      "AJ McLean",
+      "Nev Schulman"
+    ],
+    "eliminated_names": [
+      "Chrishell Stause"
+    ]
+  },
+  "29_9": {
+    "season": 29,
+    "week": 9,
+    "active_count": 6,
+    "eliminated_count": 1,
+    "active_names": [
+      "Johnny Weir",
+      "Nelly",
+      "Justina Machado",
+      "Skai Jackson",
+      "AJ McLean",
+      "Nev Schulman"
+    ],
+    "eliminated_names": [
+      "AJ McLean"
+    ]
+  },
+  "29_10": {
+    "season": 29,
+    "week": 10,
+    "active_count": 5,
+    "eliminated_count": 2,
+    "active_names": [
+      "Johnny Weir",
+      "Nelly",
+      "Justina Machado",
+      "Skai Jackson",
+      "Nev Schulman"
+    ],
+    "eliminated_names": [
+      "Johnny Weir",
+      "Skai Jackson"
+    ]
+  },
+  "29_11_final": {
+    "season": 29,
+    "week": 11,
+    "is_final": true,
+    "finalists": [
+      "Justina Machado",
+      "Nelly",
+      "Nev Schulman"
+    ]
+  },
+  "30_1": {
+    "season": 30,
+    "week": 1,
+    "active_count": 13,
+    "eliminated_count": 0,
+    "active_names": [
+      "Jimmie Allen",
+      "Olivia Jade",
+      "Cody Rigsby",
+      "Brian Austin Green",
+      "Kenya Moore",
+      "Martin Kove",
+      "Matt James",
+      "Mike \"The Miz\" Mizanin",
+      "Suni Lee",
+      "Iman Shumpert",
+      "JoJo Siwa",
+      "Melora Hardin",
+      "Amanda Kloots"
+    ],
+    "eliminated_names": []
+  },
+  "30_2": {
+    "season": 30,
+    "week": 2,
+    "active_count": 13,
+    "eliminated_count": 1,
+    "active_names": [
+      "Jimmie Allen",
+      "Olivia Jade",
+      "Cody Rigsby",
+      "Brian Austin Green",
+      "Kenya Moore",
+      "Martin Kove",
+      "Matt James",
+      "Mike \"The Miz\" Mizanin",
+      "Suni Lee",
+      "Iman Shumpert",
+      "JoJo Siwa",
+      "Melora Hardin",
+      "Amanda Kloots"
+    ],
+    "eliminated_names": [
+      "Martin Kove"
+    ]
+  },
+  "30_3": {
+    "season": 30,
+    "week": 3,
+    "active_count": 12,
+    "eliminated_count": 0,
+    "active_names": [
+      "Jimmie Allen",
+      "Olivia Jade",
+      "Cody Rigsby",
+      "Brian Austin Green",
+      "Kenya Moore",
+      "Matt James",
+      "Mike \"The Miz\" Mizanin",
+      "Suni Lee",
+      "Iman Shumpert",
+      "JoJo Siwa",
+      "Melora Hardin",
+      "Amanda Kloots"
+    ],
+    "eliminated_names": []
+  },
+  "30_4": {
+    "season": 30,
+    "week": 4,
+    "active_count": 12,
+    "eliminated_count": 2,
+    "active_names": [
+      "Jimmie Allen",
+      "Olivia Jade",
+      "Cody Rigsby",
+      "Brian Austin Green",
+      "Kenya Moore",
+      "Matt James",
+      "Mike \"The Miz\" Mizanin",
+      "Suni Lee",
+      "Iman Shumpert",
+      "JoJo Siwa",
+      "Melora Hardin",
+      "Amanda Kloots"
+    ],
+    "eliminated_names": [
+      "Matt James",
+      "Brian Austin Green"
+    ]
+  },
+  "30_5": {
+    "season": 30,
+    "week": 5,
+    "active_count": 10,
+    "eliminated_count": 0,
+    "active_names": [
+      "Jimmie Allen",
+      "Olivia Jade",
+      "Cody Rigsby",
+      "Kenya Moore",
+      "Mike \"The Miz\" Mizanin",
+      "Suni Lee",
+      "Iman Shumpert",
+      "JoJo Siwa",
+      "Melora Hardin",
+      "Amanda Kloots"
+    ],
+    "eliminated_names": []
+  },
+  "30_6": {
+    "season": 30,
+    "week": 6,
+    "active_count": 10,
+    "eliminated_count": 1,
+    "active_names": [
+      "Jimmie Allen",
+      "Olivia Jade",
+      "Cody Rigsby",
+      "Kenya Moore",
+      "Mike \"The Miz\" Mizanin",
+      "Suni Lee",
+      "Iman Shumpert",
+      "JoJo Siwa",
+      "Melora Hardin",
+      "Amanda Kloots"
+    ],
+    "eliminated_names": [
+      "Kenya Moore"
+    ]
+  },
+  "30_7": {
+    "season": 30,
+    "week": 7,
+    "active_count": 9,
+    "eliminated_count": 1,
+    "active_names": [
+      "Jimmie Allen",
+      "Olivia Jade",
+      "Cody Rigsby",
+      "Mike \"The Miz\" Mizanin",
+      "Suni Lee",
+      "Iman Shumpert",
+      "JoJo Siwa",
+      "Melora Hardin",
+      "Amanda Kloots"
+    ],
+    "eliminated_names": [
+      "Mike \"The Miz\" Mizanin"
+    ]
+  },
+  "30_8": {
+    "season": 30,
+    "week": 8,
+    "active_count": 8,
+    "eliminated_count": 2,
+    "active_names": [
+      "Jimmie Allen",
+      "Olivia Jade",
+      "Cody Rigsby",
+      "Suni Lee",
+      "Iman Shumpert",
+      "JoJo Siwa",
+      "Melora Hardin",
+      "Amanda Kloots"
+    ],
+    "eliminated_names": [
+      "Jimmie Allen",
+      "Olivia Jade"
+    ]
+  },
+  "30_9": {
+    "season": 30,
+    "week": 9,
+    "active_count": 6,
+    "eliminated_count": 2,
+    "active_names": [
+      "Cody Rigsby",
+      "Suni Lee",
+      "Iman Shumpert",
+      "JoJo Siwa",
+      "Melora Hardin",
+      "Amanda Kloots"
+    ],
+    "eliminated_names": [
+      "Melora Hardin",
+      "Suni Lee"
+    ]
+  },
+  "30_10_final": {
+    "season": 30,
+    "week": 10,
+    "is_final": true,
+    "finalists": [
+      "Amanda Kloots",
+      "Cody Rigsby",
+      "Iman Shumpert",
+      "JoJo Siwa"
+    ]
+  },
+  "31_1": {
+    "season": 31,
+    "week": 1,
+    "active_count": 15,
+    "eliminated_count": 1,
+    "active_names": [
+      "Heidi D'Amelio",
+      "Jason Lewis",
+      "Shangela",
+      "Teresa Giudice",
+      "Joseph Baena",
+      "Daniel Durant",
+      "Gabby Windey",
+      "Charli D'Amelio",
+      "Trevor Donovan",
+      "Selma Blair",
+      "Vinny Guadagnino",
+      "Jordin Sparks",
+      "Sam Champion",
+      "Wayne Brady",
+      "Cheryl Ladd"
+    ],
+    "eliminated_names": [
+      "Jason Lewis"
+    ]
+  },
+  "31_2": {
+    "season": 31,
+    "week": 2,
+    "active_count": 14,
+    "eliminated_count": 1,
+    "active_names": [
+      "Heidi D'Amelio",
+      "Shangela",
+      "Teresa Giudice",
+      "Joseph Baena",
+      "Daniel Durant",
+      "Gabby Windey",
+      "Charli D'Amelio",
+      "Trevor Donovan",
+      "Selma Blair",
+      "Vinny Guadagnino",
+      "Jordin Sparks",
+      "Sam Champion",
+      "Wayne Brady",
+      "Cheryl Ladd"
+    ],
+    "eliminated_names": [
+      "Teresa Giudice"
+    ]
+  },
+  "31_3": {
+    "season": 31,
+    "week": 3,
+    "active_count": 13,
+    "eliminated_count": 1,
+    "active_names": [
+      "Heidi D'Amelio",
+      "Shangela",
+      "Joseph Baena",
+      "Daniel Durant",
+      "Gabby Windey",
+      "Charli D'Amelio",
+      "Trevor Donovan",
+      "Selma Blair",
+      "Vinny Guadagnino",
+      "Jordin Sparks",
+      "Sam Champion",
+      "Wayne Brady",
+      "Cheryl Ladd"
+    ],
+    "eliminated_names": [
+      "Cheryl Ladd"
+    ]
+  },
+  "31_4": {
+    "season": 31,
+    "week": 4,
+    "active_count": 12,
+    "eliminated_count": 1,
+    "active_names": [
+      "Heidi D'Amelio",
+      "Shangela",
+      "Joseph Baena",
+      "Daniel Durant",
+      "Gabby Windey",
+      "Charli D'Amelio",
+      "Trevor Donovan",
+      "Selma Blair",
+      "Vinny Guadagnino",
+      "Jordin Sparks",
+      "Sam Champion",
+      "Wayne Brady"
+    ],
+    "eliminated_names": [
+      "Sam Champion"
+    ]
+  },
+  "31_5": {
+    "season": 31,
+    "week": 5,
+    "active_count": 11,
+    "eliminated_count": 2,
+    "active_names": [
+      "Heidi D'Amelio",
+      "Shangela",
+      "Joseph Baena",
+      "Daniel Durant",
+      "Gabby Windey",
+      "Charli D'Amelio",
+      "Trevor Donovan",
+      "Selma Blair",
+      "Vinny Guadagnino",
+      "Jordin Sparks",
+      "Wayne Brady"
+    ],
+    "eliminated_names": [
+      "Selma Blair",
+      "Joseph Baena"
+    ]
+  },
+  "31_6": {
+    "season": 31,
+    "week": 6,
+    "active_count": 9,
+    "eliminated_count": 0,
+    "active_names": [
+      "Heidi D'Amelio",
+      "Shangela",
+      "Daniel Durant",
+      "Gabby Windey",
+      "Charli D'Amelio",
+      "Trevor Donovan",
+      "Vinny Guadagnino",
+      "Jordin Sparks",
+      "Wayne Brady"
+    ],
+    "eliminated_names": []
+  },
+  "31_7": {
+    "season": 31,
+    "week": 7,
+    "active_count": 9,
+    "eliminated_count": 1,
+    "active_names": [
+      "Heidi D'Amelio",
+      "Shangela",
+      "Daniel Durant",
+      "Gabby Windey",
+      "Charli D'Amelio",
+      "Trevor Donovan",
+      "Vinny Guadagnino",
+      "Jordin Sparks",
+      "Wayne Brady"
+    ],
+    "eliminated_names": [
+      "Jordin Sparks"
+    ]
+  },
+  "31_8": {
+    "season": 31,
+    "week": 8,
+    "active_count": 8,
+    "eliminated_count": 2,
+    "active_names": [
+      "Heidi D'Amelio",
+      "Shangela",
+      "Daniel Durant",
+      "Gabby Windey",
+      "Charli D'Amelio",
+      "Trevor Donovan",
+      "Vinny Guadagnino",
+      "Wayne Brady"
+    ],
+    "eliminated_names": [
+      "Heidi D'Amelio",
+      "Vinny Guadagnino"
+    ]
+  },
+  "31_9": {
+    "season": 31,
+    "week": 9,
+    "active_count": 6,
+    "eliminated_count": 2,
+    "active_names": [
+      "Shangela",
+      "Daniel Durant",
+      "Gabby Windey",
+      "Charli D'Amelio",
+      "Trevor Donovan",
+      "Wayne Brady"
+    ],
+    "eliminated_names": [
+      "Daniel Durant",
+      "Trevor Donovan"
+    ]
+  },
+  "31_10_final": {
+    "season": 31,
+    "week": 10,
+    "is_final": true,
+    "finalists": [
+      "Charli D'Amelio",
+      "Gabby Windey",
+      "Shangela",
+      "Wayne Brady"
+    ]
+  },
+  "32_1": {
+    "season": 32,
+    "week": 1,
+    "active_count": 11,
+    "eliminated_count": 1,
+    "active_names": [
+      "Xochitl Gomez",
+      "Mira Sorvino",
+      "Alyson Hannigan",
+      "Tyson Beckford",
+      "Matt Walsh",
+      "Ariana Madix",
+      "Charity Lawson",
+      "Jamie Lynn Spears",
+      "Adrian Peterson",
+      "Jason Mraz",
+      "Barry Williams"
+    ],
+    "eliminated_names": [
+      "Matt Walsh"
+    ]
+  },
+  "32_2": {
+    "season": 32,
+    "week": 2,
+    "active_count": 10,
+    "eliminated_count": 1,
+    "active_names": [
+      "Xochitl Gomez",
+      "Mira Sorvino",
+      "Alyson Hannigan",
+      "Tyson Beckford",
+      "Ariana Madix",
+      "Charity Lawson",
+      "Jamie Lynn Spears",
+      "Adrian Peterson",
+      "Jason Mraz",
+      "Barry Williams"
+    ],
+    "eliminated_names": [
+      "Jamie Lynn Spears"
+    ]
+  },
+  "32_3": {
+    "season": 32,
+    "week": 3,
+    "active_count": 9,
+    "eliminated_count": 1,
+    "active_names": [
+      "Xochitl Gomez",
+      "Mira Sorvino",
+      "Alyson Hannigan",
+      "Tyson Beckford",
+      "Ariana Madix",
+      "Charity Lawson",
+      "Adrian Peterson",
+      "Jason Mraz",
+      "Barry Williams"
+    ],
+    "eliminated_names": [
+      "Tyson Beckford"
+    ]
+  },
+  "32_4": {
+    "season": 32,
+    "week": 4,
+    "active_count": 8,
+    "eliminated_count": 1,
+    "active_names": [
+      "Xochitl Gomez",
+      "Mira Sorvino",
+      "Alyson Hannigan",
+      "Ariana Madix",
+      "Charity Lawson",
+      "Adrian Peterson",
+      "Jason Mraz",
+      "Barry Williams"
+    ],
+    "eliminated_names": [
+      "Adrian Peterson"
+    ]
+  },
+  "32_5": {
+    "season": 32,
+    "week": 5,
+    "active_count": 7,
+    "eliminated_count": 1,
+    "active_names": [
+      "Xochitl Gomez",
+      "Mira Sorvino",
+      "Alyson Hannigan",
+      "Ariana Madix",
+      "Charity Lawson",
+      "Jason Mraz",
+      "Barry Williams"
+    ],
+    "eliminated_names": [
+      "Mira Sorvino"
+    ]
+  },
+  "32_6": {
+    "season": 32,
+    "week": 6,
+    "active_count": 6,
+    "eliminated_count": 0,
+    "active_names": [
+      "Xochitl Gomez",
+      "Alyson Hannigan",
+      "Ariana Madix",
+      "Charity Lawson",
+      "Jason Mraz",
+      "Barry Williams"
+    ],
+    "eliminated_names": []
+  },
+  "32_7": {
+    "season": 32,
+    "week": 7,
+    "active_count": 6,
+    "eliminated_count": 0,
+    "active_names": [
+      "Xochitl Gomez",
+      "Alyson Hannigan",
+      "Ariana Madix",
+      "Charity Lawson",
+      "Jason Mraz",
+      "Barry Williams"
+    ],
+    "eliminated_names": []
+  },
+  "32_8": {
+    "season": 32,
+    "week": 8,
+    "active_count": 6,
+    "eliminated_count": 1,
+    "active_names": [
+      "Xochitl Gomez",
+      "Alyson Hannigan",
+      "Ariana Madix",
+      "Charity Lawson",
+      "Jason Mraz",
+      "Barry Williams"
+    ],
+    "eliminated_names": [
+      "Barry Williams"
+    ]
+  },
+  "32_9": {
+    "season": 32,
+    "week": 9,
+    "active_count": 5,
+    "eliminated_count": 0,
+    "active_names": [
+      "Xochitl Gomez",
+      "Alyson Hannigan",
+      "Ariana Madix",
+      "Charity Lawson",
+      "Jason Mraz"
+    ],
+    "eliminated_names": []
+  },
+  "32_10": {
+    "season": 32,
+    "week": 10,
+    "active_count": 5,
+    "eliminated_count": 0,
+    "active_names": [
+      "Xochitl Gomez",
+      "Alyson Hannigan",
+      "Ariana Madix",
+      "Charity Lawson",
+      "Jason Mraz"
+    ],
+    "eliminated_names": []
+  },
+  "32_11_final": {
+    "season": 32,
+    "week": 11,
+    "is_final": true,
+    "finalists": [
+      "Alyson Hannigan",
+      "Ariana Madix",
+      "Charity Lawson",
+      "Jason Mraz",
+      "Xochitl Gomez"
+    ]
+  },
+  "33_1": {
+    "season": 33,
+    "week": 1,
+    "active_count": 12,
+    "eliminated_count": 0,
+    "active_names": [
+      "Jenn Tran",
+      "Dwight Howard ",
+      "Danny Amendola",
+      "Ilona Maher",
+      "Brooks Nader",
+      "Joey Graziadei",
+      "Reginald VelJohnson",
+      "Chandler Kinney",
+      "Phaedra Parks",
+      "Tori Spelling",
+      "Stephen Nedoroscik",
+      "Eric Roberts"
+    ],
+    "eliminated_names": []
+  },
+  "33_2": {
+    "season": 33,
+    "week": 2,
+    "active_count": 12,
+    "eliminated_count": 1,
+    "active_names": [
+      "Jenn Tran",
+      "Dwight Howard ",
+      "Danny Amendola",
+      "Ilona Maher",
+      "Brooks Nader",
+      "Joey Graziadei",
+      "Reginald VelJohnson",
+      "Chandler Kinney",
+      "Phaedra Parks",
+      "Tori Spelling",
+      "Stephen Nedoroscik",
+      "Eric Roberts"
+    ],
+    "eliminated_names": [
+      "Tori Spelling"
+    ]
+  },
+  "33_3": {
+    "season": 33,
+    "week": 3,
+    "active_count": 11,
+    "eliminated_count": 2,
+    "active_names": [
+      "Jenn Tran",
+      "Dwight Howard ",
+      "Danny Amendola",
+      "Ilona Maher",
+      "Brooks Nader",
+      "Joey Graziadei",
+      "Reginald VelJohnson",
+      "Chandler Kinney",
+      "Phaedra Parks",
+      "Stephen Nedoroscik",
+      "Eric Roberts"
+    ],
+    "eliminated_names": [
+      "Eric Roberts",
+      "Reginald VelJohnson"
+    ]
+  },
+  "33_4": {
+    "season": 33,
+    "week": 4,
+    "active_count": 9,
+    "eliminated_count": 1,
+    "active_names": [
+      "Jenn Tran",
+      "Dwight Howard ",
+      "Ilona Maher",
+      "Danny Amendola",
+      "Brooks Nader",
+      "Joey Graziadei",
+      "Chandler Kinney",
+      "Phaedra Parks",
+      "Stephen Nedoroscik"
+    ],
+    "eliminated_names": [
+      "Brooks Nader"
+    ]
+  },
+  "33_5": {
+    "season": 33,
+    "week": 5,
+    "active_count": 8,
+    "eliminated_count": 1,
+    "active_names": [
+      "Jenn Tran",
+      "Dwight Howard ",
+      "Ilona Maher",
+      "Danny Amendola",
+      "Joey Graziadei",
+      "Chandler Kinney",
+      "Phaedra Parks",
+      "Stephen Nedoroscik"
+    ],
+    "eliminated_names": [
+      "Phaedra Parks"
+    ]
+  },
+  "33_6": {
+    "season": 33,
+    "week": 6,
+    "active_count": 7,
+    "eliminated_count": 1,
+    "active_names": [
+      "Jenn Tran",
+      "Dwight Howard ",
+      "Ilona Maher",
+      "Danny Amendola",
+      "Joey Graziadei",
+      "Chandler Kinney",
+      "Stephen Nedoroscik"
+    ],
+    "eliminated_names": [
+      "Jenn Tran"
+    ]
+  },
+  "33_7": {
+    "season": 33,
+    "week": 7,
+    "active_count": 6,
+    "eliminated_count": 1,
+    "active_names": [
+      "Dwight Howard ",
+      "Ilona Maher",
+      "Danny Amendola",
+      "Joey Graziadei",
+      "Chandler Kinney",
+      "Stephen Nedoroscik"
+    ],
+    "eliminated_names": [
+      "Dwight Howard "
+    ]
+  },
+  "33_8": {
+    "season": 33,
+    "week": 8,
+    "active_count": 5,
+    "eliminated_count": 0,
+    "active_names": [
+      "Ilona Maher",
+      "Danny Amendola",
+      "Joey Graziadei",
+      "Chandler Kinney",
+      "Stephen Nedoroscik"
+    ],
+    "eliminated_names": []
+  },
+  "33_9_final": {
+    "season": 33,
+    "week": 9,
+    "is_final": true,
+    "finalists": [
+      "Chandler Kinney",
+      "Danny Amendola",
+      "Ilona Maher",
+      "Joey Graziadei",
+      "Stephen Nedoroscik"
+    ]
+  },
+  "34_1": {
+    "season": 34,
+    "week": 1,
+    "active_count": 13,
+    "eliminated_count": 0,
+    "active_names": [
+      "Baron Davis",
+      "Elaine Hendrix",
+      "Hilaria Baldwin",
+      "Scott Hoying",
+      "Jen Affleck",
+      "Whitney Leavitt",
+      "Andy Richter",
+      "Alix Earle",
+      "Corey Feldman",
+      "Jordan Chiles",
+      "Danielle Fishel",
+      "Dylan Efron",
+      "Lauren Jauregui"
+    ],
+    "eliminated_names": []
+  },
+  "34_2": {
+    "season": 34,
+    "week": 2,
+    "active_count": 13,
+    "eliminated_count": 2,
+    "active_names": [
+      "Baron Davis",
+      "Elaine Hendrix",
+      "Hilaria Baldwin",
+      "Scott Hoying",
+      "Jen Affleck",
+      "Whitney Leavitt",
+      "Andy Richter",
+      "Alix Earle",
+      "Corey Feldman",
+      "Jordan Chiles",
+      "Danielle Fishel",
+      "Dylan Efron",
+      "Lauren Jauregui"
+    ],
+    "eliminated_names": [
+      "Baron Davis",
+      "Corey Feldman"
+    ]
+  },
+  "34_3": {
+    "season": 34,
+    "week": 3,
+    "active_count": 11,
+    "eliminated_count": 1,
+    "active_names": [
+      "Elaine Hendrix",
+      "Hilaria Baldwin",
+      "Scott Hoying",
+      "Jen Affleck",
+      "Whitney Leavitt",
+      "Andy Richter",
+      "Alix Earle",
+      "Jordan Chiles",
+      "Danielle Fishel",
+      "Dylan Efron",
+      "Lauren Jauregui"
+    ],
+    "eliminated_names": [
+      "Lauren Jauregui"
+    ]
+  },
+  "34_4": {
+    "season": 34,
+    "week": 4,
+    "active_count": 10,
+    "eliminated_count": 1,
+    "active_names": [
+      "Elaine Hendrix",
+      "Hilaria Baldwin",
+      "Scott Hoying",
+      "Jen Affleck",
+      "Whitney Leavitt",
+      "Andy Richter",
+      "Alix Earle",
+      "Jordan Chiles",
+      "Danielle Fishel",
+      "Dylan Efron"
+    ],
+    "eliminated_names": [
+      "Hilaria Baldwin"
+    ]
+  },
+  "34_5": {
+    "season": 34,
+    "week": 5,
+    "active_count": 9,
+    "eliminated_count": 0,
+    "active_names": [
+      "Elaine Hendrix",
+      "Scott Hoying",
+      "Jen Affleck",
+      "Whitney Leavitt",
+      "Andy Richter",
+      "Alix Earle",
+      "Jordan Chiles",
+      "Danielle Fishel",
+      "Dylan Efron"
+    ],
+    "eliminated_names": []
+  },
+  "34_6": {
+    "season": 34,
+    "week": 6,
+    "active_count": 9,
+    "eliminated_count": 1,
+    "active_names": [
+      "Elaine Hendrix",
+      "Scott Hoying",
+      "Jen Affleck",
+      "Whitney Leavitt",
+      "Andy Richter",
+      "Alix Earle",
+      "Jordan Chiles",
+      "Danielle Fishel",
+      "Dylan Efron"
+    ],
+    "eliminated_names": [
+      "Scott Hoying"
+    ]
+  },
+  "34_7": {
+    "season": 34,
+    "week": 7,
+    "active_count": 8,
+    "eliminated_count": 1,
+    "active_names": [
+      "Elaine Hendrix",
+      "Jen Affleck",
+      "Whitney Leavitt",
+      "Andy Richter",
+      "Alix Earle",
+      "Jordan Chiles",
+      "Danielle Fishel",
+      "Dylan Efron"
+    ],
+    "eliminated_names": [
+      "Jen Affleck"
+    ]
+  },
+  "34_8": {
+    "season": 34,
+    "week": 8,
+    "active_count": 7,
+    "eliminated_count": 1,
+    "active_names": [
+      "Elaine Hendrix",
+      "Whitney Leavitt",
+      "Andy Richter",
+      "Alix Earle",
+      "Jordan Chiles",
+      "Danielle Fishel",
+      "Dylan Efron"
+    ],
+    "eliminated_names": [
+      "Danielle Fishel"
+    ]
+  },
+  "34_9": {
+    "season": 34,
+    "week": 9,
+    "active_count": 6,
+    "eliminated_count": 1,
+    "active_names": [
+      "Elaine Hendrix",
+      "Whitney Leavitt",
+      "Andy Richter",
+      "Alix Earle",
+      "Jordan Chiles",
+      "Dylan Efron"
+    ],
+    "eliminated_names": [
+      "Andy Richter"
+    ]
+  },
+  "34_10": {
+    "season": 34,
+    "week": 10,
+    "active_count": 5,
+    "eliminated_count": 1,
+    "active_names": [
+      "Elaine Hendrix",
+      "Whitney Leavitt",
+      "Alix Earle",
+      "Jordan Chiles",
+      "Dylan Efron"
+    ],
+    "eliminated_names": [
+      "Whitney Leavitt"
+    ]
+  },
+  "34_11_final": {
+    "season": 34,
+    "week": 11,
+    "is_final": true,
+    "finalists": [
+      "Alix Earle",
+      "Dylan Efron",
+      "Elaine Hendrix",
+      "Jordan Chiles"
+    ]
+  }
+}
