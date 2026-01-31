@@ -31,6 +31,7 @@ def compute_analysis():
     files = glob.glob(os.path.join(REPLAY_DIR, "season_*_*.npz"))
     rows = []
     controversy_rows = []
+    focal_rows = []
     
     # Group files by season
     season_files = {}
@@ -98,15 +99,70 @@ def compute_analysis():
                 p_sim = placements[i]
                 # P0 Requirement: Use Spearman
                 rho_f, _ = spearmanr(p_sim, rank_v_true)
-                rho_j, _ = spearmanr(p_sim, rank_j_true)
-                
-                # Handle NaNs from constant input
                 if np.isnan(rho_f): rho_f = 0
-                if np.isnan(rho_j): rho_j = 0
-                
                 rho_F_list.append(rho_f)
+                
+                rho_j, _ = spearmanr(p_sim, rank_j_true)
+                if np.isnan(rho_j): rho_j = 0
                 rho_J_list.append(rho_j)
                 
+            # --- Change 3: Controversy Focus Report ---
+            # Define target names (Question Specific)
+            FOCAL_NAMES = ["Jerry Rice", "Billy Ray Cyrus", "Bristol Palin", "Bobby Bones"]
+            
+            # Map Name -> PairID for this season
+            current_season_names = {v: k[1] for k, v in pair_name_map.items() if k[0] == season}
+            
+            for name in FOCAL_NAMES:
+                # Fuzzy match or exact match? Exact for now, or partial.
+                # "Jerry Rice" is standard.
+                target_pid = None
+                
+                # Try exact
+                if name in current_season_names:
+                    target_pid = current_season_names[name]
+                else:
+                    # Try partial
+                    for celeb, pid in current_season_names.items():
+                         if name in celeb:
+                             target_pid = pid
+                             break
+                             
+                if target_pid:
+                     # Calculate Stats for this Focal Person
+                     # pair_ids array maps pair_id -> col index
+                     # We need to find the specific column index for target_pid
+                     try:
+                         col_idx = list(pair_ids).index(target_pid)
+                         
+                         p_win = np.mean(placements[:, col_idx] == 1)
+                         p_top3 = np.mean(placements[:, col_idx] <= 3)
+                         exp_rank = np.mean(placements[:, col_idx])
+                         exp_surv = np.mean(elim_weeks[:, col_idx])
+                         
+                         focal_rows.append({
+                             'season': season,
+                             'celebrity': name, # Use the target name key
+                             'real_name': [k for k,v in current_season_names.items() if v==target_pid][0],
+                             'rule': rule,
+                             'p_win': p_win,
+                             'p_top3': p_top3,
+                             'exp_rank': exp_rank,
+                             'exp_weeks': exp_surv,
+                             'status': 'OK'
+                         })
+                     except ValueError:
+                         # Should not happen if data integrity holds
+                         focal_rows.append({
+                             'season': season,
+                             'celebrity': name,
+                             'rule': rule,
+                             'status': 'MISSING_IN_NPZ'
+                         })
+                # If name not in this season, skip (normal)
+                
+            # ------------------------------------------
+
             # 2. Drama
             d_mean_sample = np.nanmean(conflict_hist, axis=1)
             d_bar = np.nanmean(d_mean_sample)
@@ -131,35 +187,11 @@ def compute_analysis():
             h_bar = np.mean(entropy_list) if entropy_list else 0
             h_late = np.mean(entropy_list[-k_late:]) if entropy_list else 0
             
-            # 3. Change vs Baseline
-            p_cham_change = np.nan
-            p_top3_change = np.nan
-            
-            if baseline_placements is not None and rule != baseline_rule:
-                if len(baseline_placements) == n_samples:
-                    win_run = np.argmin(placements, axis=1)
-                    win_base = np.argmin(baseline_placements, axis=1)
-                    change = np.mean(win_run != win_base)
-                    p_cham_change = change
-                    
-                    diff_count = 0
-                    for i in range(n_samples):
-                        top3_run = set(np.argsort(placements[i])[:3])
-                        top3_base = set(np.argsort(baseline_placements[i])[:3])
-                        if top3_run != top3_base:
-                            diff_count += 1
-                    p_top3_change = diff_count / n_samples
-            elif rule == baseline_rule:
-                p_cham_change = 0.0
-                p_top3_change = 0.0
-                    
             rows.append({
                 'season': season,
                 'rule': rule,
-                'p_champion_change': p_cham_change,
-                'p_top3_change': p_top3_change,
-                'rho_F': np.mean(rho_F_list),
-                'rho_J': np.mean(rho_J_list),
+                'rho_F': np.nanmean(rho_F_list),
+                'rho_J': np.nanmean(rho_J_list),
                 'drama_D': d_bar,
                 'drama_D_late': d_late,
                 'upset_rate': upset_rate,
@@ -167,6 +199,32 @@ def compute_analysis():
                 'suspense_H_late': h_late
             })
             
+            # 3. Change vs Baseline
+            # p_cham_change = np.nan # These are now added to rows[-1]
+            # p_top3_change = np.nan # These are now added to rows[-1]
+            
+            if baseline_placements is not None and rule != baseline_rule:
+                if len(baseline_placements) == n_samples:
+                    win_run = np.argmin(placements, axis=1)
+                    win_base = np.argmin(baseline_placements, axis=1)
+                    change = np.mean(win_run != win_base)
+                    # Add change metrics to rows (assuming rows is dictionary list)
+                    rows[-1]['p_champion_change'] = change
+                    
+                    diff_count = 0
+                    for i in range(n_samples):
+                        top3_run = set(np.argsort(placements[i])[:3])
+                        top3_base = set(np.argsort(baseline_placements[i])[:3])
+                        if top3_run != top3_base:
+                            diff_count += 1
+                    rows[-1]['p_top3_change'] = diff_count / n_samples
+                else:
+                    rows[-1]['p_champion_change'] = np.nan
+                    rows[-1]['p_top3_change'] = np.nan
+            elif rule == baseline_rule:
+                rows[-1]['p_champion_change'] = 0.0
+                rows[-1]['p_top3_change'] = 0.0
+                    
             # --- Controversy / Per-Celebrity Metrics (P0) ---
             # Calculate metrics for each pair in this Season+Rule
             # p_win, p_top3, expected_rank, expected_survival_weeks
@@ -243,13 +301,26 @@ def compute_analysis():
         # Sort
         rule_order = {'rank':0, 'rank_save':1, 'percent':2, 'percent_save':3}
         df_out['rule_ord'] = df_out['rule'].map(rule_order).fillna(99)
+        cols = ['season', 'rule', 'p_champion_change', 'p_top3_change'] + \
+               [c for c in df_out.columns if c not in ['season', 'rule', 'rule_ord', 'p_champion_change', 'p_top3_change']]
+        df_out = df_out[cols]
         df_out.sort_values(['season', 'rule_ord'], inplace=True)
-        df_out.drop(columns=['rule_ord'], inplace=True)
+        # df_out.drop(columns=['rule_ord'], inplace=True) # Optional keep
         
         df_out = df_out.round(4)
         df_out.to_csv(OUTPUT_FILE, index=False)
         print(f"指标已保存至 {OUTPUT_FILE}")
         
+    # Save Focal Controversy Report (Change 3)
+    if focal_rows:
+        df_focal = pd.DataFrame(focal_rows)
+        df_focal.sort_values(['season', 'celebrity', 'rule'], inplace=True)
+        df_focal = df_focal.round(4)
+        df_focal.to_csv(FOCAL_FILE, index=False)
+        print(f"重点人物检查表已保存至 {FOCAL_FILE}")
+    else:
+        print("未生成重点人物报告 (Focal Report Empty)。")
+    
     # Save Controversy
     if controversy_rows:
         df_controv = pd.DataFrame(controversy_rows)

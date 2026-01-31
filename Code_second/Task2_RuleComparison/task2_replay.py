@@ -42,6 +42,40 @@ def run_replay(season, rule, num_simulations=None, gamma=None):
     
     n_samples, n_weeks, n_pairs = v_samples.shape
     
+    # --- Change 1: Roster Integrity Check (Self-Audit) ---
+    # Load Panel Truth
+    if not os.path.exists(PANEL_PATH):
+        # Fallback if parquet not found, try csv
+        csv_path = PANEL_PATH.replace('.parquet', '.csv')
+        if os.path.exists(csv_path):
+             df_panel_check = pd.read_csv(csv_path)
+        else:
+             print("Warning: Panel file not found for audit.")
+             df_panel_check = None
+    else:
+        df_panel_check = pd.read_parquet(PANEL_PATH)
+        
+    if df_panel_check is not None:
+        truth_roster = set(df_panel_check[df_panel_check['season'] == season]['pair_id'].unique())
+        posterior_roster = set(pair_ids)
+        
+        missing_in_post = truth_roster - posterior_roster
+        missing_in_panel = posterior_roster - truth_roster
+        
+        if missing_in_post:
+            print(f"\n[CRITICAL ERROR] Roster Mismatch! Missing {len(missing_in_post)} pairs in Posterior (Task 1 Output):")
+            print(f"  Missing IDs: {missing_in_post}")
+            # Optional: Map IDs to names if possible
+            # We can't proceed safely if we are missing people? 
+            # User said "Stop or Warning". We will Warn loudly.
+            print("  -> These contestants will be completely ignored in replay (Silent Failure prevented).")
+            # raise ValueError("Roster Integrity Check Failed") # Uncomment to force stop
+            
+        if missing_in_panel:
+            print(f"\n[WARNING] Posterior contains extra pairs not in Panel: {missing_in_panel}")
+            
+    # -----------------------------------------------------
+    
     # Subset samples if requested
     if num_simulations and num_simulations < n_samples:
         indices = np.random.choice(n_samples, num_simulations, replace=False)

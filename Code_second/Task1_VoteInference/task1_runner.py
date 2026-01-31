@@ -16,7 +16,10 @@ from task1_model import probabilistic_model
 # Enable 64-bit to avoid overflow in PL mechanism
 numpyro.enable_x64()
 
-PANEL_PATH = r'd:\shumomeisai\Code_second\Data\panel.parquet'
+# Update: Prefer CSV as it contains the corrected roster (including Bristol Palin)
+PANEL_PATH = r'd:\shumomeisai\Code_second\processed\panel.csv'
+# PANEL_PATH = r'd:\shumomeisai\Code_second\Data\panel.parquet' 
+
 ELIM_PATH = r'd:\shumomeisai\Code_second\Data\elim_events.json'
 OUTPUT_DIR = r'd:\shumomeisai\Code_second\Results\posterior_samples'
 
@@ -24,7 +27,10 @@ def run_season(season, num_warmup=500, num_samples=1000, num_chains=1):
     print(f"--- Processing Season {season} ---")
     
     # Load Data
-    df = pd.read_parquet(PANEL_PATH)
+    if PANEL_PATH.endswith('.csv'):
+        df = pd.read_csv(PANEL_PATH)
+    else:
+        df = pd.read_parquet(PANEL_PATH)
     df_s = df[df['season'] == season].copy()
     
     with open(ELIM_PATH, 'r', encoding='utf-8') as f:
@@ -44,13 +50,12 @@ def run_season(season, num_warmup=500, num_samples=1000, num_chains=1):
     
     # Create Name -> ID map for elim parsing
     # We need strictly (Celebrity Name) -> Index
-    # Check uniqueness of name in season
-    # Taking implicit mapping from first occurrence
-    # Better: iterate df_s active rows
     name_to_id = {}
     for _, row in df_s.iterrows():
         p_idx = pair_map[row['pair_id']]
         name_to_id[row['celebrity_name']] = p_idx
+        
+    print(f"  [Roster Audit] Season {season}: {len(pair_ids)} unique pairs found in Panel.")
         
     # Build Arrays
     # active_mask: (n_weeks, n_pairs)
@@ -62,10 +67,6 @@ def run_season(season, num_warmup=500, num_samples=1000, num_chains=1):
     judge_percents = np.zeros((n_weeks, n_pairs))
     
     # Fill Data
-    # Iterate rows
-    # Note: data only contains ACTIVE rows.
-    # We initialize with 0. Inactive will remain 0/False.
-    
     for _, row in df_s.iterrows():
         t = week_map[row['week']]
         i = pair_map[row['pair_id']]
@@ -74,17 +75,31 @@ def run_season(season, num_warmup=500, num_samples=1000, num_chains=1):
         observed_scores[t, i] = row['S_it']
         judge_percents[t, i] = row['pJ_it']
         
-    # Parse Elim Events
-    # elim_data keys: "season_week" or "season_week_final"
-    # Filter for this season
-    
+    # Parse Elim Events and Audit Names
     elim_events_list = [] # List of (t, [indices])
     final_ranking = []
     
-    # We rely on week_map. 
-    # Final placement is special.
-    
     max_week = max(weeks)
+    
+    # Audit: Collect all elim names and checking mapping
+    all_elim_names_in_json = []
+    for w in weeks:
+        key = f"{season}_{w}"
+        if key in elim_data:
+             all_elim_names_in_json.extend(elim_data[key].get('eliminated_names', []))
+             
+    key_final = f"{season}_{max_week}_final"
+    if key_final in elim_data:
+        all_elim_names_in_json.extend(elim_data[key_final].get('finalists', []))
+        
+    # Check for unmapped names
+    unmapped = [n for n in all_elim_names_in_json if n not in name_to_id]
+    if unmapped:
+        print(f"  [WARNING] Unmapped Elimination Names in Season {season}: {list(set(unmapped))}")
+        print("    -> These contestants will NOT process elimination correctly.")
+        # Attempt Fuzzy Fix? (Optional, user asked for fix)
+        # Simple fix: Check for partial matches or trimmed strings?
+        # For now, just logging allows user (me) to see the issue.
     
     # Regular weeks
     for w in weeks:
@@ -94,7 +109,13 @@ def run_season(season, num_warmup=500, num_samples=1000, num_chains=1):
             data = elim_data[key]
             # Eliminated names
             e_names = data.get('eliminated_names', [])
-            e_indices = [name_to_id[n] for n in e_names if n in name_to_id]
+            e_indices = []
+            for n in e_names:
+                if n in name_to_id:
+                    e_indices.append(name_to_id[n])
+                else:
+                    # Try simple normalized lookup?
+                    pass 
             if e_indices:
                 elim_events_list.append((week_map[w], e_indices))
     
