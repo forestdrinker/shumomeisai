@@ -193,7 +193,7 @@ def compute_temporal_predictive_metrics(
         y = np.zeros(n_active)
         for idx in local_true_elim:
             y[idx] = 1.0
-        brier = np.sum((active_probs - y)**2)
+        brier = np.sum((active_probs - y)**2) / n_active
         
         random_prob = 1.0 / n_active
         brier_random = (1 - random_prob)**2 + (n_active - 1) * random_prob**2
@@ -310,7 +310,7 @@ def compute_insample_metrics(
         y = np.zeros(n_active)
         for idx in local_true_elim:
             y[idx] = 1.0
-        brier = np.sum((active_probs - y)**2)
+        brier = np.sum((active_probs - y)**2) / n_active
         
         metrics_rows.append({
             'season': season,

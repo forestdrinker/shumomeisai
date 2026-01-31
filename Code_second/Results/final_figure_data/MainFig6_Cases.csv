@@ -1,21 +1,13 @@
 season,rule,pair_id,celebrity_name,p_win,p_top3,expected_rank,expected_survival_weeks
-2,percent,3,Jerry Rice,0.46,0.95,1.71,7.95
-2,percent_save,3,Jerry Rice,0.41,0.88,1.84,7.87
-2,rank,3,Jerry Rice,0.06,0.99,1.97,7.99
-2,rank_save,3,Jerry Rice,0.05,0.33,3.31,7.31
-4,percent,2,Billy Ray Cyrus,0.0,0.0,5.32,7.62
-4,percent_save,2,Billy Ray Cyrus,0.0,0.0,5.67,7.28
-4,rank,2,Billy Ray Cyrus,0.0,0.0,4.99,7.91
-4,rank_save,2,Billy Ray Cyrus,0.0,0.0,5.48,7.51
-11,percent,3,Bristol Palin,0.01,0.79,3.09,9.66
-11,percent_save,3,Bristol Palin,0.0,0.18,4.09,8.64
-11,rank,3,Bristol Palin,0.03,0.88,3.04,9.61
-11,rank_save,3,Bristol Palin,0.02,0.13,4.76,7.77
-15,percent,2,Bristol Palin,0.0,0.0,8.34,4.05
-15,percent_save,2,Bristol Palin,0.0,0.0,9.11,3.05
-15,rank,2,Bristol Palin,0.0,0.0,9.22,3.04
-15,rank_save,2,Bristol Palin,0.0,0.0,9.58,2.56
-27,percent,2,Bobby Bones,0.85,1.0,1.15,9.0
-27,percent_save,2,Bobby Bones,0.84,0.94,1.28,8.94
-27,rank,2,Bobby Bones,0.37,0.98,1.67,8.98
-27,rank_save,2,Bobby Bones,0.32,0.86,1.96,8.86
+2,percent,6,Jerry Rice,0.0,0.0,6.79,4.1
+2,percent_save,6,Jerry Rice,0.0,0.0,7.57,3.04
+2,rank,6,Jerry Rice,0.0,0.0,6.32,4.63
+2,rank_save,6,Jerry Rice,0.0,0.0,7.35,3.24
+4,percent,9,Billy Ray Cyrus,0.0,0.0,8.57,3.43
+4,percent_save,9,Billy Ray Cyrus,0.0,0.0,8.37,3.63
+4,rank,9,Billy Ray Cyrus,0.0,0.0,8.18,3.82
+4,rank_save,9,Billy Ray Cyrus,0.0,0.0,8.01,3.99
+27,percent,10,Bobby Bones,0.0,0.0,10.8,1.2
+27,percent_save,10,Bobby Bones,0.0,0.0,10.82,1.18
+27,rank,10,Bobby Bones,0.0,0.0,10.82,1.18
+27,rank_save,10,Bobby Bones,0.0,0.0,10.94,1.06

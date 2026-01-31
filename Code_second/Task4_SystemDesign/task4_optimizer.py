@@ -3,6 +3,8 @@ import os
 import optuna
 import pandas as pd
 import numpy as np
+# Fix 1: Reproducibility
+np.random.seed(2026)
 import json
 from scipy.stats import spearmanr, rankdata, kendalltau
 from task4_simulator import SeasonSimulatorFast
@@ -17,7 +19,7 @@ PERTURB_KAPPA = 0.5 # Noise scale
 
 # Paths
 OUTPUT_DIR = r'd:\shumomeisai\Code_second\Results'
-PANEL_PATH = r'd:\shumomeisai\Code_second\Data\panel.parquet'
+PANEL_PATH = r'd:\shumomeisai\Code_second\processed\panel.csv'
 POSTERIORS_DIR = r'd:\shumomeisai\Code_second\Results\posterior_samples'
 ELIM_PATH = r'd:\shumomeisai\Code_second\Data\elim_events.json'
 
@@ -102,6 +104,15 @@ def objective(trial):
         obj_R_list.append(np.mean(kendall_dists))
 
     # Mean and SD across seasons
+    
+    # Fix 3: Robustness - Failure Rate Penalty
+    # If too many seasons failed (NaN), penalize this rule heavily
+    valid_count = np.sum(~np.isnan(obj_F_list))
+    total_seasons = len(SEASON_IDS)
+    if valid_count < (0.9 * total_seasons):
+        # Return bad scores to prune this parameter set
+        return -1.0, -1.0, -1.0, -1.0
+
     f_mean = np.nanmean(obj_F_list)
     j_mean = np.nanmean(obj_J_list)
     d_mean = np.nanmean(obj_D_list)
@@ -127,7 +138,7 @@ def objective(trial):
     return f_mean, j_mean, d_mean, r_mean
 
 def run_optimizer():
-    print("--- Running Task 4 Optuna MOBO ---")
+    print("--- 正在运行 Task 4 Optuna 多目标优化 (MOBO) ---")
     
     # Directions: Maximize all (Correlation, Correlation, Drama, Similarity/Robustness)
     study = optuna.create_study(directions=["maximize", "maximize", "maximize", "maximize"])
@@ -135,11 +146,11 @@ def run_optimizer():
     # Stage 1: LHS Warmup (simulated by RandomSampler or LatinHypercubeSampler if available)
     # Optuna NSGAII uses Random sampling for initialization.
     
-    print(f"Optimizing {N_TRIALS} trials (N_SEASONS={len(SEASON_IDS)})...")
+    print(f"优化 {N_TRIALS} 次尝试 (N_SEASONS={len(SEASON_IDS)})...")
     study.optimize(objective, n_trials=N_TRIALS, show_progress_bar=True)
     
     # Save Results
-    print("Saving results...")
+    print("正在保存结果...")
     
     # 1. Theta Evaluations (All Trials)
     rows = []
@@ -155,6 +166,10 @@ def run_optimizer():
         rows.append(row)
         
     df_evals = pd.DataFrame(rows)
+    # Audit Fix: Fill gamma NaN and Round
+    if 'gamma' in df_evals.columns:
+        df_evals['gamma'] = df_evals['gamma'].fillna(1.0)
+    df_evals = df_evals.round(4)
     df_evals.to_parquet(os.path.join(OUTPUT_DIR, 'task4_theta_evaluations.parquet'))
     
     # 2. Pareto Front
@@ -168,10 +183,14 @@ def run_optimizer():
         p_rows.append(row)
         
     df_pareto = pd.DataFrame(p_rows)
+    # Audit Fix: Fill gamma NaN and Round
+    if 'gamma' in df_pareto.columns:
+        df_pareto['gamma'] = df_pareto['gamma'].fillna(1.0)
+    df_pareto = df_pareto.round(4)
     df_pareto.to_csv(os.path.join(OUTPUT_DIR, 'task4_pareto_front.csv'), index=False)
     
-    print("Optimization Finished.")
-    print(f"Pareto Front Size: {len(df_pareto)}")
+    print("优化完成。")
+    print(f"Pareto 前沿大小: {len(df_pareto)}")
 
 if __name__ == "__main__":
     run_optimizer()

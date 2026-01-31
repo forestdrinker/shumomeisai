@@ -13,7 +13,13 @@ class SeasonSimulatorFast:
         Initialize and pre-load all static data (Panel, Elim, Posteriors)
         to memory for fast Monte Carlo.
         """
-        self.panel = pd.read_parquet(panel_path)
+        if panel_path.endswith('.csv'):
+            self.panel = pd.read_csv(panel_path)
+            # Compat: Rename age if needed
+            if 'celebrity_age' in self.panel.columns and 'celebrity_age_during_season' not in self.panel.columns:
+                 self.panel.rename(columns={'celebrity_age': 'celebrity_age_during_season'}, inplace=True)
+        else:
+            self.panel = pd.read_parquet(panel_path)
         self.posteriors_dir = posteriors_dir
         with open(elim_path, 'r', encoding='utf-8') as f:
             self.elim_data = json.load(f)
@@ -47,7 +53,7 @@ class SeasonSimulatorFast:
             week_values = data['week_values'] # e.g. [1, 2, ..., 11]
             
         except Exception as e:
-            print(f"Error loading S{season}: {e}")
+            print(f"加载第 {season} 季数据时出错: {e}")
             return
 
         # 2. Build S matrix (Judge Scores)

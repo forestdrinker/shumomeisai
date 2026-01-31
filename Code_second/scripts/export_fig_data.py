@@ -22,7 +22,7 @@ def save_csv(df, name):
 # Fig 2: Validation
 def export_fig2():
     print("Exporting Fig 2 data...")
-    path = os.path.join(DATA_DIR, "task1_metrics.csv")
+    path = os.path.join(DATA_DIR, "validation_results", "detailed_predictions.csv")
     if os.path.exists(path):
         df = pd.read_csv(path)
         save_csv(df, "MainFig2_Validation.csv")

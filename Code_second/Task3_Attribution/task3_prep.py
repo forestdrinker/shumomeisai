@@ -6,7 +6,7 @@ import glob
 from itertools import combinations
 
 # Paths
-PANEL_PATH = r'd:\shumomeisai\Code_second\Data\panel.parquet'
+PANEL_PATH = r'd:\shumomeisai\Code_second\processed\panel.csv' # Updated to Partner's CSV
 POSTERIOR_DIR = r'd:\shumomeisai\Code_second\Results\posterior_samples' # For v samples
 OUTPUT_DIR = r'd:\shumomeisai\Code_second\Results\task3_data'
 
@@ -117,11 +117,25 @@ def generate_network_features(panel):
         return pd.DataFrame()
 
 def prep_task3_data():
-    print("--- Preparing Task 3 Dataset ---")
+    print("--- 正在准备 Task 3 数据集 ---")
     
     # 1. Load Panel (Score Targets & Features)
-    print("Loading Panel...")
-    panel = pd.read_parquet(PANEL_PATH)
+    print(f"正在加载面板数据自 {PANEL_PATH} ...")
+    if PANEL_PATH.endswith('.csv'):
+        panel = pd.read_csv(PANEL_PATH)
+    else:
+        panel = pd.read_parquet(PANEL_PATH)
+        
+    # Compatibility Fix for Partner Data
+    if 'celebrity_age' in panel.columns and 'celebrity_age_during_season' not in panel.columns:
+        print("Notice: Renaming 'celebrity_age' to 'celebrity_age_during_season' for compatibility.")
+        panel.rename(columns={'celebrity_age': 'celebrity_age_during_season'}, inplace=True)
+
+    # 2. Compatibility Fix: Create pJ_it (Judge Score) from S_it if missing
+    if 'pJ_it' not in panel.columns and 'S_it' in panel.columns:
+        print("Notice: Creating 'pJ_it' from 'S_it' (assuming S_it is the score metric).")
+        panel['pJ_it'] = panel['S_it']
+
     # Expected columns: season, week, pair_id, celebrity_name, ballroom_partner, S_it, pJ_it, 
     #                   celebrity_age_during_season, celebrity_industry
     
@@ -131,7 +145,7 @@ def prep_task3_data():
     req_cols = ['celebrity_age_during_season', 'celebrity_industry']
     for c in req_cols:
         if c not in panel.columns:
-            print(f"Error: Column {c} not found in panel.")
+            print(f"Error: Column {c} not found in panel. Available: {list(panel.columns[:10])}...")
             # Verify if maybe named differently?
             # Based on check_cols check, they should be there.
             return
@@ -212,9 +226,19 @@ def prep_task3_data():
         merged['age'] = merged['age'].fillna(mean_age)
         print(f"Imputed {merged['age'].isnull().sum()} missing ages with mean {mean_age:.1f}")
         
-    # Industry: fill Unknown
+    # Industry: fill Unknown and CLEAN UP
     if merged['industry'].isnull().any():
         merged['industry'] = merged['industry'].fillna('Unknown')
+    
+    # Audit Fix: Data Hygiene
+    # 1. Fix Typos
+    replace_map = {
+        'Beauty Pagent': 'Beauty Pageant',
+        'Con artist': 'Personality' # Fix the "Con artist" issue
+    }
+    merged['industry'] = merged['industry'].replace(replace_map)
+    # 2. Normalize case
+    merged['industry'] = merged['industry'].astype(str).str.strip().str.title()
 
     final_cols = [
         'season', 'week', 'pair_id', 'celebrity_name', 'ballroom_partner',
@@ -236,7 +260,7 @@ def prep_task3_data():
     
     out_path = os.path.join(OUTPUT_DIR, 'task3_weekly_dataset.parquet')
     out_df.to_parquet(out_path)
-    print(f"Saved Task 3 Dataset to {out_path} (Rows: {len(out_df)})")
+    print(f"Task 3 数据集已保存至 {out_path} (行数: {len(out_df)})")
     print(out_df.head())
 
 if __name__ == "__main__":

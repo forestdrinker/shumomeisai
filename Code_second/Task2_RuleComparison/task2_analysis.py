@@ -7,18 +7,26 @@ import glob
 from scipy.stats import kendalltau, entropy, spearmanr
 
 # Constants
-PANEL_PATH = r'd:\shumomeisai\Code_second\Data\panel.parquet'
+PANEL_PATH = r'd:\shumomeisai\Code_second\processed\panel.csv'
 POSTERIOR_DIR = r'd:\shumomeisai\Code_second\Results\posterior_samples'
 REPLAY_DIR = r'd:\shumomeisai\Code_second\Results\replay_results'
 OUTPUT_FILE = r'd:\shumomeisai\Code_second\Results\task2_metrics.csv'
 CONTROVERSY_FILE = r'd:\shumomeisai\Code_second\Results\controversy_cases.csv'
 
 def compute_analysis():
-    df_panel = pd.read_parquet(PANEL_PATH)
+    if PANEL_PATH.endswith('.csv'):
+        df_panel = pd.read_csv(PANEL_PATH)
+    else:
+        df_panel = pd.read_parquet(PANEL_PATH)
     # Create (Season, PairID) -> Name mapping
     # pair_id seems to be reused per season or we just want to be safe.
     # Group by [season, pair_id] and take first name.
     pair_name_map = df_panel.set_index(['season', 'pair_id'])['celebrity_name'].to_dict()
+    
+    # 2. Compatibility Fix: Create pJ_it (Judge Score) from S_it if missing
+    if 'pJ_it' not in df_panel.columns and 'S_it' in df_panel.columns:
+        print("Notice: Creating 'pJ_it' from 'S_it' (assuming S_it is the score metric).")
+        df_panel['pJ_it'] = df_panel['S_it']
     
     files = glob.glob(os.path.join(REPLAY_DIR, "season_*_*.npz"))
     rows = []
@@ -37,7 +45,7 @@ def compute_analysis():
         
     for season in sorted(season_files.keys()):
         rules_dict = season_files[season]
-        print(f"Processing Season {season}...")
+        print(f"正在处理第 {season} 季...")
         
         # Load Baseline (rank) if available
         baseline_placements = None
@@ -107,7 +115,9 @@ def compute_analysis():
             k_late = min(3, n_weeks_replay)
             d_late = np.nanmean(conflict_hist[:, -k_late:])
             
-            upset_rate = np.mean(upset_counts) / max(1, n_weeks_replay - 1)
+            # Fix Upset Rate: Denominator should be total eliminations (n_pairs - 1), not weeks
+            # Assuming 1 winner, so (N-1) eliminations total.
+            upset_rate = np.mean(upset_counts) / max(1, n_pairs - 1)
             
             # Suspense H
             entropy_list = []
@@ -116,7 +126,7 @@ def compute_analysis():
                 elim_counts = np.sum(is_elim, axis=0)
                 total = np.sum(elim_counts)
                 if total > 0:
-                    entropy_list.append(entropy(elim_counts/total))
+                     entropy_list.append(entropy(elim_counts/total, base=2))
             
             h_bar = np.mean(entropy_list) if entropy_list else 0
             h_late = np.mean(entropy_list[-k_late:]) if entropy_list else 0
@@ -236,17 +246,19 @@ def compute_analysis():
         df_out.sort_values(['season', 'rule_ord'], inplace=True)
         df_out.drop(columns=['rule_ord'], inplace=True)
         
+        df_out = df_out.round(4)
         df_out.to_csv(OUTPUT_FILE, index=False)
-        print(f"Metrics saved to {OUTPUT_FILE}")
+        print(f"指标已保存至 {OUTPUT_FILE}")
         
     # Save Controversy
     if controversy_rows:
         df_controv = pd.DataFrame(controversy_rows)
         df_controv.sort_values(['season', 'pair_id', 'rule'], inplace=True)
+        df_controv = df_controv.round(4)
         df_controv.to_csv(CONTROVERSY_FILE, index=False)
-        print(f"Controversy cases saved to {CONTROVERSY_FILE}")
+        print(f"争议案例已保存至 {CONTROVERSY_FILE}")
     else:
-        print("No results found.")
+        print("未找到结果。")
 
 if __name__ == "__main__":
     compute_analysis()

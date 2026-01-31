@@ -7,6 +7,9 @@ import os
 import glob
 import json
 
+# Fix 1: Reproducibility
+np.random.seed(2026)
+
 # Paths
 DATASET_PATH = r'd:\shumomeisai\Code_second\Results\task3_data\task3_weekly_dataset.parquet'
 POSTERIOR_DIR = r'd:\shumomeisai\Code_second\Results\posterior_samples'
@@ -83,8 +86,14 @@ def run_task3_lmm():
         res_j = model_j.fit(reml=True)
         print(res_j.summary())
         
-        # Extract Fixed Effects
-        fe_j = res_j.params.to_frame(name='coef')
+        # Extract Fixed Effects with CIs
+        # Fix 2: Completeness - Add Confidence Intervals
+        params = res_j.params.to_frame(name='estimate')
+        conf = res_j.conf_int()
+        conf.columns = ['2.5%', '97.5%']
+        # Combine
+        fe_j = params.join(conf)
+        # fe_j = res_j.params.to_frame(name='coef') # Old logic
         fe_j.to_csv(os.path.join(OUTPUT_DIR, 'task3_lmm_judge_coeffs.csv'))
         
         # Extract Random Effects (Partner)
