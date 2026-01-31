@@ -1,86 +1,86 @@
-# Math Modeling Coach Audit Report
-**Date:** 2026-01-31
-**Subject:** Critical Review of Project Output Data
-**Auditor:** Math Modeling Coach (Strict Mode)
+# 数学建模教练审核报告 (Math Modeling Coach Audit Report)
+**日期:** 2026-01-31
+**主题:** 项目输出数据的批判性审查
+**审核人:** 数学建模教练 (严肃模式)
 
 ---
 
-## 🟥 Overall Assessment: UNACCEPTABLE FOR SUBMISSION
+## 🟥 总体评估: 不合格 (UNACCEPTABLE)
 
-Your current data outputs demonstrate a **fundamental lack of professional rigor**. While the *pipelines* seem to be running, the results are plagued by amateurish formatting, valid statistical concerns, and distinct lack of quality control. If this were a competition submission, you would be penalized heavily for "Presentation Quality".
+目前的输出数据表现出**极其缺乏专业严谨性**。虽然*流程*似乎跑通了，但结果充斥着业余的格式错误、严重的统计隐患以及质量控制的缺失。如果这是一份竞赛提交作品，你的"论文呈现质量 (Presentation Quality)"将被重扣。
 
-You are treating floating-point numbers like garbage dumps and neglecting basic data hygiene (clean categories, proper CSV formulation).
-
----
-
-## Task 1 Analysis: Vote Inference & Calibration
-**File Audited:** `task1_metrics.csv`, `MainFig2_Validation.csv`
-**Score:** 4/10
-
-### 🚩 Critical Issues
-1.  **Calibration "Perfect" Score (Over-Conservative CI):**
-    *   **Observation:** `coverage_90` is exactly `1` for entire blocks of early weeks.
-    *   **Verdict:** This is **statistically implausible** for a "90%" interval unless your intervals are absurdly wide. A perfect 1.0 means your model is **under-confident**. You are playing it too safe, making the "prediction" uselessly vague.
-2.  **Floating Point Garbage:**
-    *   **Observation:** `brier` score like `0.06567992975142782`.
-    *   **Verdict:** **Significant Digits, Student!** Do not output 16 decimal places. No judge trusts `0.065679929...`. Round to 3-4 significant figures. It clutters the file size and looks messy.
-
-### ⚠️ Warnings
-*   **Data Consistency:** Line 39 in validation has `n_elim=2`. Ensure your logic handles double eliminations correctly and clearly marks them.
-*   **Missing Metadata:** No units in headers. Is `avg_ci_width` in percentage points or raw vote share? Explicitly state unit (e.g., `avg_ci_width_pct`).
+你们把浮点数当个垃圾场一样随便输出，并且忽略了基本的数据卫生（类别清洗、CSV 结构）。
 
 ---
 
-## Task 2 Analysis: Rule Replay & Metrics
-**File Audited:** `task2_metrics.csv`
-**Score:** 5/10
+## Task 1 分析: 投票推断与校准 (Vote Inference & Calibration)
+**审核文件:** `task1_metrics.csv`, `MainFig2_Validation.csv`
+**评分:** 4/10
 
-### 🚩 Critical Issues
-1.  **Suspense Metric Definition:**
-    *   **Observation:** `suspense_H` (Entropy) frequently exceeds 1.0 (e.g., `1.129`).
-    *   **Verdict:** If this is Shannon Entropy (bits/nats), fine. But if this is meant to be a normalized [0,1] metric for a general audience, **it is broken**. You must clarify the base ($log_2$ vs $log_{10}$ vs $log_e$) or normalize it. A value > 1 confuses non-expert readers expecting a probability-like scale.
-2.  **Amateur String Formatting:**
-    *   **Observation:** `rule` column uses `rank`, `rank_save`, `percent`.
-    *   **Verdict:** Inconsistent casing. Use Title Case (`Rank`, `Percent`) or keep it strictly lowercase codes. Consistency is key.
-3.  **Floating Point mess:**
-    *   **Observation:** `0.8369999999999997`.
-    *   **Verdict:** This is a classic floating-point error. Round your outputs! (`round(x, 4)`).
+### 🚩 关键问题 (Critical Issues)
+1.  **校准度"完美"得分 (过度保守的置信区间):**
+    *   **观察:** 在早期的几周里，`coverage_90`（90%覆盖率）经常整段显示为 `1`。
+    *   **结论:** 对于一个 "90%" 的区间来说，这在统计上是**不可信的**，除非你的区间宽得离谱。完美的 1.0 意味着你的模型**极度缺乏自信 (under-confident)**。你在打安全牌，导致"预测"变得毫无意义。
+2.  **浮点数垃圾 (Floating Point Garbage):**
+    *   **观察:** `brier` 分数显示为 `0.06567992975142782`。
+    *   **结论:** **学会有效数字！** 不要输出 16 位小数。没有评委相信 `0.065679929...` 这种精度。保留 3-4 位有效数字即可。这不仅浪费存储空间，还让数据看起来非常乱。
 
----
-
-## Task 3 Analysis: Attribution
-**File Audited:** `task3_lmm_fan_coeffs_aggregated.csv`
-**Score:** **2/10 (FAIL)**
-
-### 🚩 Critical Issues
-1.  **Data Hygiene Failure (Duplicate Categories):**
-    *   **Observation:** You have distinct rows for `Social Media Personality` and `Social media personality`.
-    *   **Verdict:** **INEXCUSABLE.** This splits your sample size, biases the coefficients for *both* resulting rows, and invalidates your statistical inferences for this group. This is basic "Data Cleaning 101".
-2.  **Spelling Errors:**
-    *   **Observation:** `Beauty Pagent` (missing 'a').
-    *   **Verdict:** Typos in final data categories destroy credibility. It suggests you didn't even look at the file before creating a plot.
+### ⚠️ 警告 (Warnings)
+*   **数据一致性:** 验证集中第 39 行显示 `n_elim=2`。确保你的逻辑能正确处理双淘汰，并在文中明确标记。
+*   **缺失元数据:** 表头没有单位。`avg_ci_width` 是百分点还是原始票数份额？必须明确单位 (例如 `avg_ci_width_pct`)。
 
 ---
 
-## Task 4 Analysis: Policy Optimization
-**File Audited:** `task4_pareto_front.csv`
-**Score:** 3/10
+## Task 2 分析: 规则回放与指标 (Rule Replay & Metrics)
+**审核文件:** `task2_metrics.csv`
+**评分:** 5/10
 
-### 🚩 Critical Issues
-1.  **Malformed CSV Structure:**
-    *   **Observation:** The `gamma` column has data in some rows but is empty/missing in others (resulting in jagged lines like `...,0.0175,` vs `...,0.028,1.559`).
-    *   **Verdict:** While Python *might* handle this, standard CSV parsers will choke or misalign columns. If `gamma` is unused (e.g. when `save_flag=0`), put `NaN`, `0`, or `N/A`. Do not leave a trailing comma or ragged edge.
-2.  **Parameter Precision:**
-    *   **Observation:** `b: 9.736920152922979`.
-    *   **Verdict:** Optimization parameters do not need nanometer precision. Round them.
+### 🚩 关键问题
+1.  **悬念指标定义 (Suspense Metric Definition):**
+    *   **观察:** `suspense_H` (熵) 经常超过 1.0 (例如 `1.129`)。
+    *   **结论:** 如果这是香农熵 (bits/nats)，那是对的。但如果这是给大众看的归一化 [0,1] 指标，**它就坏了**。你必须澄清底数 ($log_2$ vs $log_{10}$ vs $log_e$) 或者进行归一化。大于 1 的值会让期待概率量纲的非专家读者感到困惑。
+2.  **业余的字符串格式:**
+    *   **观察:** `rule` 列混用了 `rank`, `rank_save`, `percent`。
+    *   **结论:** 使用标题大写 (`Rank`, `Percent`) 或保持严格的小写代码。一致性是关键。
+3.  **浮点数混乱:**
+    *   **观察:** `0.8369999999999997`。
+    *   **结论:** 典型的浮点数精度错误。请对输出进行四舍五入！(`round(x, 4)`)。
 
 ---
 
-## 🛠️ Required Actions (Immediate Fixes)
+## Task 3 分析: 归因分析 (Attribution)
+**审核文件:** `task3_lmm_fan_coeffs_aggregated.csv`
+**评分:** **2/10 (不及格)**
 
-1.  **Refactor Data Export Scripts:** Apply `.round(4)` to ALL float columns before `to_csv`.
-2.  **Fix Task 3 Cleaning:** Normalize industry strings (`.str.title().str.strip()`) and fix typos (`Pagent` -> `Pageant`) *before* model training. Re-run Task 3.
-3.  **Fix Task 4 CSV:** Ensure `gamma` column is filled with `None`/`NaN` instead of empty strings, or drop it if irrelevant for specific rows (better to fill for consistent schema).
-4.  **Validate Task 1 Coverage:** Investigate why coverage is perfect. If true, your error bars are too big. Tighten the model variance ($\sigma_u$).
+### 🚩 关键问题
+1.  **数据卫生失败 (重复类别):**
+    *   **观察:** 你有 `Social Media Personality` 和 `Social media personality` 两行不同的数据。
+    *   **结论:** **不可原谅。** 这分散了样本量，使*两行*的系数都产生偏差，并使该组的统计推断失效。这是最基本的"数据清洗 101"。
+2.  **拼写错误:**
+    *   **观察:** `Beauty Pagent` (少了一个 'a', 应为 Pageant)。
+    *   **结论:** 最终数据类别中的拼写错误会彻底摧毁可信度。这表明你在画图之前甚至没看一眼文件。
 
-**Get to work.**
+---
+
+## Task 4 分析: 策略优化 (Policy Optimization)
+**审核文件:** `task4_pareto_front.csv`
+**评分:** 3/10
+
+### 🚩 关键问题
+1.  **畸形的 CSV 结构:**
+    *   **观察:** `gamma` 列在某些行有数据，而在其他行却是空/缺失的（导致像 `...,0.0175,` vs `...,0.028,1.559` 这样的参差不齐的行）。
+    *   **结论:** 虽然 Python *可能* 能处理，但标准的 CSV 解析器会报错或列对齐错误。如果 `gamma` 未被使用（例如 `save_flag=0` 时），请填入 `NaN`, `0`, 或 `N/A`。不要留下悬空的逗号或参差不齐的边缘。
+2.  **参数精度:**
+    *   **观察:** `b: 9.736920152922979`。
+    *   **结论:** 优化参数不需要纳米级的精度。请保留合理的小数位。
+
+---
+
+## 🛠️ 必须执行的整改 (立即修复)
+
+1.  **重构数据导出脚本:** 在 `to_csv` 之前对所有浮点列应用 `.round(4)`。
+2.  **修复 Task 3 清洗:** 在模型训练*之前*标准化行业字符串 (`.str.title().str.strip()`) 并修复拼写错误 (`Pagent` -> `Pageant`)。重新运行 Task 3。
+3.  **修复 Task 4 CSV:** 确保 `gamma` 列填充 `None`/`NaN` 而不是空字符串，或者如果是特定行无关，请确保持续的 schema。
+4.  **验证 Task 1 覆盖率:** 调查为什么覆盖率是完美的。如果是真的，说明你的误差棒太大了。收紧模型方差 ($\sigma_u$)。
+
+**立刻开工。**
