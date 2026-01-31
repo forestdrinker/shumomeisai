@@ -1,0 +1,6 @@
+metric,rank,percent,rank_save,percent_save,recommended,significance
+fairness_to_fans,0.921±0.03,0.932±0.04,0.902±0.06,0.929±0.03,percent,No (Negligible)
+fairness_to_judges,0.893±0.07,0.883±0.08,0.907±0.04,0.903±0.05,rank_save,No (Negligible)
+entertainment_value,0.613±0.17,0.617±0.17,0.596±0.16,0.626±0.17,percent_save,No (Negligible)
+stability,0.193±0.16,0.259±0.18,0.125±0.17,0.195±0.20,rank_save,Yes (Significant)
+overall_recommendation,,,,,percent_save,Judgment Call

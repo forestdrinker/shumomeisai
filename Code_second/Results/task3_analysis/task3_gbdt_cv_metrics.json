@@ -1,0 +1,5 @@
+{
+  "judge_cv_rmse_mean": 0.0130182255556742,
+  "judge_cv_rmse_std": 0.010800766143768768,
+  "n_folds": 5
+}

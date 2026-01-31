@@ -1,0 +1,29 @@
+,coef
+Intercept,0.0589975185031569
+C(industry)[T.Astronaut],0.005123527318207703
+C(industry)[T.Athlete],0.0002755674167365375
+C(industry)[T.Beauty Pagent],-0.0006721622390719761
+C(industry)[T.Comedian],-0.004412920616762686
+C(industry)[T.Entrepreneur],-0.002945459967623344
+C(industry)[T.Fashion Designer],0.003849142194069741
+C(industry)[T.Fitness Instructor],-0.0078020619922291425
+C(industry)[T.Journalist],0.021328682194617032
+C(industry)[T.Magician],-0.02541817801869878
+C(industry)[T.Military],-0.0016020814357403986
+C(industry)[T.Model],-0.010040584506656888
+C(industry)[T.Motivational Speaker],0.005439646422783533
+C(industry)[T.Musician],0.009380801022049533
+C(industry)[T.News Anchor],0.006460909897691372
+C(industry)[T.Politician],-0.020171862322856247
+C(industry)[T.Producer],0.012446767822184715
+C(industry)[T.Racing Driver],-0.02415476653754812
+C(industry)[T.Radio Personality],-0.012239166066461611
+C(industry)[T.Singer/Rapper],0.0026301451218531846
+C(industry)[T.Social Media Personality],-0.007248576277738746
+C(industry)[T.Social media personality],-0.0038221281610304504
+C(industry)[T.Sports Broadcaster],0.004889935523676221
+C(industry)[T.TV Personality],-0.00805575750506833
+age_z,-0.005655565970227864
+week_norm,0.19333505912864676
+partner Var,0.16088581650122535
+season Var,0.48625997686985073

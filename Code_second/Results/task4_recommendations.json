@@ -1,0 +1,62 @@
+{
+  "knee_point": {
+    "theta": {
+      "a": 0.596226025455286,
+      "b": 4.013978373354195,
+      "eta": 0.1425629024568968,
+      "gamma": 0.6895700781750226,
+      "save_flag": 1.0
+    },
+    "metrics": {
+      "obj_F_mean": 0.9591959594818787,
+      "obj_J_mean": 0.9625292928152124,
+      "obj_D_mean": 0.9240068699580088,
+      "obj_R_mean": 0.9919516567679488,
+      "obj_F_sd": 0.0315166288219673,
+      "obj_J_sd": 0.0329779782781078,
+      "obj_D_sd": 0.0795775840150534,
+      "obj_R_sd": 0.0070389856957551
+    },
+    "description": "Balanced trade-off closest to ideal point (1,1,1,1)."
+  },
+  "fan_favor_point": {
+    "theta": {
+      "a": 0.8157788240383385,
+      "b": 6.791587882631054,
+      "eta": 1.8988432200339005,
+      "gamma": 1.5594456541771913,
+      "save_flag": 1.0
+    },
+    "metrics": {
+      "obj_F_mean": 0.9966666666666664,
+      "obj_J_mean": 0.9451515151515152,
+      "obj_D_mean": 0.6313086052298097,
+      "obj_R_mean": 0.9749206349206349,
+      "obj_F_sd": 0.0066666666666666,
+      "obj_J_sd": 0.0748944773428286,
+      "obj_D_sd": 0.0671205125503469,
+      "obj_R_sd": 0.0283973533094389
+    },
+    "description": "Maximizes alignment with audience choices."
+  },
+  "judge_favor_point": {
+    "theta": {
+      "a": 0.4016040581785299,
+      "b": 3.676858829601706,
+      "eta": 0.2192856154196728,
+      "gamma": 0.1690434135736844,
+      "save_flag": 1.0
+    },
+    "metrics": {
+      "obj_F_mean": 0.9653121094310482,
+      "obj_J_mean": 0.9686454427643816,
+      "obj_D_mean": 0.9267082935943745,
+      "obj_R_mean": 0.9796579278666108,
+      "obj_F_sd": 0.0341353581667539,
+      "obj_J_sd": 0.0349098482263645,
+      "obj_D_sd": 0.0574857135598278,
+      "obj_R_sd": 0.0175975602043321
+    },
+    "description": "Maximizes alignment with technical judge scores."
+  }
+}

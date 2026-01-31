@@ -2,137 +2,241 @@
 import pandas as pd
 import numpy as np
 import os
-import json
+import glob
+from itertools import combinations
 
 # Paths
 PANEL_PATH = r'd:\shumomeisai\Code_second\Data\panel.parquet'
-RAW_DATA_PATH = r'd:\shumomeisai\Code_second\Data\2026_MCM_Problem_C_Data.csv'
 POSTERIOR_DIR = r'd:\shumomeisai\Code_second\Results\posterior_samples' # For v samples
 OUTPUT_DIR = r'd:\shumomeisai\Code_second\Results\task3_data'
 
 if not os.path.exists(OUTPUT_DIR):
     os.makedirs(OUTPUT_DIR)
 
+def generate_network_features(panel):
+    print("Generating Network Features (Pro-Pro Co-occurrence) [Manual Impl]...")
+    net_feats = []
+    seasons = sorted(panel['season'].unique())
+    season_pros = panel.groupby('season')['ballroom_partner'].unique().to_dict()
+    
+    # helper for pagerank
+    def power_iteration(A, num_simulations=20):
+        # M_ij = A_ij / deg_j
+        deg = A.sum(axis=0)
+        deg[deg==0] = 1
+        M = A / deg
+        n = M.shape[0]
+        v = np.ones(n) / n
+        d = 0.85
+        for _ in range(num_simulations):
+            v = d * M.dot(v) + (1-d)/n
+        return v
+
+    for s in seasons:
+        # Build graph using seasons < s to avoid leakage
+        past_seasons = [ps for ps in seasons if ps < s]
+        
+        # Get unique pros in history
+        all_past = set()
+        for ps in past_seasons:
+            all_past.update(season_pros.get(ps, []))
+        all_past = sorted(list(all_past))
+        n = len(all_past)
+        
+        # Mapping
+        pro2idx = {p: i for i, p in enumerate(all_past)}
+        
+        # Build Matrix
+        w_deg, pr_vec, clo_vec, emb = [], [], [], []
+        
+        if n > 0:
+            A = np.zeros((n, n))
+            for ps in past_seasons:
+                pros = season_pros.get(ps, [])
+                idxs = [pro2idx[p] for p in pros if p in pro2idx]
+                for i1, i2 in combinations(idxs, 2):
+                    A[i1, i2] += 1
+                    A[i2, i1] += 1 # undirected
+            
+            # Degree (Weighted)
+            w_deg = A.sum(axis=1) # weighted degree
+            
+            # PageRank
+            try:
+                pr_vec = power_iteration(A)
+            except:
+                pr_vec = np.zeros(n)
+            
+            # Simple Closeness Proxy (Normalized Degree)
+            clo_vec = w_deg / (w_deg.sum() + 1e-9)
+            
+            # Embedding (SVD)
+            try:
+                u, _, _ = np.linalg.svd(A) # SVD of Adjacency
+                if u.shape[1] >= 4:
+                    emb = u[:, :4]
+                else:
+                    emb = np.zeros((n, 4))
+                    emb[:, :u.shape[1]] = u[:, :u.shape[1]]
+            except:
+                emb = np.zeros((n, 4))
+        
+        # Map to current rows
+        cur_rows = panel[panel['season'] == s][['season', 'week', 'pair_id', 'ballroom_partner']].drop_duplicates(subset=['pair_id'])
+        s_feats = []
+        
+        for p in cur_rows['ballroom_partner']:
+            f = {}
+            if p in pro2idx:
+                idx = pro2idx[p]
+                f['partner_network_degree'] = w_deg[idx]
+                f['partner_network_pagerank'] = pr_vec[idx]
+                f['partner_network_closeness'] = clo_vec[idx]
+                for k in range(4):
+                    f[f'partner_embedding_{k}'] = emb[idx, k]
+            else:
+                # new partner
+                f['partner_network_degree'] = 0.0
+                f['partner_network_pagerank'] = 0.0
+                f['partner_network_closeness'] = 0.0
+                for k in range(4):
+                    f[f'partner_embedding_{k}'] = 0.0
+            
+            s_feats.append(f)
+            
+        s_df = pd.DataFrame(s_feats, index=cur_rows.index)
+        temp = pd.concat([cur_rows, s_df], axis=1)
+        net_feats.append(temp)
+    
+    if net_feats:
+        net_df = pd.concat(net_feats)
+        return net_df[['season', 'pair_id', 
+                       'partner_network_degree', 'partner_network_pagerank', 'partner_network_closeness',
+                       'partner_embedding_0', 'partner_embedding_1', 'partner_embedding_2', 'partner_embedding_3']]
+    else:
+        return pd.DataFrame()
+
 def prep_task3_data():
     print("--- Preparing Task 3 Dataset ---")
     
-    # 1. Load Panel (Score Targets)
+    # 1. Load Panel (Score Targets & Features)
     print("Loading Panel...")
     panel = pd.read_parquet(PANEL_PATH)
-    # panel keys: season, week, pair_id, celebrity_name, ballroom_partner, S_it, pJ_it
+    # Expected columns: season, week, pair_id, celebrity_name, ballroom_partner, S_it, pJ_it, 
+    #                   celebrity_age_during_season, celebrity_industry
     
-    # 2. Load Raw Data (Features: Age, Industry)
-    print("Loading Raw Metadata...")
-    # Handle BOM if present
-    try:
-        raw = pd.read_csv(RAW_DATA_PATH, encoding='utf-8-sig')
-    except:
-        raw = pd.read_csv(RAW_DATA_PATH, encoding='ISO-8859-1')
-        
-    # Standardize names for merge
-    # raw columns usually: celebrity_name, ballroom_partner, celebrity_age_at_season_premiere, industry_category, season
-    # Let's clean column names
-    raw.columns = [c.strip().replace('ï»¿', '') for c in raw.columns]
+    print(f"Panel Shape: {panel.shape}")
     
-    # Select feature columns
-    # We need season + name -> age, industry
-    # raw might have duplicate rows per celebrity? (wide format). Usually 1 row per celeb.
-    feat_cols = ['season', 'celebrity_name', 'celebrity_age_at_season_premiere', 'industry_category']
-    # Check if exist
-    for c in feat_cols:
-        if c not in raw.columns:
-            print(f"Warning: Column {c} not found in raw data. Available: {raw.columns}")
-            # Try fuzzy match?
-            # Age often: 'celebrity_age_at_season_premiere'
-            # Industry: 'industry_category'
-    
-    # Drop duplicates in raw (just in case)
-    meta = raw[feat_cols].drop_duplicates()
-    
-    # Merge
-    # We merge on [season, celebrity_name]
-    # Panel name might differ slighly? 
-    # Let's hope exact match works for now.
-    
-    # Normalize strings
-    panel['celebrity_name_clean'] = panel['celebrity_name'].astype(str).str.lower().str.strip()
-    meta['celebrity_name_clean'] = meta['celebrity_name'].astype(str).str.lower().str.strip()
-    
-    merged = pd.merge(panel, meta, how='left', on=['season', 'celebrity_name_clean'], suffixes=('', '_raw'))
-    
-    # Check match rate
-    missing_age = merged['celebrity_age_at_season_premiere'].isna().sum()
-    print(f"Merged Metadata. Missing Age: {missing_age} / {len(merged)}")
-    
-    if missing_age > 0:
-        # Fill mean? or drop? LMM needs no NaNs.
-        # Impute with mean age
-        mean_age = merged['celebrity_age_at_season_premiere'].mean()
-        merged['celebrity_age_at_season_premiere'].fillna(mean_age, inplace=True)
-        merged['industry_category'].fillna('Unknown', inplace=True)
-        
-    # 3. Enhance Features
-    # Rolling stats for pJ_it
-    # Need to sort by season/week/pair
-    merged.sort_values(['season', 'pair_id', 'week'], inplace=True)
-    
-    # Rolling Mean (window=3)
-    merged['rolling_avg_pJ'] = merged.groupby(['season', 'pair_id'])['pJ_it'].transform(lambda x: x.rolling(3, min_periods=1).mean())
-    # Volatility
-    merged['rolling_std_pJ'] = merged.groupby(['season', 'pair_id'])['pJ_it'].transform(lambda x: x.rolling(3, min_periods=1).std()).fillna(0)
-    
-    # 4. Integrate Posterior Samples (Fan Target yF)
-    # We need to load v samples per season and attach to week-rows.
-    # To avoid huge file, we can save:
-    # Option A: Save point estimate (mean) + CI width as features
-    # Option B: Save ALL replicates (Huge) -> Execution Doc says "Fan target... posterior samples... outer loop".
-    # Ref Doc 3.1: "Construct weekly dataset... yF^(r)".
-    # "yF^(r) = v^(r)".
-    # This implies we need to save the samples or load them on the fly in LMM script.
-    # Loading on the fly in LMM script is better to keep this prep file small.
-    # So here in prep, we just prepare the Fixed Features X matrix.
-    
+    # Check for required feature columns
+    req_cols = ['celebrity_age_during_season', 'celebrity_industry']
+    for c in req_cols:
+        if c not in panel.columns:
+            print(f"Error: Column {c} not found in panel.")
+            # Verify if maybe named differently?
+            # Based on check_cols check, they should be there.
+            return
+
+    # 2. Integrate Posterior Comparisons (Fan Feature/Target Proxy)
     # Load Summary for v_mean (Point Estimate) and v_ci_width
-    # Generated in Task 1 Metrics
-    # season_{s}_summary.csv
-    
+    print("Loading Posterior Summaries...")
     v_stats_list = []
-    seasons = merged['season'].unique()
-    for s in seasons:
+    
+    # We iterate through seasons present in panel
+    seasons = panel['season'].unique()
+    
+    for s in sorted(seasons):
         summ_path = os.path.join(POSTERIOR_DIR, f"season_{s}_summary.csv")
         if os.path.exists(summ_path):
-            sdf = pd.read_csv(summ_path)
-            # Keys: season, week, pair_id, v_mean, v_ci_width
-            v_stats_list.append(sdf)
-            
+            try:
+                sdf = pd.read_csv(summ_path)
+                # Keep only join keys and features of interest
+                # Keys: season, week, pair_id
+                cols_to_keep = ['season', 'week', 'pair_id', 'v_mean', 'v_ci_width']
+                
+                # Check if columns exist
+                available_cols = [c for c in cols_to_keep if c in sdf.columns]
+                
+                if len(available_cols) < len(cols_to_keep):
+                    print(f"  Warning: S{s} summary missing columns. Found: {sdf.columns}")
+                    continue
+                    
+                v_stats_list.append(sdf[available_cols])
+            except Exception as e:
+                print(f"  Error loading S{s} summary: {e}")
+        else:
+            print(f"  Warning: Summary not found for S{s}")
+
+    merged = panel.copy()
+    
     if v_stats_list:
-        v_stats = pd.concat(v_stats_list)
-        # Merge onto merged
-        # On [season, week, pair_id]
-        # Ensure types (week might be int/float)
-        merged = pd.merge(merged, v_stats[['season','week','pair_id','v_mean','v_ci_width']], 
-                          on=['season','week','pair_id'], how='left')
-                          
-    # 5. Final Columns
-    # Keep useful columns
+        v_stats = pd.concat(v_stats_list, ignore_index=True)
+        # Merge onto panel
+        # Ensure join keys type consistency usually good, but let's be safe
+        print(f"Merging posterior stats (Shape: {v_stats.shape})...")
+        
+        merged = pd.merge(merged, v_stats, on=['season', 'week', 'pair_id'], how='left')
+    else:
+        print("Warning: No posterior summaries loaded. v_mean/v_ci_width will be missing.")
+        merged['v_mean'] = np.nan
+        merged['v_ci_width'] = np.nan
+
+    # 3. Enhance Features
+    print("Generating rolling features...")
+    # Sort for rolling
+    merged.sort_values(['season', 'pair_id', 'week'], inplace=True)
+    
+    # Rolling stats for pJ_it (Performance Momentum)
+    # Window=3
+    merged['rolling_avg_pJ'] = merged.groupby(['season', 'pair_id'])['pJ_it'].transform(lambda x: x.rolling(3, min_periods=1).mean())
+    merged['rolling_std_pJ'] = merged.groupby(['season', 'pair_id'])['pJ_it'].transform(lambda x: x.rolling(3, min_periods=1).std()).fillna(0)
+    
+    # 3.5 Network Features
+    net_df = generate_network_features(merged)
+    if not net_df.empty:
+        print("Merging network features...")
+        merged = pd.merge(merged, net_df, on=['season', 'pair_id'], how='left')
+        # Fill NaN for any rows that didn't match (shouldn't happen if logic correct)
+        net_cols = [c for c in net_df.columns if c not in ['season', 'pair_id']]
+        merged[net_cols] = merged[net_cols].fillna(0.0)
+    
+    # 4. Final Columns & Cleanup
+    merged.rename(columns={
+        'celebrity_age_during_season': 'age', 
+        'celebrity_industry': 'industry'
+    }, inplace=True)
+    
+    # Fill basic missing values for features if any
+    # Age: fill with mean
+    if merged['age'].isnull().any():
+        mean_age = merged['age'].mean()
+        merged['age'] = merged['age'].fillna(mean_age)
+        print(f"Imputed {merged['age'].isnull().sum()} missing ages with mean {mean_age:.1f}")
+        
+    # Industry: fill Unknown
+    if merged['industry'].isnull().any():
+        merged['industry'] = merged['industry'].fillna('Unknown')
+
     final_cols = [
         'season', 'week', 'pair_id', 'celebrity_name', 'ballroom_partner',
-        'S_it', 'pJ_it', # Judge Targets
-        'v_mean', 'v_ci_width', # Fan Features/Target Proxy
-        'celebrity_age_at_season_premiere', 'industry_category',
-        'rolling_avg_pJ', 'rolling_std_pJ'
+        'pJ_it', # Judge Target
+        'v_mean', 'v_ci_width', # Fan Features / Proxy Target
+        'age', 'industry',
+        'rolling_avg_pJ', 'rolling_std_pJ',
+        'partner_network_degree', 'partner_network_pagerank', 'partner_network_closeness',
+        'partner_embedding_0', 'partner_embedding_1', 'partner_embedding_2', 'partner_embedding_3'
     ]
     
-    # Clean output
-    out_df = merged[final_cols].copy()
-    out_df.rename(columns={'celebrity_age_at_season_premiere': 'age', 'industry_category': 'industry'}, inplace=True)
+    # Filter only existing columns (e.g. if v_mean missing)
+    out_cols = [c for c in final_cols if c in merged.columns]
     
-    # One-Hot Industry? Or Category? LMM script can handle category encoding or formulae.
-    # Keep raw category here.
+    out_df = merged[out_cols].copy()
+    
+    # Drop rows where we have absolutely no target data? 
+    # Usually we want to keep all active rows.
     
     out_path = os.path.join(OUTPUT_DIR, 'task3_weekly_dataset.parquet')
     out_df.to_parquet(out_path)
-    print(f"Saved Task 3 Base Dataset to {out_path}")
+    print(f"Saved Task 3 Dataset to {out_path} (Rows: {len(out_df)})")
     print(out_df.head())
 
 if __name__ == "__main__":

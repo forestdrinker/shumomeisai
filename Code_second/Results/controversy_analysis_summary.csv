@@ -1,0 +1,5 @@
+celebrity,season,historical_result,rank_result,percent_result,rank_save_result,percent_save_result,key_finding
+Jerry Rice,2,2nd,2nd (p=0.06),2nd (p=0.46),3rd (p=0.05),2nd (p=0.41),Percent规则显著提升夺冠概率 (40%差异)
+Billy Ray Cyrus,4,5th,5th (p=0.00),5th (p=0.00),5th (p=0.00),6th (p=0.00),"评委分数过低,任何规则下都无法晋级"
+Bristol Palin,11,3rd,3rd (p=0.03),3rd (p=0.01),5th (p=0.02),4th (p=0.00),Save机制对其不利 (排名下降)
+Bobby Bones,27,1st,2nd (p=0.37),1st (p=0.85),2nd (p=0.32),1st (p=0.84),Percent规则显著提升夺冠概率 (48%差异)

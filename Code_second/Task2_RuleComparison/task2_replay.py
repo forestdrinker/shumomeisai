@@ -19,12 +19,15 @@ def get_elimination_count(season, week, elim_data):
         return len(elim_data[key].get('eliminated_names', []))
     return 0
 
-def run_replay(season, rule, num_simulations=None):
+
+def run_replay(season, rule, num_simulations=None, gamma=None):
     """
     Replay a season using posterior samples under a specific rule.
     rule: 'rank', 'percent', 'rank_save', 'percent_save'
+    gamma: float, optional. parameter for probabilistic judges save. 
+           If None, uses deterministic save (save better score).
     """
-    print(f"--- Replaying Season {season} | Rule: {rule} ---")
+    print(f"--- Replaying Season {season} | Rule: {rule} | Gamma: {gamma} ---")
     
     # 1. Load Data
     post_file = os.path.join(POSTERIOR_DIR, f"season_{season}.npz")
@@ -206,39 +209,58 @@ def run_replay(season, rule, num_simulations=None):
                         should_save = True
                 
                 # Upset Checking (Did we eliminate someone NOT in Judge Bottom 2?)
-                # Judge Bottom 2 indices:
-                judge_worst_2_args = np.argsort(S_active)[:2] # S is Higher=Better. So lowest S are 0,1.
-                # Wait, argsort sorts increasing. S=[10, 20, 30]. argsort=[0, 1, 2].
-                # So indices 0 and 1 are the worst scores.
-                # Correct.
+                # Judge Bottom 2 calculation (Handle Ties correctly)
+                # Logic: Is the candidate's score <= the 2nd lowest score?
+                
+                distinct_scores = np.unique(S_active)
+                if len(distinct_scores) >= 2:
+                    bottom_2_thresh = distinct_scores[1] # 2nd LOWEST value
+                else:
+                    bottom_2_thresh = distinct_scores[0] if len(distinct_scores)>0 else 0
+                    
+                # A person is in Bottom 2 if their S <= bottom_2_thresh
                 
                 final_elim_local = []
                 
                 if should_save:
                     # Candidates are Bottom 2 (Combined).
-                    # Judges save one. Who do they save?
-                    # Deterministic Replay: Judge saves the one with HIGHER Judge Score.
-                    # aka Eliminates the one with LOWER Judge Score.
+                    # Judges save one. 
                     
-                    c1_local = candidates_local[0] # Better of the two (3rd score) -- Wait.
-                    c2_local = candidates_local[1] # Worst of the two (4th score/Last)
-                    # sorted_local_args is [Best ... Worst].
-                    # candidates_local = [-2:] = [2nd_Worst, Worst].
+                    c1_local = candidates_local[0] # Better of the two (3rd score / 2nd Worst)
+                    c2_local = candidates_local[1] # Worst of the two (Last)
                     
-                    s1 = S_active[c1_local]
-                    s2 = S_active[c2_local]
+                    r1 = rJ_active[c1_local]
+                    r2 = rJ_active[c2_local]
                     
-                    if s1 > s2:
-                        # Save c1, Elim c2
-                        final_elim_local = [c2_local]
-                    elif s2 > s1:
-                         # Save c2, Elim c1
-                         final_elim_local = [c1_local]
+                    elim_c1 = False
+                    
+                    # Probabilistic Save
+                    if gamma is not None and not np.isinf(gamma):
+                        # P(elim i) propto exp(gamma * rank_i)
+                        # rank 1=Best. Higher Rank = Worse.
+                        # So worse rank should have higher Prob of Elim.
+                        
+                        score_1 = np.exp(gamma * r1)
+                        score_2 = np.exp(gamma * r2)
+                        prob_elim_c1 = score_1 / (score_1 + score_2)
+                        
+                        elim_c1 = np.random.rand() < prob_elim_c1
+                        
                     else:
-                        # Tie in Judge Score?
-                        # Fallback to Votes? Or Random?
-                        # Usually "Judges Decision" is explicit.
-                        # We fallback to "Original Combined Rank" (c2 is worse).
+                        # Deterministic: Eliminate the one with WORSE Judge Rank (Higher rJ)
+                        # rJ: 1=Best.
+                        if r1 > r2:
+                            elim_c1 = True # c1 is worse
+                        elif r2 > r1:
+                            elim_c1 = False # c2 is worse
+                        else:
+                            # Equal Judge Rank. Fallback to Combined Rank.
+                            # c2 has worse Combined Rank (it is candidates_local[1])
+                            elim_c1 = False
+                            
+                    if elim_c1:
+                        final_elim_local = [c1_local]
+                    else:
                         final_elim_local = [c2_local]
                         
                 else:
@@ -259,10 +281,11 @@ def run_replay(season, rule, num_simulations=None):
                     elim_weeks[s_idx, pidx] = week_val
                     active_mask[pidx] = False
                     
-                    # Upset Check
-                    # Is this person in Judge Bottom 2?
-                    # Judge Bottom 2 are indices correspond to Smallest S.
-                    if local_idx not in judge_worst_2_args:
+                    # Upset Check (Corrected Logic)
+                    s_val = S_active[local_idx]
+                    # If s_val > bottom_2_thresh, it is strictly NOT in the bottom 2 scores.
+                    # This is an upset.
+                    if s_val > bottom_2_thresh:
                          sample_upsets += 1
                          
                 current_rank -= len(final_elim_local)
@@ -306,6 +329,7 @@ if __name__ == "__main__":
     parser.add_argument('--rule', type=str)
     parser.add_argument('--all', action='store_true', help="Run all seasons/rules")
     parser.add_argument('--num', type=int, default=100)
+    parser.add_argument('--gamma', type=float, default=None, help="Gamma parameter for probabilistic judges save")
     
     args = parser.parse_args()
     
@@ -317,9 +341,10 @@ if __name__ == "__main__":
         seasons = sorted([int(f.split('_')[1].split('.')[0]) for f in files if f.startswith('season_')])
         for s in seasons:
             for r in rules:
-                run_replay(s, r, args.num)
+                run_replay(s, r, args.num, args.gamma)
     else:
         if args.season and args.rule:
-            run_replay(args.season, args.rule, args.num)
+            run_replay(args.season, args.rule, args.num, args.gamma)
         else:
             print("Please specify --season and --rule, or --all")
+

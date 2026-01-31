@@ -4,19 +4,25 @@ import pandas as pd
 import argparse
 import os
 import glob
-from scipy.stats import kendalltau, entropy
+from scipy.stats import kendalltau, entropy, spearmanr
 
 # Constants
 PANEL_PATH = r'd:\shumomeisai\Code_second\Data\panel.parquet'
 POSTERIOR_DIR = r'd:\shumomeisai\Code_second\Results\posterior_samples'
 REPLAY_DIR = r'd:\shumomeisai\Code_second\Results\replay_results'
 OUTPUT_FILE = r'd:\shumomeisai\Code_second\Results\task2_metrics.csv'
+CONTROVERSY_FILE = r'd:\shumomeisai\Code_second\Results\controversy_cases.csv'
 
 def compute_analysis():
-    df = pd.read_parquet(PANEL_PATH)
+    df_panel = pd.read_parquet(PANEL_PATH)
+    # Create (Season, PairID) -> Name mapping
+    # pair_id seems to be reused per season or we just want to be safe.
+    # Group by [season, pair_id] and take first name.
+    pair_name_map = df_panel.set_index(['season', 'pair_id'])['celebrity_name'].to_dict()
     
     files = glob.glob(os.path.join(REPLAY_DIR, "season_*_*.npz"))
     rows = []
+    controversy_rows = []
     
     # Group files by season
     season_files = {}
@@ -31,26 +37,22 @@ def compute_analysis():
         
     for season in sorted(season_files.keys()):
         rules_dict = season_files[season]
+        print(f"Processing Season {season}...")
         
         # Load Baseline (rank) if available
         baseline_placements = None
-        baseline_top3 = None
         baseline_rule = 'rank'
         
         if baseline_rule in rules_dict:
             b_data = np.load(rules_dict[baseline_rule])
             baseline_placements = b_data['placements'] # (Samples, N)
-            # Top 3 mask or sets?
-            # We want P(Top 3 Change). 
-            # Boolean: Does Set(Top3_Sim) == Set(Top3_Base)?
-            # Or "Any change in set"?
-            # Let's use strict set equality for "Top 3 Composition Change"
-            # placements 1,2,3 are Top 3.
-            pass
             
         # Ground Truths
-        df = pd.read_parquet(PANEL_PATH)
         post_path = os.path.join(POSTERIOR_DIR, f"season_{season}.npz")
+        if not os.path.exists(post_path):
+            print(f"  Warning: Posterior not found for S{season}")
+            continue
+            
         post_data = np.load(post_path)
         v_samples = post_data['v']
         week_values = post_data['week_values']
@@ -60,10 +62,10 @@ def compute_analysis():
         v_overall = np.mean(v_mean_t, axis=0) 
         rank_v_true = pd.Series(v_overall).rank(ascending=False).values
         
-        df_s = df[df['season'] == season]
+        df_s = df_panel[df_panel['season'] == season]
+        
         # Ensure pair_ids match
-        # We need pair_ids from replay file (they should be consistent across rules)
-        # Load one to get pair_ids
+        # We need pair_ids from replay file
         first_key = list(rules_dict.keys())[0]
         data_0 = np.load(rules_dict[first_key])
         pair_ids = data_0['pair_ids']
@@ -82,14 +84,20 @@ def compute_analysis():
             
             n_samples, n_pairs = placements.shape
             
-            # 1. Bias Metrics
+            # 1. Bias Metrics (Changed to Spearman)
             rho_F_list, rho_J_list = [], []
             for i in range(n_samples):
                 p_sim = placements[i]
-                tau_f, _ = kendalltau(p_sim, rank_v_true)
-                tau_j, _ = kendalltau(p_sim, rank_j_true)
-                rho_F_list.append(tau_f)
-                rho_J_list.append(tau_j)
+                # P0 Requirement: Use Spearman
+                rho_f, _ = spearmanr(p_sim, rank_v_true)
+                rho_j, _ = spearmanr(p_sim, rank_j_true)
+                
+                # Handle NaNs from constant input
+                if np.isnan(rho_f): rho_f = 0
+                if np.isnan(rho_j): rho_j = 0
+                
+                rho_F_list.append(rho_f)
+                rho_J_list.append(rho_j)
                 
             # 2. Drama
             d_mean_sample = np.nanmean(conflict_hist, axis=1)
@@ -117,28 +125,23 @@ def compute_analysis():
             p_cham_change = np.nan
             p_top3_change = np.nan
             
-            if baseline_placements is not None:
-                # Compare placements[i] vs baseline_placements[i]
-                # Assuming samples correspond 1-to-1 (same seed/order)
-                # Ensure sizes match
+            if baseline_placements is not None and rule != baseline_rule:
                 if len(baseline_placements) == n_samples:
-                    # Winner Change: P(Rank1_Run != Rank1_Base)
-                    # Indices of rank 1
                     win_run = np.argmin(placements, axis=1)
                     win_base = np.argmin(baseline_placements, axis=1)
                     change = np.mean(win_run != win_base)
                     p_cham_change = change
                     
-                    # Top 3 Change
-                    # Set comparison per sample
                     diff_count = 0
                     for i in range(n_samples):
-                        # Top 3 pairs
                         top3_run = set(np.argsort(placements[i])[:3])
                         top3_base = set(np.argsort(baseline_placements[i])[:3])
                         if top3_run != top3_base:
                             diff_count += 1
                     p_top3_change = diff_count / n_samples
+            elif rule == baseline_rule:
+                p_cham_change = 0.0
+                p_top3_change = 0.0
                     
             rows.append({
                 'season': season,
@@ -153,61 +156,78 @@ def compute_analysis():
                 'suspense_H': h_bar,
                 'suspense_H_late': h_late
             })
-
-        # --- Generate Weekly Diff CSV (Item 71 in Self-Check) ---
-        # Need at least Rank and Percent rules for this season
-        diff_rows = []
-        if 'rank' in rules_dict and 'percent' in rules_dict:
-            # Compare Eliminations Week by Week for Rank vs Percent
-            d_rank = np.load(rules_dict['rank'])
-            d_perc = np.load(rules_dict['percent'])
             
-            # elim_weeks: (Samples, Pairs) -> Week Value when elim.
-            # Convert to "Elim Set per Week"
-            # Or just check "Who was eliminated at week t?"
-            # For each sample r, week t: Set(Elim_Rank) vs Set(Elim_Perc).
-            # Diff = 1 if Sets differ.
+            # --- Controversy / Per-Celebrity Metrics (P0) ---
+            # Calculate metrics for each pair in this Season+Rule
+            # p_win, p_top3, expected_rank, expected_survival_weeks
             
-            # week_values comes from Posterior.
-            # Note: week_values[-1] is Finals which has no elimination usually?
-            # Or elim_weeks stores n_weeks for finals.
-            # We iterate all weeks that HAD eliminations.
-            # week_values usually includes Final week.
+            # placements: (S, N). 1=Best.
+            # elim_weeks: (S, N).
             
-            for t_idx, w_val in enumerate(week_values[:-1]):
-                # Indices eliminated at w_val
-                # rank
-                elim_mask_r = (d_rank['elim_weeks'] == w_val) # (R, N) boolean
-                # percent
-                elim_mask_p = (d_perc['elim_weeks'] == w_val) # (R, N) boolean
+            p_win_arr = np.mean(placements == 1, axis=0) # (N,)
+            p_top3_arr = np.mean(placements <= 3, axis=0) # (N,)
+            exp_rank_arr = np.mean(placements, axis=0) # (N,)
+            exp_weeks_arr = np.mean(elim_weeks, axis=0) # (N,)
+            
+            for p_idx, pid in enumerate(pair_ids):
+                # Look up (season, pid)
+                name = pair_name_map.get((season, pid), f"Pair_{pid}")
                 
-                # Compare per sample
-                # Are masks identical?
-                # XOR gives differences. Any difference means set not equal.
-                diff = np.any(np.bitwise_xor(elim_mask_r, elim_mask_p), axis=1) # (R,)
-                p_diff = np.mean(diff)
-                
-                # Check Save vs NoSave (if rank_save exists)
-                p_diff_save = np.nan
-                if 'rank_save' in rules_dict:
-                     d_save = np.load(rules_dict['rank_save'])
-                     elim_mask_s = (d_save['elim_weeks'] == w_val)
-                     diff_s = np.any(np.bitwise_xor(elim_mask_r, elim_mask_s), axis=1)
-                     p_diff_save = np.mean(diff_s)
-                
-                diff_rows.append({
+                controv_item = {
                     'season': season,
-                    'week': w_val,
-                    'p_elim_diff_rank_vs_percent': p_diff,
-                    'p_elim_diff_save_vs_nosave': p_diff_save
-                })
+                    'rule': rule,
+                    'pair_id': pid,
+                    'celebrity_name': name,
+                    'p_win': p_win_arr[p_idx],
+                    'p_top3': p_top3_arr[p_idx],
+                    'expected_rank': exp_rank_arr[p_idx],
+                    'expected_survival_weeks': exp_weeks_arr[p_idx]
+                }
+                controversy_rows.append(controv_item)
+
+        # --- Generate Weekly Diff CSV (Expanded P1) ---
+        # Compare ALL available pairs of rules
+        available_rules = list(rules_dict.keys())
+        diff_rows = []
+        
+        # Iterate all unique pairs
+        for i in range(len(available_rules)):
+            for j in range(i + 1, len(available_rules)):
+                r1 = available_rules[i]
+                r2 = available_rules[j]
+                
+                d1 = np.load(rules_dict[r1])
+                d2 = np.load(rules_dict[r2])
+                
+                # Check compatibility
+                if d1['elim_weeks'].shape != d2['elim_weeks'].shape:
+                    continue
+                    
+                for t_idx, w_val in enumerate(week_values[:-1]):
+                    # Check who was eliminated at this week
+                    mask1 = (d1['elim_weeks'] == w_val)
+                    mask2 = (d2['elim_weeks'] == w_val)
+                    
+                    # Difference?
+                    # Any bitwise XOR means difference in the SET of eliminated people
+                    diff_bool = np.any(np.bitwise_xor(mask1, mask2), axis=1) # (S,)
+                    p_diff = np.mean(diff_bool)
+                    
+                    diff_rows.append({
+                        'season': season,
+                        'week': w_val,
+                        'rule_A': r1,
+                        'rule_B': r2,
+                        'p_elim_diff': p_diff
+                    })
         
         if diff_rows:
             diff_df = pd.DataFrame(diff_rows)
             out_path = os.path.join(REPLAY_DIR, f"season_{season}_weekly_diff.csv")
             diff_df.to_csv(out_path, index=False)
-            print(f"  -> Generated Weekly Diff: {out_path}")
+            # print(f"  -> Generated Weekly Diff: {out_path}")
             
+    # Save Metrics
     if rows:
         df_out = pd.DataFrame(rows)
         # Sort
@@ -218,6 +238,13 @@ def compute_analysis():
         
         df_out.to_csv(OUTPUT_FILE, index=False)
         print(f"Metrics saved to {OUTPUT_FILE}")
+        
+    # Save Controversy
+    if controversy_rows:
+        df_controv = pd.DataFrame(controversy_rows)
+        df_controv.sort_values(['season', 'pair_id', 'rule'], inplace=True)
+        df_controv.to_csv(CONTROVERSY_FILE, index=False)
+        print(f"Controversy cases saved to {CONTROVERSY_FILE}")
     else:
         print("No results found.")
 
