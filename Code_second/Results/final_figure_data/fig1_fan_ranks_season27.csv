@@ -1,0 +1,100 @@
+Season,Week,Pair_ID,Name,Fan_Rank_Median,Fan_Rank_CI_Lower,Fan_Rank_CI_Upper,Judge_Score
+27,1,1,Juan Pablo Di Pace,4.0,1.0,7.0,7.33
+27,1,2,Evanna Lynch,1.0,1.0,4.0,6.0
+27,1,3,Nancy McKeon,9.0,6.0,11.0,6.5
+27,1,4,John Schneider,5.0,2.0,10.0,6.0
+27,1,5,Milo Manheim,3.0,1.0,6.0,6.67
+27,1,6,Danelle Umstead,6.0,3.0,9.0,6.0
+27,1,7,Mary Lou Retton,7.0,4.0,11.0,6.67
+27,1,8,DeMarcus Ware,2.0,1.0,7.0,7.67
+27,1,9,Nikki Glaser,8.0,5.0,11.0,5.83
+27,1,10,Bobby Bones,10.0,7.0,11.0,6.67
+27,1,11,Tinashe,9.0,6.0,11.0,7.67
+27,2,1,Juan Pablo Di Pace,3.0,1.0,7.0,8.67
+27,2,2,Evanna Lynch,1.0,1.0,4.0,8.0
+27,2,3,Nancy McKeon,9.0,6.0,10.0,6.83
+27,2,4,John Schneider,5.0,2.0,9.0,7.17
+27,2,5,Milo Manheim,3.0,1.0,6.0,8.67
+27,2,6,Danelle Umstead,6.0,3.0,8.0,6.17
+27,2,7,Mary Lou Retton,7.0,4.0,10.0,7.67
+27,2,8,DeMarcus Ware,2.0,1.0,6.0,7.83
+27,2,9,Nikki Glaser,8.0,5.0,10.0,
+27,2,10,Bobby Bones,11.0,11.0,11.0,6.5
+27,2,11,Tinashe,9.0,6.0,10.0,8.67
+27,3,1,Juan Pablo Di Pace,3.0,1.0,7.0,10.0
+27,3,2,Evanna Lynch,1.0,1.0,4.0,9.0
+27,3,3,Nancy McKeon,10.0,10.0,10.0,7.33
+27,3,4,John Schneider,5.0,2.0,8.0,7.0
+27,3,5,Milo Manheim,3.0,1.0,6.0,9.0
+27,3,6,Danelle Umstead,6.0,3.0,8.0,
+27,3,7,Mary Lou Retton,7.0,4.0,9.0,8.0
+27,3,8,DeMarcus Ware,2.0,1.0,6.0,8.67
+27,3,9,Nikki Glaser,8.0,5.0,9.0,
+27,3,10,Bobby Bones,10.0,10.0,10.0,7.67
+27,3,11,Tinashe,9.0,6.0,9.0,9.0
+27,4,1,Juan Pablo Di Pace,3.0,1.0,7.0,8.0
+27,4,2,Evanna Lynch,1.0,1.0,3.0,8.0
+27,4,3,Nancy McKeon,9.0,9.0,9.0,
+27,4,4,John Schneider,5.0,3.0,8.0,7.0
+27,4,5,Milo Manheim,3.0,1.0,5.0,9.67
+27,4,6,Danelle Umstead,6.0,3.0,7.0,
+27,4,7,Mary Lou Retton,7.0,4.0,8.0,8.67
+27,4,8,DeMarcus Ware,2.0,1.0,6.0,7.33
+27,4,9,Nikki Glaser,9.0,9.0,9.0,
+27,4,10,Bobby Bones,9.0,9.0,9.0,6.67
+27,4,11,Tinashe,8.0,6.0,8.0,8.67
+27,5,1,Juan Pablo Di Pace,4.0,1.0,6.02,9.67
+27,5,2,Evanna Lynch,1.0,1.0,3.0,8.0
+27,5,3,Nancy McKeon,8.0,8.0,8.0,
+27,5,4,John Schneider,5.0,3.0,7.0,8.0
+27,5,5,Milo Manheim,3.0,1.0,5.0,9.0
+27,5,6,Danelle Umstead,6.0,3.0,7.0,
+27,5,7,Mary Lou Retton,7.0,4.0,7.0,8.33
+27,5,8,DeMarcus Ware,2.0,1.0,6.0,8.67
+27,5,9,Nikki Glaser,8.0,8.0,8.0,
+27,5,10,Bobby Bones,8.0,8.0,8.0,7.0
+27,5,11,Tinashe,8.0,8.0,8.0,
+27,6,1,Juan Pablo Di Pace,4.0,2.0,6.0,10.0
+27,6,2,Evanna Lynch,1.0,1.0,3.0,9.67
+27,6,3,Nancy McKeon,8.0,8.0,8.0,
+27,6,4,John Schneider,5.0,3.0,7.0,6.33
+27,6,5,Milo Manheim,3.0,1.0,5.0,10.0
+27,6,6,Danelle Umstead,6.0,3.0,7.0,
+27,6,7,Mary Lou Retton,7.0,4.98,7.0,8.0
+27,6,8,DeMarcus Ware,2.0,1.0,6.0,8.67
+27,6,9,Nikki Glaser,8.0,8.0,8.0,
+27,6,10,Bobby Bones,8.0,8.0,8.0,7.33
+27,6,11,Tinashe,8.0,8.0,8.0,
+27,7,1,Juan Pablo Di Pace,4.0,2.0,6.0,9.33
+27,7,2,Evanna Lynch,1.0,1.0,3.0,9.83
+27,7,3,Nancy McKeon,7.0,7.0,7.0,
+27,7,4,John Schneider,5.0,3.0,6.0,9.0
+27,7,5,Milo Manheim,3.0,2.0,5.0,9.67
+27,7,6,Danelle Umstead,6.0,3.0,6.0,
+27,7,7,Mary Lou Retton,7.0,7.0,7.0,
+27,7,8,DeMarcus Ware,2.0,1.0,5.0,8.83
+27,7,9,Nikki Glaser,7.0,7.0,7.0,
+27,7,10,Bobby Bones,7.0,7.0,7.0,8.83
+27,7,11,Tinashe,7.0,7.0,7.0,
+27,8,1,Juan Pablo Di Pace,3.0,2.0,4.0,10.0
+27,8,2,Evanna Lynch,1.0,1.0,2.0,9.67
+27,8,3,Nancy McKeon,5.0,5.0,5.0,
+27,8,4,John Schneider,5.0,5.0,5.0,
+27,8,5,Milo Manheim,3.0,2.0,4.0,9.17
+27,8,6,Danelle Umstead,5.0,5.0,5.0,
+27,8,7,Mary Lou Retton,5.0,5.0,5.0,
+27,8,8,DeMarcus Ware,2.0,1.0,4.0,
+27,8,9,Nikki Glaser,5.0,5.0,5.0,
+27,8,10,Bobby Bones,5.0,5.0,5.0,7.5
+27,8,11,Tinashe,5.0,5.0,5.0,
+27,9,1,Juan Pablo Di Pace,3.0,2.0,3.0,
+27,9,2,Evanna Lynch,1.0,1.0,2.0,10.0
+27,9,3,Nancy McKeon,4.0,4.0,4.0,
+27,9,4,John Schneider,4.0,4.0,4.0,
+27,9,5,Milo Manheim,4.0,4.0,4.0,10.0
+27,9,6,Danelle Umstead,4.0,4.0,4.0,
+27,9,7,Mary Lou Retton,4.0,4.0,4.0,
+27,9,8,DeMarcus Ware,2.0,1.0,3.0,
+27,9,9,Nikki Glaser,4.0,4.0,4.0,
+27,9,10,Bobby Bones,4.0,4.0,4.0,9.0
+27,9,11,Tinashe,4.0,4.0,4.0,

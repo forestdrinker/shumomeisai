@@ -1,0 +1,38 @@
+=== Model 1: Judge Share LMM ===
+          Mixed Linear Model Regression Results
+=========================================================
+Model:            MixedLM Dependent Variable: judge_share
+No. Observations: 2777    Method:             REML       
+No. Groups:       34      Scale:              0.0007     
+Min. group size:  26      Log-Likelihood:     5823.3418  
+Max. group size:  115     Converged:          No         
+Mean group size:  81.7                                   
+---------------------------------------------------------
+               Coef.  Std.Err.   z    P>|z| [0.025 0.975]
+---------------------------------------------------------
+Intercept       0.054    0.005 11.307 0.000  0.045  0.063
+age_std        -0.006    0.001 -7.172 0.000 -0.007 -0.004
+week            0.016    0.000 76.840 0.000  0.015  0.016
+Group Var       0.001    0.006                           
+partner Var     0.000    0.001                           
+=========================================================
+
+
+=== Model 2: Fan Share (Baseline) LMM ===
+         Mixed Linear Model Regression Results
+========================================================
+Model:            MixedLM Dependent Variable: v_baseline
+No. Observations: 2777    Method:             REML      
+No. Groups:       34      Scale:              0.0008    
+Min. group size:  26      Log-Likelihood:     5874.4323 
+Max. group size:  115     Converged:          Yes       
+Mean group size:  81.7                                  
+--------------------------------------------------------
+              Coef.  Std.Err.   z    P>|z| [0.025 0.975]
+--------------------------------------------------------
+Intercept      0.051    0.005  9.805 0.000  0.041  0.062
+age_std       -0.001    0.001 -0.923 0.356 -0.002  0.001
+week           0.017    0.000 80.558 0.000  0.016  0.017
+Group Var      0.001    0.008                           
+partner Var    0.000    0.000                           
+========================================================
