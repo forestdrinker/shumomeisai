@@ -1,0 +1,29 @@
+数据来源说明
+图B数据来源
+
+文件 season_{S}_{rule}.npz（来自 task2_replay.py 输出）
+前置依赖链
+
+  task1 后验采样 → posterior_samplesseason_.npz
+  task2_replay.py --all → replay_resultsseason_{S}_{rule}.npz
+
+切换真实数据
+
+bash  python fig_b_controversy_portraits.py --data-dir dshumomeisaiCode_secondResultsreplay_results --panel dshumomeisaiCode_secondprocessedpanel.csv
+图C数据来源
+
+文件 task2_metrics.csv（来自 task2_analysis.py 输出）
+必需列 season, rule, rho_J, rho_F
+切换真实数据
+
+bash  python fig_c_bias_diagnostic.py --metrics dshumomeisaiCode_secondResultstask2_metrics.csv
+
+关键统计发现（演示数据）
+图B - Bobby Bones 核心数据点（可直接引用到论文）
+规则E[名次]P(夺冠)P(前三)Rank1.7059.9%93.4%Percent5.540%5.5%Rank+Save6.740%0%Percent+Save8.060%0%
+→ ΔP(Win) = −59.9%（从 Rank 切换到 Percent）
+图C - 系统性偏向检验
+
+Rank 规则 Δ(ρ_J − ρ_F) = −0.227, p  0.0001 → Fan-favoring
+Percent 规则 Δ(ρ_J − ρ_F) = +0.221, p  0.0001 → Judge-favoring
+Percent 比 Rank 的 ρ_J 高 +0.294 (t=15.81, p0.0001)
