@@ -177,9 +177,14 @@ def compute_temporal_predictive_metrics(
         sorted_indices = np.argsort(active_probs)[::-1]
         sorted_probs = active_probs[sorted_indices]
         cumsum = np.cumsum(sorted_probs)
-        cutoff_idx = np.searchsorted(cumsum, 0.9)
-        cred_set = set(sorted_indices[:cutoff_idx+1])
-        coverage_hit = any(idx in cred_set for idx in local_true_elim)
+        cutoff_idx_90 = np.searchsorted(cumsum, 0.9)
+        cred_set_90 = set(sorted_indices[:cutoff_idx_90+1])
+        coverage_hit_90 = any(idx in cred_set_90 for idx in local_true_elim)
+        
+        # Coverage 50%
+        cutoff_idx_50 = np.searchsorted(cumsum, 0.5)
+        cred_set_50 = set(sorted_indices[:cutoff_idx_50+1])
+        coverage_hit_50 = any(idx in cred_set_50 for idx in local_true_elim)
         
         # Accuracy
         top_1 = sorted_indices[0]
@@ -195,8 +200,10 @@ def compute_temporal_predictive_metrics(
             y[idx] = 1.0
         brier = np.sum((active_probs - y)**2) / n_active
         
+        # Brier Random (Fixed: Normalized by n_active to match brier definition)
         random_prob = 1.0 / n_active
-        brier_random = (1 - random_prob)**2 + (n_active - 1) * random_prob**2
+        brier_random_sum = (1 - random_prob)**2 + (n_active - 1) * random_prob**2
+        brier_random = brier_random_sum / n_active
         
         entropy = -np.sum(active_probs * np.log(active_probs + 1e-10))
         
@@ -206,12 +213,15 @@ def compute_temporal_predictive_metrics(
             'week_idx': t,
             'n_active': n_active,
             'n_elim': len(local_true_elim),
-            'coverage_90': int(coverage_hit),
+            'coverage_90': int(coverage_hit_90),
+            'coverage_50': int(coverage_hit_50),
             'accuracy': accuracy,
             'top2_acc': top2_acc,
             'brier': brier,
             'brier_random': brier_random,
-            'cred_set_size': cutoff_idx + 1,
+            'cred_set_size': cutoff_idx_90 + 1, # Keep for backward compatibility
+            'cred_set_size_90': cutoff_idx_90 + 1,
+            'cred_set_size_50': cutoff_idx_50 + 1,
             'max_prob': np.max(active_probs),
             'entropy': entropy,
             'validation_type': 'temporal_predictive'
@@ -443,12 +453,20 @@ if __name__ == "__main__":
         res_df = pd.DataFrame(all_metrics)
         res_df.to_csv(os.path.join(VALIDATION_DIR, 'detailed_predictions.csv'), index=False)
         
+        # Custom aggregation
+        res_df['avg_credset90_ratio'] = res_df['cred_set_size_90'] / res_df['n_active']
+        res_df['avg_credset50_ratio'] = res_df['cred_set_size_50'] / res_df['n_active']
+        
         # Season Summary
         summary = res_df.groupby('season').agg({
             'accuracy': 'mean',
             'top2_acc': 'mean',
             'coverage_90': 'mean',
+            'coverage_50': 'mean',
             'brier': 'mean',
+            'brier_random': 'mean',
+            'avg_credset90_ratio': 'mean',
+            'avg_credset50_ratio': 'mean',
             'n_elim': 'sum'
         }).reset_index()
         summary.to_csv(os.path.join(VALIDATION_DIR, 'season_summary.csv'), index=False)
@@ -456,8 +474,10 @@ if __name__ == "__main__":
         # Report
         mean_acc = res_df['accuracy'].mean()
         mean_top2 = res_df['top2_acc'].mean()
-        mean_cov = res_df['coverage_90'].mean()
+        mean_cov90 = res_df['coverage_90'].mean()
+        mean_cov50 = res_df['coverage_50'].mean()
         mean_brier = res_df['brier'].mean()
+        mean_brier_rand = res_df['brier_random'].mean()
         
         report_path = os.path.join(VALIDATION_DIR, 'validation_report.txt')
         with open(report_path, 'w', encoding='utf-8') as f:
@@ -472,8 +492,10 @@ if __name__ == "__main__":
             f.write(f"  Total Predictions:       {len(res_df)}\n")
             f.write(f"  Mean Accuracy (Top-1):   {mean_acc:.4f}\n")
             f.write(f"  Mean Top-2 Accuracy:     {mean_top2:.4f}\n")
-            f.write(f"  Mean 90% Coverage:       {mean_cov:.4f}\n")
-            f.write(f"  Mean Brier Score:        {mean_brier:.4f}\n\n")
+            f.write(f"  Mean 90% Coverage:       {mean_cov90:.4f}\n")
+            f.write(f"  Mean 50% Coverage:       {mean_cov50:.4f}\n")
+            f.write(f"  Mean Brier Score:        {mean_brier:.4f}\n")
+            f.write(f"  Mean Brier Random:       {mean_brier_rand:.4f}\n\n")
             
             f.write("2. SEASON BY SEASON\n")
             f.write("-------------------\n")
@@ -482,7 +504,8 @@ if __name__ == "__main__":
             
         print(f"\nValidation Complete. Metrics saved to {VALIDATION_DIR}")
         print(f"Overall Accuracy: {mean_acc:.2%}")
-        print(f"Overall Coverage: {mean_cov:.2%}")
+        print(f"Overall Coverage 90%: {mean_cov90:.2%}")
+        print(f"Overall Coverage 50%: {mean_cov50:.2%}")
         
     else:
         print("No metrics computed. Check input data or elim_events.")

@@ -87,9 +87,13 @@ def compute_row_metrics(probs, true_elim_indices):
     sorted_probs = probs[sorted_indices]
     cumsum = np.cumsum(sorted_probs)
     
-    cutoff_idx = np.searchsorted(cumsum, 0.9)
-    cred_set = sorted_indices[:cutoff_idx+1]
-    hit_cov = any(idx in cred_set for idx in true_elim_indices)
+    cutoff_idx_90 = np.searchsorted(cumsum, 0.9)
+    cred_set_90 = sorted_indices[:cutoff_idx_90+1]
+    hit_cov_90 = any(idx in cred_set_90 for idx in true_elim_indices)
+    
+    cutoff_idx_50 = np.searchsorted(cumsum, 0.5)
+    cred_set_50 = sorted_indices[:cutoff_idx_50+1]
+    hit_cov_50 = any(idx in cred_set_50 for idx in true_elim_indices)
     
     top_1 = sorted_indices[0]
     acc = 1 if top_1 in true_elim_indices else 0
@@ -103,7 +107,7 @@ def compute_row_metrics(probs, true_elim_indices):
         y[idx] = 1.0
     brier = np.sum((probs - y)**2)
     
-    return hit_cov, acc, top2_hit, brier, N
+    return hit_cov_90, hit_cov_50, acc, top2_hit, brier, N, len(cred_set_90), len(cred_set_50)
 
 
 def compute_ci_width(v_samples):
@@ -285,12 +289,12 @@ def compute_metrics_temporal(samples_dir=SAMPLES_DIR):
             
             # 时序预测指标
             active_probs_temp = probs_temporal[active_indices]
-            cov_temp, acc_temp, top2_temp, brier_temp, _ = compute_row_metrics(
+            cov90_temp, cov50_temp, acc_temp, top2_temp, brier_temp, _, cz90_temp, cz50_temp = compute_row_metrics(
                 active_probs_temp, local_true_elim)
             
             # 样本内指标
             active_probs_ins = probs_insample[active_indices]
-            cov_ins, acc_ins, top2_ins, brier_ins, _ = compute_row_metrics(
+            cov90_ins, cov50_ins, acc_ins, top2_ins, brier_ins, _, cz90_ins, cz50_ins = compute_row_metrics(
                 active_probs_ins, local_true_elim)
             
             # CI宽度
@@ -300,6 +304,30 @@ def compute_metrics_temporal(samples_dir=SAMPLES_DIR):
             # 熵
             entropy_temp = -np.sum(active_probs_temp * np.log(active_probs_temp + 1e-10))
             
+            # Brier Random Correction
+            random_prob = 1.0 / n_active
+            brier_random_sum = (1 - random_prob)**2 + (n_active - 1) * random_prob**2
+            brier_random = brier_random_sum # Validation script uses sum for brier_random? 
+            # Wait, in validation script I normalized both. 
+            # In compute_row_metrics (line 104), brier is SUM.
+            # So here brier_random should also be SUM to be comparable?
+            # User said: "brier... unit inconsistent... brier is average version (divide by n_active) in CURRENT CODE?"
+            # Let's check compute_row_metrics: "brier = np.sum((probs - y)**2)" -> This is SUM.
+            # User said "your code ... brier is average version". Is it?
+            # Ah, maybe they were referring to 'task1_validation.py' where I divided by n_active.
+            # In task1_metrics.py, compute_row_metrics returns SUM.
+            # So I should keep brier_random as SUM.
+            # OR, I should normalize BOTH.
+            # User recommended: "Plan A: Divide brier_random by n_active (to match mean version)"
+            # BUT my compute_row_metrics returns sum.
+            # I should probably normalize my brier in compute_row_metrics to be mean as well?
+            # Or just normalize both here.
+            # Let's normalize BOTH here for the report to be consistent with validation script.
+            
+            brier_temp_norm = brier_temp / n_active
+            brier_ins_norm = brier_ins / n_active
+            brier_random_norm = brier_random_sum / n_active
+
             metrics_rows.append({
                 'season': season,
                 'week': week_num,
@@ -307,17 +335,24 @@ def compute_metrics_temporal(samples_dir=SAMPLES_DIR):
                 'n_elim': len(local_true_elim),
                 
                 # 时序预测指标 (主要报告)
-                'coverage_90_temporal': int(cov_temp),
+                'coverage_90_temporal': int(cov90_temp),
+                'coverage_50_temporal': int(cov50_temp),
                 'accuracy_temporal': acc_temp,
                 'top2_acc_temporal': top2_temp,
-                'brier_temporal': brier_temp,
+                'brier_temporal': brier_temp_norm, # Normalized
+                'brier_random': brier_random_norm,
                 'entropy_temporal': entropy_temp,
                 'max_prob_temporal': np.max(active_probs_temp),
+                'cred_set_size_90_temporal': cz90_temp,
+                'cred_set_size_50_temporal': cz50_temp,
+                'avg_credset90_ratio_temporal': cz90_temp / n_active,
+                'avg_credset50_ratio_temporal': cz50_temp / n_active,
                 
                 # 样本内指标 (参考)
-                'coverage_90_insample': int(cov_ins),
+                'coverage_90_insample': int(cov90_ins),
+                'coverage_50_insample': int(cov50_ins),
                 'accuracy_insample': acc_ins,
-                'brier_insample': brier_ins,
+                'brier_insample': brier_ins_norm, # Normalized
                 
                 # 后验不确定性
                 'post_var_v_mean': mean_post_var,
@@ -340,12 +375,14 @@ def compute_metrics_temporal(samples_dir=SAMPLES_DIR):
         print("-"*60)
         print(f"{'Mean Accuracy':<25} {df_out['accuracy_temporal'].mean():>12.3f} {df_out['accuracy_insample'].mean():>12.3f}")
         print(f"{'Mean Coverage_90':<25} {df_out['coverage_90_temporal'].mean():>12.3f} {df_out['coverage_90_insample'].mean():>12.3f}")
+        print(f"{'Mean Coverage_50':<25} {df_out['coverage_50_temporal'].mean():>12.3f} {df_out['coverage_50_insample'].mean():>12.3f}")
         print(f"{'Mean Brier':<25} {df_out['brier_temporal'].mean():>12.3f} {df_out['brier_insample'].mean():>12.3f}")
+        print(f"{'Mean Brier Random':<25} {df_out['brier_random'].mean():>12.3f} {'-':>12}")
         print("="*60)
         print("\n解读:")
-        print("- Temporal指标反映真正的预测能力 (预期Acc~35-50%)")
+        print("- Temporal指标反映真正的预测能力 (预期Acc~35-50%, Cov90~80-90%)")
         print("- In-Sample指标反映模型拟合质量 (预期Acc~85-95%)")
-        print("- 差距大说明模型学到了规律，而非简单记忆")
+        print("- Brier Temporal < Brier Random? " + ("YES" if df_out['brier_temporal'].mean() < df_out['brier_random'].mean() else "NO"))
         
     else:
         print("No metrics calculated.")

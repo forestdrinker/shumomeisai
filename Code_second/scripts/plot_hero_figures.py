@@ -45,155 +45,83 @@ PALETTE_PARETO = '#E0E0E0' # Grey
 # 🌊 Fig 1: The Hidden Current (Rank-Flow Divergence)
 # ---------------------------------------------------------
 def plot_fig1_hidden_current(season=27):
-    print(f"Generating Fig 1 for Season {season}...")
+    print(f"Generating Fig 1 for Season {season} from Custom CSV...")
     
-    # 1. Load Posterior
-    post_path = os.path.join(RESULTS_DIR, 'posterior_samples', f'season_{season}.npz')
-    if not os.path.exists(post_path):
-        print(f"Posterior file not found: {post_path}")
+    # 1. Load Custom CSV
+    custom_csv_path = os.path.join(BASE_DIR, 'season27_full_weekly_table.csv')
+    if not os.path.exists(custom_csv_path):
+        print(f"Custom CSV not found: {custom_csv_path}")
         return
         
-    data = np.load(post_path)
-    # v_samples shape: (Chain*Samples, Weeks, Contestants) or similar
-    # Check structure. Usually: 'v_draws' or 'u_draws'
-    if 'v_draws' in data:
-        v = data['v_draws'] # (R, T_s, N_s)
-    elif 'v' in data:
-        v = data['v']
-    else:
-        print("Keys:", data.files)
-        return
-
-    # Dimensions
-    n_samples, n_weeks, n_contestants = v.shape
+    df = pd.read_csv(custom_csv_path)
     
-    # 2. Get the specific Pair IDs this model used
-    if 'pair_ids' in data:
-        model_pair_ids = data['pair_ids']
-    else:
-        # Fallback if unassigned (should fit n_contestants)
-        print("Warning: 'pair_ids' not in npz. Using first N from panel.")
-        model_pair_ids = range(1, n_contestants + 1) # Assumptions
-
-    # 3. Load Panel and Filter
-    panel_path = os.path.join(BASE_DIR, 'processed', 'panel.csv')
-    panel_df = pd.read_csv(panel_path)
-    s_df = panel_df[panel_df['season'] == season]
-    weeks = sorted(s_df['week'].unique())
+    # Filter valid rows (where we have a name). Some rows might be empty/artifacts
+    df = df.dropna(subset=['celebrity_name'])
     
-    # Filter panel to match model universe
-    s_df = s_df[s_df['pair_id'].isin(model_pair_ids)]
+    # Get List of Contestants for Color Mapping
+    # We want consistent colors. Sort by pair_id or something stable.
+    unique_pairs = df[['pair_id', 'celebrity_name']].drop_duplicates().sort_values('pair_id')
+    n_contestants = len(unique_pairs)
     
-    # Map: index in v -> pair_id -> name
-    # Ensure sorted order matches model assumption (Task1 usually sorts by pair_id)
-    # The pair_ids in npz should match the columns 0..N
-    sorted_pairs = sorted(model_pair_ids)
-    pair_map = {i: pid for i, pid in enumerate(sorted_pairs)}
-    name_map = s_df.set_index('pair_id')['celebrity_name'].to_dict()
+    # Metadata maps
+    pair_map = unique_pairs.set_index('pair_id')['celebrity_name'].to_dict()
+    pairs = unique_pairs['pair_id'].tolist()
     
-    limit = n_contestants # Now they match exactly by definition
-
-    # Holder for stats
-    rank_median = np.zeros((n_weeks, limit))
-    rank_low = np.zeros((n_weeks, limit))
-    rank_high = np.zeros((n_weeks, limit))
-    
-    # Judge Ranks - Initialize with NaN
-    judge_ranks_matrix = np.full((n_weeks, limit), np.nan)
-    
-    for t_idx, w in enumerate(weeks):
-        # Fan Ranks
-        # v column order corresponds to sorted_pair_ids
-        v_t = v[:, t_idx, :] 
-        
-        ranks_t = np.zeros_like(v_t)
-        for r in range(n_samples):
-            ranks_t[r] = rankdata(-v_t[r], method='min') 
-            
-        rank_median[t_idx] = np.median(ranks_t, axis=0)
-        rank_low[t_idx] = np.percentile(ranks_t, 2.5, axis=0)
-        rank_high[t_idx] = np.percentile(ranks_t, 97.5, axis=0)
-        
-        # Judge Ranks (Population)
-        # We must compute rank among *Active* contestants this week
-        w_df = s_df[s_df['week'] == w]
-        
-        if w_df.empty: continue
-        
-        # Get scores for everyone active this week
-        current_scores = w_df[['pair_id', 'S_it']].set_index('pair_id')['S_it'].to_dict()
-        
-        # Check active status. 
-        # If score exists, they are active.
-        active_pids = list(current_scores.keys())
-        active_scores = list(current_scores.values())
-        
-        # Compute ranks for this week's active set
-        # Higher score = Better (Lower Rank Number)
-        # rankdata(-score)
-        
-        for i in range(limit):
-            pid = pair_map[i]
-            if pid in current_scores:
-                my_score = current_scores[pid]
-                # Rank logic: 1 + count(score > my_score)
-                # Handle ties: 'min' method (e.g. T1, T1, 3) 
-                # or 'average'? DWTS usually 'min'.
-                better_count = sum(s > my_score for s in active_scores)
-                my_rank = 1 + better_count
-                judge_ranks_matrix[t_idx, i] = my_rank
-            else:
-                 pass # Eliminated or not present this week
-                 
-    # 4. Plot
+    # 2. Plot
     fig, ax = plt.subplots(figsize=(12, 8))
     
     # Colors suitable for bump chart
     colors = sns.color_palette("husl", n_contestants)
+    pair_color_map = {pid: colors[i] for i, pid in enumerate(pairs)}
     
-    # We only plot Top 6-8 contenders to avoid clutter? Or all?
-    # Let's plot everyone who survived at least 3 weeks
+    weeks = sorted(df['week'].unique())
     
-    for i in range(n_contestants):
-        pid = pair_map[i]
-        name = name_map.get(pid, f"Pair {pid}")
+    for pid in pairs:
+        name = pair_map[pid]
+        p_data = df[df['pair_id'] == pid].sort_values('week')
         
-        # Mask: Plot only when active (judge rank exists)
-        active_mask = ~np.isnan(judge_ranks_matrix[:, i])
-        if np.sum(active_mask) < 2: continue
+        # Only plot if we have data points
+        if len(p_data) < 1: continue
         
         # X: weeks
-        x = np.array(weeks)
+        x = p_data['week'].values
         
         # Y: Fan Ranks
-        y_fan = rank_median[:, i]
-        y_low = rank_low[:, i]
-        y_high = rank_high[:, i]
+        y_fan = p_data['fan_rank_median'].values
+        y_low = p_data['fan_rank_ci_low'].values
+        y_high = p_data['fan_rank_ci_high'].values
         
         # Y: Judge Ranks
-        y_judge = judge_ranks_matrix[:, i]
+        y_judge = p_data['judge_rank'].values
         
-        # Filter by active
-        x_plot = x[active_mask]
-        y_fan_plot = y_fan[active_mask]
-        y_low_plot = y_low[active_mask]
-        y_high_plot = y_high[active_mask]
-        y_judge_plot = y_judge[active_mask]
+        color = pair_color_map[pid]
         
         # -- The Current (Fan Ribbon) --
-        color = colors[i]
-        ax.fill_between(x_plot, y_low_plot, y_high_plot, color=color, alpha=0.15, ec='none')
-        ax.plot(x_plot, y_fan_plot, color=color, linewidth=3, alpha=0.8, label=name)
+        # Ribbon (Uncertainty)
+        # Ensure floats
+        y_low = y_low.astype(float)
+        y_high = y_high.astype(float)
+        
+        ax.fill_between(x, y_low, y_high, color=color, alpha=0.15, ec='none')
+        
+        # Median Line
+        ax.plot(x, y_fan, color=color, linewidth=3, alpha=0.8, label=name)
         
         # -- The Surface (Judge Dots) --
-        # White jitter or halo to separate
-        ax.plot(x_plot, y_judge_plot, 'o', color=color, markeredgecolor='white', markeredgewidth=1.5, markersize=6, alpha=0.9, linestyle=':')
+        # Filter NaNs for judge ranks
+        mask_j = ~np.isnan(y_judge)
+        if np.any(mask_j):
+            ax.plot(x[mask_j], y_judge[mask_j], 'o', color=color, 
+                    markeredgecolor='white', markeredgewidth=1.5, markersize=6, 
+                    alpha=0.9, linestyle=':')
         
         # End Label
-        last_idx = -1
-        ax.text(x_plot[last_idx]+0.2, y_fan_plot[last_idx], name, va='center', fontsize=9, color=color)
+        # Use the last valid point
+        if len(x) > 0:
+            last_idx = -1
+            ax.text(x[last_idx]+0.2, y_fan[last_idx], name, va='center', fontsize=9, color=color)
 
-    ax.set_ylim(14, 0.5) # Inverted
+    ax.set_ylim(14, 0.5) # Inverted Y-axis
     ax.set_xlabel('Week', weight='bold')
     ax.set_ylabel('Rank (1 = Top)', weight='bold')
     ax.set_title(f'Figure 1: The Hidden Current | Season {season}\nDeviations between Judge Scores (Dots) and Fan Vote Estimates (Ribbons)', loc='left', pad=15)

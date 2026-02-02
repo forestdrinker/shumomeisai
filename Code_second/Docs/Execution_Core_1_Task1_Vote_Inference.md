@@ -1,5 +1,15 @@
 ## Task 1｜票份额反演（NUTS MCMC 主线）执行核心
 
+Baseline Model（对照基线）
+每周独立的 Hard-constraint 可行域解：CSP/LP/最大熵单点票份额（无跨周平滑）
+- 在每一周单独求一组 (v_{i,t})，只要求“淘汰机制与该周规则一致”（硬约束），不给时间连续性：
+  - 对 S1–S2 与 S28+：采用 Rank 合成规则；
+  - 对 S3–S27：采用 Percent 合成规则；
+  - 对 S28+：采用“两阶段”硬约束版本（淘汰者必须位于 bottom2，且与评委倾向一致的情形优先）。
+- 输出通常是单点解（或少量可行解采样），不强调后验校准，仅用于：
+1325. 证明我们不是“凭空拟合”；
+1326. 给软模型/贝叶斯模型提供 sanity check。
+1327. 逻辑库
 ### 1.1 Task1 数据预处理（专项）
 - **输入**：panel 中该季 $s$ 的所有 active 行 $(t,i)$、以及 $\mathcal E_{s,t}$（$t<T_s$）和决赛周 finalists 集合 $\mathcal F_s=\mathcal A_{s,T_s}$。
 - **仅在 active 内建模**：每周 softmax 的归一化必须只对 $\mathcal A_{s,t}$ 做。

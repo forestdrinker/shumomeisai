@@ -1,0 +1,13 @@
+Raw Excel Loaded. Shape: (37, 4)
+First 10 rows:
+                                                     0                 1                 2                  3
+0  Dancing with the Stars - All Seasons Summary (1-34)               NaN               NaN                NaN
+1                                                  NaN               NaN               NaN                NaN
+2                                               Season            Winner         Runner-up        Third Place
+3                                                   S1      Kelly & Alec  John & Charlotte       Joey & Ashly
+4                                                   S2     Drew & Cheryl      Jerry & Anna       Stacy & Tony
+5                                                   S3   Emmitt & Cheryl    Mario & Karina       Joey & Edyta
+6                                                   S4  Apolo & Julianne        Joey & Kym       Laila & Maks
+7                                                   S5  Hélio & Julianne        Mel & Maks   Marie & Jonathan
+8                                                   S6     Kristi & Mark     Jason & Edyta  Cristián & Cheryl
+9                                                   S7    Brooke & Derek      Warren & Kym      Lance & Lacey

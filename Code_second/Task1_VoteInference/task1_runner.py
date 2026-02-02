@@ -73,7 +73,14 @@ def run_season(season, num_warmup=500, num_samples=1000, num_chains=1):
         
         active_mask[t, i] = True
         observed_scores[t, i] = row['S_it']
-        judge_percents[t, i] = row['pJ_it']
+        # judge_percents[t, i] = row['pJ_it']  <-- MISSING in CSV
+    
+    # Compute pJ_it (Percent of total judge points in that week)
+    # Avoid div by zero
+    for t in range(n_weeks):
+        total_score = np.sum(observed_scores[t, active_mask[t]])
+        if total_score > 0:
+            judge_percents[t, active_mask[t]] = observed_scores[t, active_mask[t]] / total_score
         
     # Parse Elim Events and Audit Names
     elim_events_list = [] # List of (t, [indices])
@@ -166,7 +173,12 @@ def run_season(season, num_warmup=500, num_samples=1000, num_chains=1):
 
     # Rule Segment
     # All rows in season should have same rule
-    segment = df_s['rule_segment'].iloc[0]
+    # In CSV it is 'regime_mode'
+    segment = df_s['regime_mode'].iloc[0].lower()
+    if segment == 'rank+save':
+        segment = 'rank_save'
+    elif segment == 'percent+save':
+        segment = 'percent_save'
     
     print(f"Data Prep Done. N={n_pairs}, T={n_weeks}, Rule={segment}")
     print(f"Elim Events: {len(elim_events_list)}")
